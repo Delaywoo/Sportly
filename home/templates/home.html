@@ -1,21 +1,71 @@
-<h5>SPORTLY
-    Home Page</h5>
+<!DOCTYPE html>
+<html lang="en">
 
-<h2> 달력 </h2>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./home.css">
+</head>
 
-<h2> 날짜</h2>
-<h2>일정 알림</h2>
+<body>
+    <p>navbar</p>
+    <div class="calander">
+        <h2> 달력 </h2>
+    </div>
 
-<h2>내 일지</h2>
-<h2>일지 리스트</h2>
 
-<h2> 로그작성 버튼</h2>
+    <div class='homecontent'>
+        <div class='cal'>
+            <h2 class='title2'> 날짜</h2>
+
+            <div class='cal-notification'>
+                <h2 class='title2'>일정 알림</h2>
+                <p class='cal-time'>일정 시간</p>
+            </div>
+
+        </div>
+
+        <div class="mylog">
+            <h2 class='title2'>내 일지</h2>
+            <li class='myloglist'>이모티콘<br> 제목 내용</li>
+            <li class='myloglist'>이모티콘<br> 제목 내용</li>
+            <li class='myloglist'>이모티콘<br> 제목 내용</li>
+        </div>
+    </div>
+
+    <button style=border:0 class='logcreate-button'>로그 작성</button>
+
+
+</body>
+
+</html>
+
 
 <!--MENU-->
 <h4>스포틀리</h4>
+<<<<<<< HEAD
+<a href="{%url 'home' %}">
+    <h3>HOME</h3>
+</a>
+<a href="{%url 'home' %}">
+    <h3>MY LOG</h3>
+</a>
+<a href="{%url 'home' %}">
+    <h3>MY TEAM</h3>
+</a>
+<a href="{%url 'home' %}">
+    <h3>JOIN</h3>
+</a>
+<a href="{%url 'home' %}">
+    <h3>로그인</h3>
+</a>
+=======
 <a href="{%url 'home' %}"><h3>HOME</h3></a>
 <a href="{%url 'joinall' %}"><h3>JOIN</h3></a>
 <a href="{%url 'login' %}"><h3>로그인</h3></a>
 <a href="{%url 'mylog_list' %}"><h3>MY LOG</h3></a>
 <a href="{%url 'myteam_notice' %}"><h3>MY TEAM</h3></a>
 
+>>>>>>> 6416e4a49a04dbaf0818624e41ff6f9b2d9c3bdd
