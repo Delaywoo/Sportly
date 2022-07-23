@@ -1,0 +1,57 @@
+*{
+    text-align: center;
+}
+
+#video-play {
+    width: 90%;
+}
+
+.emojifeeling {
+    font-size: 30px;
+}
+
+.mylogcreate-button{
+    width: 10%;
+    height: 30px;
+    color: white;
+    background-color: #524FFF;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-top: 40px;
+    font-weight: 600;
+    min-width: 100px;
+    box-shadow:rgba(0, 0, 0, 0.3) 0 1px 3px;
+    border: none
+}
+
+#currentDate {
+    width: 50%;
+    max-width: 200px;
+    height: 30px;
+    font-size: 25px;
+    font-weight: bolder;
+    border: none;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+
+h1 {
+    font-size: 15px;
+    color: gray;
+}
+
+h2 {
+    text-align: justify;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-size: 15px;
+}
+
+.writing-can {
+    width: 95%;
+    max-width: 400px;
+    border: none;
+    border-radius: 10px;
+    background-color:aliceblue;
+    font-size: 15px;
+}
