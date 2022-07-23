@@ -10,9 +10,9 @@
     <title>My Log 확인</title>
 </head>
 <body>
-    <a href="{% url 'mylog_create' %}">내 로그 작성하기</a>
-    <a href="{% url 'schedule_create' %}">일정 등록하기</a>
-    <p>내 로그 자세히 보기는 아직 미연결. 나중에 연결 예정.</p>
+    <a href="{% url 'mylog_create' %}">내 로그 작성하기</a><br>
+    <a href="{% url 'schedule_create' %}">일정 등록하기</a><br>
+    <a href="{% url 'mylog_detail' %}">(내 로그들 중 하나 선택시) 내 로그 자세히 보기</a>
     
 </body>
 </html>
