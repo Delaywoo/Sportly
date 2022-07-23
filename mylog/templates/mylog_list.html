@@ -1,0 +1,18 @@
+<!--메뉴바에서 mylog를 누르면 가장 처음 보이는 페이지,
+작성했던 로그들이 화면에 나열된다.-->
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Log 확인</title>
+</head>
+<body>
+    <a href="{% url 'mylog_create' %}">내 로그 작성하기</a>
+    <a href="{% url 'schedule_create' %}">일정 등록하기</a>
+    <p>내 로그 자세히 보기는 아직 미연결. 나중에 연결 예정.</p>
+    
+</body>
+</html>
