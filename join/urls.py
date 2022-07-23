@@ -2,5 +2,6 @@ from django.urls import path
 from .views import *
 
 urlpatterns=[
-    path('joinpw', joinpw ),
+    path('',joinall, name="joinall"),
+    path('joinpw', joinpw, name="joinpw" ),
 ]

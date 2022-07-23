@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
 # Create your views here.
+def joinall(request):
+    return render(request, 'joinall.html')
+
 def joinpw(request):
-    if request.method == 'PASSWORD':
-        pass
-    else:
-        return render(request,'joinall.html')
+    return render(request,'joinpw.html')
