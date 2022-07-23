@@ -1,0 +1,19 @@
+<!--메뉴바에서 my team을 클릭하면 """가장 먼저""" 이동하는 페이지.
+피그마의 'MyTeam:공지' 페이지이다.-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My team</title>
+</head>
+<body>
+    Myteam:공지 페이지
+    <a href="{% url 'myteam_notice' %}">공지사항</a><br>
+    <a href="{% url 'myteam_log' %}">팀 로그</a><br>
+    <a href="{% url 'myteam_tactic' %}">팀 전술</a><br>
+    <br>
+    <a href="{% url 'notice_create' %}">공지사항+</a>
+</body>
+</html>

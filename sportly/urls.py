@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('mylog/',include('mylog.urls')),
+    path('myteam/',include('myteam.urls')),
     # mylog app
 
     
