@@ -1,0 +1,32 @@
+#햄버거 
+body {
+    background-color: white;
+}
+
+.burger div {
+    background-color: white;
+    width: 30px;
+    height: 3px;
+    margin: 5px;
+    margin-left: 10px;
+    transition: all 0.5s;
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -5px);
+}
+
+nav {
+    background-color: #524FFF;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
