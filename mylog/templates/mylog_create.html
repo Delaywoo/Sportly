@@ -34,50 +34,50 @@
         });
     </script>
 
+    <div class="page-background">
+        <form action="#" method="post">
+            <div>
+                <label for="learned" class="title1">배운 점</label>
+                <br>
+                <input type="text" name="learned" class="writing-can" id="learned" rows="4">
+                <!--js: 글자 줄 수 만큼 칸 늘어나게 하는 기능 추가해야함!-->
+            </div>
+            <div>
+                <label for="lacked" class="title1">부족한 점</label>
+                <br>
+                <input type="text" name="lacked" class="writing-can" id="lacked" rows="4">
+            </div>
+            <div>
+                <label for="improve" class="title1">개선할 점</label>
+                <br>
+                <input type="text" name="improve" class="writing-can" id="improve" rows="4">
+            </div>
+        </form>
 
-    <form action="#" method="post">
-        <div>
-            <label for="learned" class="title1">배운 점</label>
-            <br>
-            <input type="text" name="learned" class="writing-can" id="learned" rows="4">
-            <!--js: 글자 줄 수 만큼 칸 늘어나게 하는 기능 추가해야함!-->
+        <!--사진/동영상 업로드-->
+        <h2>사진/비디오 추가</h2>
+        <div class="img-upload">
+            <label for="img-file"><div>+</div></label>
+            <input type="file" id="img-file" accept="image/*,video/mp4, video/mkv, video/x-m4v,video/*" multiple>
+            <!--업로드한 사진 미리보기 기능 추가해야함 !-->
         </div>
-        <div>
-            <label for="lacked" class="title1">부족한 점</label>
-            <br>
-            <input type="text" name="lacked" class="writing-can" id="lacked" rows="4">
-        </div>
-        <div>
-            <label for="improve" class="title1">개선할 점</label>
-            <br>
-            <input type="text" name="improve" class="writing-can" id="improve" rows="4">
-        </div>
-    </form>
 
-    <!--사진/동영상 업로드-->
-    <h2>사진/비디오 추가</h2>
-    <div class="img-upload">
-        <label for="img-file"><div>+</div></label>
-        <input type="file" id="img-file" accept="image/*,video/mp4, video/mkv, video/x-m4v,video/*" multiple>
-        <!--업로드한 사진 미리보기 기능 추가해야함 !-->
+            
+        <!--업로드한 비디오 미리보기 기능-->
+        <video id="video-play"></video>
+        <script>
+            const inputFile = document.getElementById("img-file");
+            const video = document.getElementById("video-play");
+
+            inputFile.addEventListener("change", function(){
+                const file = inputFile.files[0];
+                const videourl = URL.createObjectURL(file);
+                video.setAttribute("src", videourl);
+                video.play();
+            });
+        </script>
+
+        <input type="button" class="mylogcreate-button" value="등록하기">
     </div>
-
-        
-    <!--업로드한 비디오 미리보기 기능-->
-    <video id="video-play"></video>
-    <script>
-        const inputFile = document.getElementById("img-file");
-        const video = document.getElementById("video-play");
-
-        inputFile.addEventListener("change", function(){
-            const file = inputFile.files[0];
-            const videourl = URL.createObjectURL(file);
-            video.setAttribute("src", videourl);
-            video.play();
-        });
-    </script>
-    </div>
-
-    <input type="button" class="mylogcreate-button" value="등록하기">
 </body>
 </html>

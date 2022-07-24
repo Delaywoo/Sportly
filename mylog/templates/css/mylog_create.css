@@ -2,6 +2,27 @@
     text-align: center;
 }
 
+body {
+    position: absolute;
+    background-color: rgb(241, 241, 241);
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.page-background {
+    position: relative;
+    background-color:white;
+    width: 95%;
+    max-width: 450px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow:rgba(0, 0, 0, 0.3) 0 1px 8px;
+    margin: auto;
+}
+
 #video-play {
     width: 90%;
 }
@@ -40,11 +61,12 @@
     border: none;
     padding: 10px;
     padding-bottom: 20px;
+    background-color: rgb(241, 241, 241);
 }
 
 h1 {
     font-size: 15px;
-    color: gray;
+    color:dimgray;
 }
 
 .writing-can {
@@ -53,7 +75,7 @@ h1 {
     height: 100px;
     border: none;
     border-radius: 10px;
-    background-color:aliceblue;
+    background-color:rgba(240, 240, 240, 0.5);
     font-size: 15px;
     margin-top: 5px;
 }
@@ -61,8 +83,8 @@ h1 {
 .img-upload {
     width: 100px;
     height: 100px;
-    color: rgb(147, 177, 232);
-    background-color:aliceblue;
+    color: rgb(200, 200, 200);
+    background-color:rgba(240, 240, 240, 0.5);;
     font-size: 50px;
     border-radius: 7px;
     font-weight: 600;
