@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/mylog_create.css">
-    
     <title>로그 작성 일지</title>
 </head>
 <body>
@@ -17,11 +16,11 @@
 
     <h1>오늘의 운동 만족도는 어떠셨나요?</h1>
     <ul class="feeling-list">
-        <span class="emojifeeling">&#128545;</span>
-        <span class="emojifeeling">&#128533;</span>
-        <span class="emojifeeling">&#128528;</span>
-        <span class="emojifeeling">&#128578;</span>
-        <span class="emojifeeling">&#128540;</span>
+        <li class="emojifeeling">&#128545;</li>
+        <li class="emojifeeling">&#128533;</li>
+        <li class="emojifeeling">&#128528;</li>
+        <li class="emojifeeling">&#128578;</li>
+        <li class="emojifeeling">&#128540;</li>
     </ul>
     <script>
         var feelingnumber; //feelingnumber 라는 변수 = 0,1,2,3,4 순서대로 만족도 높아짐!!! -> mylog에서 기록 저장시 함께 저장
@@ -58,7 +57,7 @@
     <!--사진/동영상 업로드-->
     <h2>사진/비디오 추가</h2>
     <div class="img-upload">
-        <label for="img-file">+</label>
+        <label for="img-file"><div>+</div></label>
         <input type="file" id="img-file" accept="image/*,video/mp4, video/mkv, video/x-m4v,video/*" multiple>
         <!--업로드한 사진 미리보기 기능 추가해야함 !-->
     </div>
