@@ -40,18 +40,41 @@ h1 {
     color: gray;
 }
 
-h2 {
-    text-align: justify;
-    padding-left: 20px;
-    padding-top: 20px;
-    font-size: 15px;
-}
-
 .writing-can {
     width: 95%;
     max-width: 400px;
+    height: 100px;
     border: none;
     border-radius: 10px;
     background-color:aliceblue;
     font-size: 15px;
+    margin-top: 5px;
+}
+
+.img-upload {
+    width: 100px;
+    height: 100px;
+    color: rgb(147, 177, 232);
+    background-color:aliceblue;
+    font-size: 50px;
+    border-radius: 7px;
+    font-weight: 600;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#img-file {
+    display: none;
+}
+
+div {
+    padding: 7px;
+}
+
+.title1 {
+    font-size: 18px;
+    font-weight: bolder;
+    padding-top: 20px;
 }
