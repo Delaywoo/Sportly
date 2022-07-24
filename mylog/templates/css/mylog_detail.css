@@ -1,0 +1,25 @@
+*{
+    text-align: center;
+}
+
+.up-basic-info {
+    display: flex;
+}
+
+h2 {
+    text-align: justify;
+    padding-left: 20px;
+    padding-top: 20px;
+    font-size: 15px;
+}
+
+h4 {
+    background-color: aliceblue;
+    width: 95%;
+    max-width: 400px;
+    height: 100px;
+    border: none;
+    border-radius: 5px;
+    background-color:aliceblue;
+    font-size: 15px;
+}
