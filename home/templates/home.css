@@ -1,0 +1,83 @@
+body{
+    margin: 0px;
+    text-align: center;
+    background-color: rgb(241, 241, 241);
+}
+
+.calander{
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+    border-radius: 10px;
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow:rgba(0, 0, 0, 0.3) 0 1px 3px;
+    min-width: 300px;
+}
+.homecontent{
+    background-color: rgb(226, 226, 226);
+    width: 80%;
+    border-radius: 10px;
+    margin: 0 auto;
+    max-width: 400px;
+    padding: 10px;
+    box-shadow:rgba(0, 0, 0, 0.3) 0 1px 3px;
+    min-width: 300px;
+}
+
+.title2{
+    font-size: 15px;
+}
+.cal{
+    text-align: left;
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.mylog{
+    text-align: left;
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.myloglist{
+    background-color: white;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow:rgba(0, 0, 0, 0.3) 0 1px 3px;
+
+
+}
+
+.cal-notification{
+    background-color: white;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+.cal-time{
+    text-align: right;
+    color: gray;
+    margin-bottom: 0px;
+    font-size: 10px;
+}
+
+.logcreate-button{
+    width: 10%;
+    height: 30px;
+    color: white;
+    background-color: #524FFF;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-top: 40px;
+    font-weight: 600;
+    min-width: 100px;
+    box-shadow:rgba(0, 0, 0, 0.3) 0 1px 3px;
+}

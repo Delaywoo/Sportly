@@ -59,7 +59,7 @@ ROOT_URLCONF = 'sportly.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ 'sportly/templates' ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
