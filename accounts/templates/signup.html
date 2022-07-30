@@ -1,19 +1,73 @@
-<div class="wrapper" style="text-align: center;">
-    <h1>회원가입</h1>
-    <form method="POST">
-        {% csrf_token %}
-        아이디: <br>
-        <input name="username" type="text">
-        <br>
-        비밀번호: <br>
-        <input name="password1" type="password">
-        <br>
-        비밀번호 확인: <br>
-        <input name="password2" type="password">
-        <br>
-        이메일: <br>
-        <input name="email" type="email">
-        <br><br>
-        <input type="submit" class="btn btn-primary" value="Sign Up">
-    </form>
-</div>
+  
+    <head>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <div class= "container">
+            <div class = "row mt-5">
+                <div class = "col-12 text-center">
+                    <h1>회원가입</h1>
+                </div>
+            </div>
+        </div>
+      
+    <form action="" method="POST">    
+        {% csrf_token %} 
+        <div class="form-group">
+            <label for="username">이름</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                id="username" 
+                placeholder="사용자 이름"
+                name="username">   
+        </div>
+        <div class="form-group">
+            <label for="user_id">ID</label>
+            <input 
+            type="text" 
+            class="form-control" 
+            id="user_id" 
+            placeholder="ID"
+            name="user_id">   
+        </div>
+
+        <div class="form-group">
+            <label for="password">비밀번호</label>
+            <input type="password" 
+            class="form-control"
+            id="password"
+            placeholder="비밀번호"
+            name= "password">
+        </div>
+    
+        <div class="form-group">
+            <label for="re_password">비밀번호 확인</label>
+            <input 
+            type= "password" 
+            class="form-control"
+            id="re_password"
+            placeholder="비밀번호 확인"
+            name = "re_password">
+        </div>
+
+        <div class="form-group">
+            <label for="email">email</label>
+            <input 
+            type="text" 
+            class="form-control" 
+            id="email" 
+            placeholder="email"
+            name="email">   
+        </div>
+
+        <button type="submit" class="signup-submit" value="signup">회원가입하기</button>
+
+    </form>    
+
+
+</body>
+</html>
