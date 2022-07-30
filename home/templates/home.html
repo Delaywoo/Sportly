@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -7,12 +7,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./home.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src='./home.js'></script>
+
 </head>
 
 <body>
     <p>navbar</p>
     <div class="calander">
-        <h2> 달력 </h2>
+        <div class="sec_cal">
+            <div class="cal_nav">
+                <a href="javascript:;" class="nav-btn go-prev">prev</a>
+                <div class="year-month"></div>
+                <a href="javascript:;" class="nav-btn go-next">next</a>
+            </div>
+            <div class="cal_wrap">
+                <div class="days">
+                    <div class="day">월</div>
+                    <div class="day">화</div>
+                    <div class="day">수</div>
+                    <div class="day">목</div>
+                    <div class="day">금</div>
+                    <div class="day">토</div>
+                    <div class="day">일</div>
+                </div>
+                <div class="dates"></div>
+            </div>
+        </div>
     </div>
 
 
@@ -57,8 +79,12 @@
 <a href="{%url 'joinall' %}">
     <h3>JOIN</h3>
 </a>
-<a href="{%url 'login' %}">
-    <h3>로그인</h3>
-</a>
 
-
+{% if user.is_authenticated %}
+안녕하세요, {{ user.username }}님!<br>
+<a href="{%url 'logout' %}">로그아웃</a>
+{% else %}
+아직 로그인이 되지 않았어요.
+<br>
+<a href="{%url 'login' %}">로그인</a>
+{% endif %}

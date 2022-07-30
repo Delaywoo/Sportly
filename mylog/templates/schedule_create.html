@@ -6,8 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>일정 등록하기</title>
+    <link rel="stylesheet" href="css/schedule_create.css">
 </head>
 <body>
-    
+    <h2>새로운 일정 등록</h2>
+    <input type="text" class="writing-schedule"></textarea>
+    <br>
+
+    <h2>날짜 선택</h2>
+    <input type ="date" id="currentDate">
+    <script>
+        document.getElementById('currentDate').value = new Date().toISOString().substring(0,10);;
+    </script>
+    <br>
+
+    <h2>일정 색상</h2>
+    <input type="color" id="schedule-color" value="#524FFF">
+    <!-- 색상 6가지 정도 후보 제시해서 선택할 수 있도록 기능 추가하기-->
+    <br>
+
+    <input type="button" class="mylogcreate-button" value="등록하기">
 </body>
 </html>

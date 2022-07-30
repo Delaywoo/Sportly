@@ -1,0 +1,113 @@
+*{
+    text-align: center;
+}
+
+body {
+    position: absolute;
+    background-color: rgb(241, 241, 241);
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.page-background {
+    position: relative;
+    background-color:white;
+    width: 95%;
+    max-width: 450px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow:rgba(0, 0, 0, 0.3) 0 1px 8px;
+    margin: auto;
+}
+
+#video-play {
+    width: 90%;
+}
+
+.emojifeeling {
+    font-size: 30px;
+    display: inline-block;
+}
+
+.feeling-list {
+    text-align: center;
+    padding: 0px;
+    padding-bottom: 10px;
+}
+
+.mylogcreate-button{
+    width: 10%;
+    height: 30px;
+    color: white;
+    background-color: #524FFF;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-top: 40px;
+    font-weight: 600;
+    min-width: 100px;
+    box-shadow:rgba(0, 0, 0, 0.3) 0 1px 3px;
+    border: none
+}
+
+#currentDate {
+    width: 50%;
+    max-width: 200px;
+    height: 30px;
+    font-size: 25px;
+    font-weight: bolder;
+    border: none;
+    padding: 10px;
+    padding-bottom: 20px;
+    background-color: rgb(241, 241, 241);
+}
+
+h1 {
+    font-size: 15px;
+    color:dimgray;
+}
+
+.writing-can {
+    width: 95%;
+    max-width: 400px;
+    height: 100px;
+    border: none;
+    border-radius: 10px;
+    background-color:rgba(240, 240, 240, 0.5);
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.img-upload {
+    width: 100px;
+    height: 100px;
+    color: rgb(200, 200, 200);
+    background-color:rgba(240, 240, 240, 0.5);;
+    font-size: 50px;
+    border-radius: 7px;
+    font-weight: 600;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+#img-file {
+    display: none;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+}
+
+div {
+    padding: 7px;
+}
+
+.title1 {
+    font-size: 18px;
+    font-weight: bolder;
+    padding-top: 20px;
+}
