@@ -10,5 +10,37 @@
 </head>
 <body>
     내 로그 자세히 보는 페이지
+    <h1>날짜2</h1>
+    {{mylog_detail.log_date2}}
+    <h3>기분</h3>
+    {{mylog_detail.mood}}
+    <h3>배운 점</h3>
+    {{mylog_detail.learned}}
+    <h3>부족한 점</h3>
+    {{mylog_detail.lacked}}
+    <h3>개선할 점</h3>
+    {{mylog_detail.improve}}
+    <h3>사진</h3>
+    {% if mylog_detail.photo %}
+        <img src="{{mylog_detail.photo.url}}" alt="" height="600">
+    {% endif %}
+    <h3>비디오</h3>
+    {% if mylog_detail.video %}
+        <video src="{{mylog_detail.video.url}}"  width="1000px" height="700px"></video>   
+    {% endif %}
+
+    <hr>
+    <h3>댓글</h3>
+    <form method="POST" action="{% url 'create_comment' mylog_detail.id %}"> 
+        {% csrf_token %}
+        {{comment_form}}
+        <input type ="submit">
+    </form>
+    <hr>
+    <!--댓글 목록들-->
+    {% for comment in mylog_detail.comment_set.all %}
+    <p>{{comment}}</p>
+    <hr>
+    {% endfor %}
 </body>
 </html>

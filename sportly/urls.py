@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings #for media file
+from django.conf.urls.static import static #for media file
 
 
 
@@ -25,7 +27,5 @@ urlpatterns = [
     path('join/',include('join.urls')),
     path('login/',include('accounts.urls')),
     path('myteam/',include('myteam.urls')),
-    # mylog app
-
     
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #미디어 파일에 접근할 수 있는 url추가
