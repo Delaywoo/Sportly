@@ -10,9 +10,17 @@
     <title>My Log 확인</title>
 </head>
 <body>
-    <a href="{% url 'mylog_create' %}">내 로그 작성하기</a><br>
+    <a href="{% url 'modelformcreate' %}">내 로그 작성하기</a><br>
     <a href="{% url 'schedule_create' %}">일정 등록하기</a><br>
-    <a href="{% url 'mylog_detail' %}">(내 로그들 중 하나 선택시) 내 로그 자세히 보기</a>
     
+    <hr>
+    <!--이 아래로 로그들을 띄운다.-->
+    {% for post in posts %}
+        <h3>날짜 : {{post.log_date}}</h3>
+        <a href="{% url 'mylog_detail' post.id %}"><h3>날짜2 : {{post.log_date2}}</h3></a> <!--클릭시 detail페이지로 이동, post.id는 추가로 필요한 정보를 넘겨주는 거다.--> 
+        <h6>기분 : {{post.mood}}</h6>
+        <h6>배운점 : {{post.learned}}</h6>
+        <hr>
+    {% endfor %}
 </body>
 </html>

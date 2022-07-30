@@ -131,3 +131,7 @@ LOGIN_REDIRECT_URLS="/"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import os #media를 사용하기 위해
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')#파일이 저장될 경로.
+MEDIA_URL = '/media/'#사용자에 의해 올라온 파일에 접근할 수 있는 url 경로
