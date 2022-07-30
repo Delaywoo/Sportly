@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="base.css">
-    
+    <title>{% block title %}{% endblock %} | liflix</title>
+    <link rel="stylesheet" href="./base.css">
+    {% block static %} {% endblock %}
+
     <style>
         body {
             margin: 0;
         }
     </style>
 </head>
+
 <body>
     <nav>
         <div class="burger">
@@ -21,12 +24,18 @@
             <div class="line2"></div>
             <div class="line3"></div>
         </div>
-        <script src="burger.js"></script>
+        <script src="./realburger.js"></script>
     </nav>
 
-    {% block mycontent %}
-
+    {% block content %}
     {% endblock %}
-    
+
+    <script type="text/javascript" src="{% static '/realburger.js' %}"></script>
+
+    {% block js %}
+    {% endblock %}
+
+
 </body>
+
 </html>
