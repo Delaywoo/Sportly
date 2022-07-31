@@ -1,0 +1,15 @@
+<form action="{% url 'joinall' %}" model="POST">
+    {% csrf_token %}
+
+    <div>
+        <label for="title">제목</label><br/>
+        <input type="text" name="title" id="title">
+    </div>
+    <div>
+        <label for="body">소개글</label><br/>
+        <textarea name="body" id="body" cols="30" rows="10"></textarea>
+    </div>   
+    <div>
+        <input type="submit" value="글 생성하기">
+    </div>
+</form>
