@@ -10,8 +10,13 @@
 </head>
 
 <body>
-    <p>nav bar</p>
-    <br>
+    {% for post in posts %}
+        <a href="{% url 'joindetail' post.id %}"><h3>팀명: {{ post.title}} </h3>
+        <h4>날짜: {{ post.date }}</h4>
+
+        {{ post.body }}
+
+    {% endfor %}
 
     <h3 class="title">인기 팀</h3>
     <div class="team-list">
@@ -64,6 +69,5 @@
 <a href="{%url 'joinpw' %}">
     <h3>가입신청</h3>
 </a>
-<a href="{%url 'joinnew' %}">
-    <h3>새 팀 만들기</h3>
+<a href="{% url 'modelformcreate' %}"> 새 팀만들기</a><br>
 </a>

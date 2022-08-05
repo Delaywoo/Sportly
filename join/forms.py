@@ -1,6 +1,13 @@
-from django import forms
-from .models import Join
 
-class Joinform(forms.Form):
-    title = forms.CharField()
-    body = forms.CharField(widget=forms.Textarea)
+from django.forms import ModelForm
+from .models import Join, Comment
+
+class JoinModelForm(ModelForm):
+    class Meta:
+        model = Join
+        fields ='__all__'
+
+class CommentForm(ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['comment']
