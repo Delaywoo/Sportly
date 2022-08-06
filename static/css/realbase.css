@@ -6,6 +6,7 @@
 
 .appbar {
     background-color: #524FFF;
+    width: 100%;
 }
 
 label {
@@ -46,7 +47,7 @@ label {
     font-size: 3px;
 }
 
-section {
+.menubar {
     background-color: #f0effa;
     color: black;
     width: 200px;

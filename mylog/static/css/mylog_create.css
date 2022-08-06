@@ -1,3 +1,7 @@
+* {
+    text-align: center;
+}
+
 .page-background {
     position: relative;
     background-color:white;
