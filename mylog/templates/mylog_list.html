@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block title %}<title>MY LOG</title>{% endblock title %}
-    {% block css %}<link rel="stylesheet" href="{% static 'css/mylog_list.css' %}">{% endblock css %}
+    {% block css %}<link rel="stylesheet" href="{% static 'css/mylog_list.css' %}?after">{% endblock css %}
 </head>
 <body>
     {% block content %}
@@ -19,7 +19,7 @@
     <!-- 하단 플로팅 버튼 : 일지 작성 -->
     <div class="floating-button">
         <span class="to-write">
-        <a class="create-btn" href="{% url 'modelformcreate' %}">+</a>
+        <a class="create-btn" href="{% url 'modelformcreate' %}">일지 작성</a>
         </span>
     </div>
 
