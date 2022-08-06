@@ -93,7 +93,7 @@
     {%csrf_token%}
 
     <table>
-        {{form.log_date2}}
+        <div class="create_date">{{form.log_date2}}</div>
     </table>
 
     <h1>오늘의 운동 만족도는 어떠셨나요?</h1>
@@ -117,12 +117,21 @@
     </script>
 
     <!--views.py 에서 render()의 세번째 인자로 넘겨준 딕셔너리형 데이터는 html 내에서 \{\{}}에 갑싸진 채로 표현 가능하다.-->
-    <table> 
-        {{form.log_date2}}
-        {{form.mood}}
-        {{form.learned}}
-        {{form.lacked}}
-        {{form.improve}}
+    <table>
+        <h2>배운점<br></h2>
+            {{form.learned}}
+        <h2>부족한점<br></h2>
+            {{form.lacked}}
+        <h2>개선할점<br></h2>
+            {{form.improve}}
+
+        <h2>사진/비디오 추가</h2>
+        <div class="img-upload">
+            <label for="img-file"><div>+</div></label>
+            <input type="file" id="img-file" accept="image/*,video/mp4, video/mkv, video/x-m4v,video/*" multiple>
+            <!--업로드한 사진 미리보기 기능 추가해야함 !-->
+        </div>
+        
         {{form.photo}}
         {{form.video}}
         <!--위에 form말고 form.as_table로 쓰면 자동으로 table에 감싸진 것처럼 나온다.-->

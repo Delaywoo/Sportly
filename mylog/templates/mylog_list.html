@@ -1,26 +1,55 @@
 <!--메뉴바에서 mylog를 누르면 가장 처음 보이는 페이지,
 작성했던 로그들이 화면에 나열된다.-->
 
+{% extends 'realbase.html' %}
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Log 확인</title>
+    {% block title %}<title>MY LOG</title>{% endblock title %}
+    {% block css %}<link rel="stylesheet" href="{% static 'css/mylog_list.css' %}">{% endblock css %}
 </head>
 <body>
-    <a href="{% url 'modelformcreate' %}">내 로그 작성하기</a><br>
-    <a href="{% url 'schedule_create' %}">일정 등록하기</a><br>
+    {% block content %}
+
+    <!-- 하단 플로팅 버튼 : 일지 작성 -->
+    <div class="floating-button">
+        <span class="to-write">
+        <a class="create-btn" href="{% url 'modelformcreate' %}">+</a>
+        </span>
+    </div>
+
+    
+    <a class="mylog-btn" href="{% url 'modelformcreate' %}">내 로그 작성하기</a><br>
+    <a class="mylog-btn" href="{% url 'schedule_create' %}">일정 등록하기</a><br>
     
     <hr>
     <!--이 아래로 로그들을 띄운다.-->
+    <h1>MY LOG</h1>
+
+    <div class="myalllogs">
+
     {% for post in posts %}
-        <h3>날짜 : {{post.log_date}}</h3>
-        <a href="{% url 'mylog_detail' post.id %}"><h3>날짜2 : {{post.log_date2}}</h3></a> <!--클릭시 detail페이지로 이동, post.id는 추가로 필요한 정보를 넘겨주는 거다.--> 
-        <h6>기분 : {{post.mood}}</h6>
-        <h6>배운점 : {{post.learned}}</h6>
-        <hr>
+        <div class="onelog">
+            <div class="log-garo">
+                <div class="log-emotion">{{post.mood}}</div>
+                <a class="log-date" href="{% url 'mylog_detail' post.id %}">{{post.log_date2}}</a>
+            </div>
+            <div class="log-content">
+                <h6>배운점 : {{post.learned}}</h6>
+                <h6>부족한점 : {{post.lacked}}</h6>
+                <h6>개선할점 : {{post.improve}}</h6>
+            </div>
+        </div>
     {% endfor %}
+
+    </div>
+
+
+    {% endblock content %}
 </body>
 </html>

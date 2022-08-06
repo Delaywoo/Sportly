@@ -56,7 +56,7 @@
 
 h1 {
     font-size: 15px;
-    color:dimgray;
+    color:rgb(50, 50, 50);
 }
 
 .writing-can {
@@ -100,4 +100,10 @@ div {
     font-size: 18px;
     font-weight: bolder;
     padding-top: 20px;
+}
+
+h2 {
+    font-size: 15px;
+    color:rgb(50, 50, 50);
+    padding: 5px;
 }
