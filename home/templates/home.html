@@ -1,3 +1,5 @@
+{% extends 'realbase.html' %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,16 +7,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendar - 달력</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="./home.css">
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'stlyle.css' %}?after">
+    <link rel="stylesheet" href="{% static 'home.css' %}?after"type = "text/css"media="all">
+    {% endblock css %}
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
+    <script src="{% static 'calendar.js' %}"></script>
     <script src="https://kit.fontawesome.com/c92986acdf.js" crossorigin="anonymous"></script>
-    <script src="./calendar.js" defer></script>
 </head>
 
 <body>
-    <p>navbar</p>
-    <br>
+    {% block content %}
+
     <section class="main">
         <h1 class="main-title">스포틀리-일정</h1>
         <div class="month clearfix">
@@ -37,7 +41,10 @@
                 <li>SUN</li>
             </ul>
         </div>
-        <ul class="day clearfix">
+        <div class='dayCount'>
+            <ul class="day clearfix"></ul>
+        </div>
+
 
         </ul>
 
@@ -49,8 +56,6 @@
         <div class="textToDo">
             <input type="text" class="textToDo-text">
             <button class="textToDo-button add">Add</button>
-            <button class="textToDo-button reset">Reset</button>
-            <button class="textToDo-button allreset">All reset</button>
         </div>
         <ul class="todoList"></ul>
     </section>
@@ -65,7 +70,7 @@
     </div>
 
     <button style=border:0 class='logcreate-button'>로그 작성</button>
-
+    {% endblock content %}
 
 </body>
 

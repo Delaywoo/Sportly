@@ -11,8 +11,6 @@ const todoList = document.querySelector('.todoList');
 
 const input = document.querySelector('input[type="text"]');
 const add = document.querySelector('.add');
-const reset = document.querySelector('.reset');
-const allReset = document.querySelector('.allreset');
 
 
 let currentMon = date.getMonth()+1;   
@@ -210,7 +208,7 @@ Day.addEventListener('click',(event)=>{
     if(event.target.tagName==='UL')return;
     if(event.target.className!=='disabled'){
         clearEvent();
-        todoTitle.textContent = `${year}.${mon}.${event.target.textContent}에 무슨 일정이 있으신가요?`;
+        todoTitle.textContent = `${year}.${mon}.${event.target.textContent}: 무슨 일정이 있으신가요?`;
         event.target.style.border='3px solid red';
         DayOfChoice = (event.target.textContent)*1;
         MonOfChoice = mon;
@@ -268,23 +266,6 @@ add.addEventListener('click',(event)=>{
 input.addEventListener('keypress',(event)=>{
     if(event.key==='Enter'){
        addToDoList();
-    }
-});
-
-reset.addEventListener('click',()=>{
-    const result = prompt(`정말로 ${year} ${mon} ${DayOfChoice} 일정을 삭제하시겠습니까? Enter (y/n)`);
-    const YMD = year+'-'+mon+'-'+DayOfChoice;
-    if(result==='y'){
-        localStorage.removeItem(YMD);
-        displayToDoOnDays();
-    }
-});
-
-allReset.addEventListener('click',()=>{
-    const result = prompt(`모든 일정을 삭제하시겠습니까? Enter (y/n)`);
-    if(result==='y'){
-        localStorage.clear();
-        displayToDoOnDays();
     }
 });
 

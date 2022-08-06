@@ -1,3 +1,6 @@
+{% extends 'realbase.html' %}
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,13 +8,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./join.css">
-    <title>Document</title>
+    {% block css %}<link rel="stylesheet" href="{% static 'join.css' %}?after">{% endblock css %}
+    {% block title %}<title>join</title>{% endblock title %}
 </head>
 
 <body>
-    <p>nav bar</p>
-    <br>
+    {% block content %}
 
     <h3 class="title">인기 팀</h3>
     <div class="team-list">
@@ -54,7 +56,7 @@
         </div>
 
     </div>
-
+    {% endblock content %}
 </body>
 
 </html>
@@ -62,3 +64,4 @@
 <a href="{%url 'joinpw' %}">
     <h3>가입신청</h3>
 </a>
+
