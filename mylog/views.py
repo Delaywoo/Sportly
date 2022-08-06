@@ -44,3 +44,31 @@ def create_comment(request, mylog_id):
         filled_form.post = get_object_or_404(Mylog, pk= mylog_id ) #게시물 id 불러옴
         filled_form.save() #이제 저장하세요.
     return redirect('mylog_detail',mylog_id)
+"""
+    #mood
+def transition0(request):
+    Mylog.mood='😡'
+    Mylog.save()
+    return redirect('mylog_create')
+
+def transition1(request):
+    
+    Mylog.mood='😠'
+    Mylog.save()
+    return redirect('mylog_create')
+
+def transition2(request):
+    Mylog.mood='😐'
+    Mylog.save()
+    return redirect('mylog_create')
+
+def transition3(request):
+    Mylog.mood='🙂'
+    Mylog.save()
+    return redirect('mylog_create')
+
+def transition4(request):
+    Mylog.mood='😜'
+    Mylog.save()
+    return redirect('mylog_create')
+"""

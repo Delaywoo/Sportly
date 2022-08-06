@@ -1,4 +1,29 @@
-<!DOCTYPE html>
+스포틀리 로그인 페이지
+<form method="POST" action="{% url 'login' %}">
+    {% csrf_token %}
+    <p>username</p>
+    <input type="text" name="username">
+    <br>
+    <p>password</p>
+    <input type="text" name="password">
+    <br>
+    <input type="submit" value="로그인">
+</form>
+
+<a href="{% url 'signup' %}">회원가입하기</a>
+
+<!--
+<form class="user" method="POST">
+    {% csrf_token %}
+    <input type="text" id="user_id" name="user_id" placeholder="아이디 입력"><br>
+    <input type="password" id="password" name="password" placeholder="비밀번호 입력"><br>
+    <button type="submit" value="login" >로그인</button><br>
+    <hr>
+</form>
+<a href="{% url 'signup' %}">회원가입하기</a>-->
+
+
+<!--<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -29,4 +54,4 @@
     </div>
 </body>
 
-</html>
+</html>-->

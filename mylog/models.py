@@ -3,18 +3,16 @@ from django.db import models
 
 # Create your models here.
 class Mylog(models.Model):
-    log_date = models.DateTimeField(auto_now_add = True)#자동으로 현재 날짜와 시간 추가
     log_date2=models.DateTimeField(default=datetime.now())
-
     #mood=models.IntegerField() #각 이모티콘이 1~5의 값을 가짐.
     MOOD_CHOICES = (
         ('😡', '😡'),
-        ('😠', '😠'),
+        ('😕', '😕'),
         ('😐', '😐'),
         ('🙂', '🙂'),
-        ('😆', '😆')
+        ('😜', '😜') 
     )
-    mood= models.TextField(choices = MOOD_CHOICES, default='😐')
+    mood= models.TextField( choices = MOOD_CHOICES,default='😐')
     learned = models.TextField() #대용량 문자열, 배운 점
     lacked=models.TextField() #부족한점
     improve=models.TextField() #개선할 점

@@ -13,4 +13,6 @@ urlpatterns = [
     path('mylog_detail/<int:mylog_id>',mylog_detail,name='mylog_detail'),
     #댓글 작성
     path('create_comment/<int:mylog_id>', create_comment, name='create_comment'),
+    #mood 변경
+
 ]

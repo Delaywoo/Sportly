@@ -44,6 +44,9 @@ INSTALLED_APPS = [
     'join',
 ]
 
+#회원가입 기존 내장 User custom
+AUTH_USER_MODEL = 'accounts.Customuser' # <app명.class명>
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -122,7 +125,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-LOGIN_REDIRECT_URLS="/"
+LOGIN_REDIRECT_URLS="/" #로그인 성공시 "/"으로 갈 것.(home으로 간다.)
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 

@@ -1,4 +1,39 @@
-<head>
+<form method="POST" action="{% url 'signup' %}">
+    {% csrf_token %}
+    <p>닉네임</p>
+    <input type="text"   placeholder="nickname" name="nickname">
+    <br>
+    <p>이메일</p>
+    <input type="email"  placeholder="email" name="useremail">
+    <br>
+    <p>아이디</p>
+    <input type="text" placeholder="username(id)" name="username">
+    <br>
+    <p>비밀번호</p>
+    <input type="text" placeholder="password" name="password">
+    <br>
+    <p>비밀번호 확인</p>
+    <input type="text"  placeholder="password confirm" name="confirm">
+    <br>
+    <input type="submit" value="회원가입">
+</form>
+
+
+
+
+<!--<form action="" method="POST"> 
+    {% csrf_token %}
+    <h1 class='title'>스포틀리</h1><br>
+    <input type="text"  id="username" placeholder="사용자 닉네임" name="username"><br>
+    <input type="email" id="email" placeholder="email" name="email"><br>
+    <input type="text"id="user_id" placeholder="ID" name="user_id"><br>
+    <input type="password" id="password" placeholder="비밀번호" name="password"><br>
+    <input type="password" id="repeat" placeholder="비밀번호 확인" name="repeat"><br>-->
+    <!--<button type="submit" value="signup">회원가입하기</button>-->
+    <!--<a href="{% url 'login' %}">회원가입하기</a>
+</form>-->
+
+<!--<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="./reallogsign.css">
@@ -8,9 +43,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-</head>
+</head>-->
 
-<body class = 'main'>
+<!--<body class = 'main'>
     <form action="" method="POST">
         {% csrf_token %}
         <h1 class='title'>스포틀리</h1>
@@ -41,12 +76,7 @@
         <button type="submit" style=border:0 class='login-button' value="signup">회원가입하기</button>
 
     </form>
-
-
-    
-
-       
+      
 
 </body>
-
-</html>
+</html>-->
