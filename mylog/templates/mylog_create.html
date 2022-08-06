@@ -92,6 +92,10 @@
     <!--이 방식은 <form> 요소가 파일이나 이미지를 서버로 전송할 때 주로 사용함 위에 enctype-->
     {%csrf_token%}
 
+    <table>
+        {{form.log_date2}}
+    </table>
+
     <h1>오늘의 운동 만족도는 어떠셨나요?</h1>
     <ul class="feeling-list">
         <li class="emojifeeling">&#128545;</li>
