@@ -8,18 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendar - 달력</title>
     {% block css %}
-    <link rel="stylesheet" href="{% static 'stlyle.css' %}?after">
+    <link rel="stylesheet" href="{% static 'style.css' %}?after"type = "text/css"media="all">
     <link rel="stylesheet" href="{% static 'home.css' %}?after"type = "text/css"media="all">
     {% endblock css %}
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
-    <script src="{% static 'calendar.js' %}"></script>
+    
     <script src="https://kit.fontawesome.com/c92986acdf.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     {% block content %}
 
-    <section class="main">
+    <div class="main">
         <h1 class="main-title">스포틀리-일정</h1>
         <div class="month clearfix">
             <span class="left">
@@ -48,8 +48,8 @@
 
         </ul>
 
-    </section>
-    <section class="todo">
+    </div>
+    <div class="todo">
         <h1 class="todo-title">
             Today's To Do List
         </h1>
@@ -58,7 +58,7 @@
             <button class="textToDo-button add">Add</button>
         </div>
         <ul class="todoList"></ul>
-    </section>
+    </div>
 
     <div class='homecontent'>
         <div class="mylog">
@@ -70,6 +70,8 @@
     </div>
 
     <button style=border:0 class='logcreate-button'>로그 작성</button>
+
+    <script type="text/javascript" src="{% static '/calendar.js' %}"></script>
     {% endblock content %}
 
 </body>
