@@ -20,14 +20,18 @@ li{
 
 body{
     background: rgb(245, 241, 241);
+    text-align: center;
+    margin: 0 auto;
 }
 
 .main{
-    background: rgb(90, 82, 190);
-    width: 80%;
-    margin: 50px auto 0;
-    padding: 20px 0px 20px 25px;
+    background: #524fff;
+    width: 370px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 200px;
     border-radius: 10px;
+    text-align: center;
 }
 
 .main .main-title{
@@ -92,13 +96,21 @@ body{
 
 .dayCount {
     width: 100%;
+    font-weight: 900;
+}
+
+.weekdaycount{
+    color: white;
+    
+    margin-left: 20px;
+    font-weight: 700;
 }
 
 
 .dayCount-list li{
     
-    margin-right: 5px;
-    width: 10%;
+    width: 12%;
+    margin-left: 0px;
     color: rgb(255, 255, 255);
     float: left;
 
@@ -113,10 +125,13 @@ body{
 }
 
 .todo{
-    width: 90%;
+    width: 370px;
     margin: 0 auto;
+    margin-top: 20px;
     background: white;
     padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
 
 }
 
@@ -127,7 +142,7 @@ body{
 
 .textToDo .textToDo-text[type="text"]{
     border: none;
-    border: 3px solid rgb(108, 91, 201);
+    border: 3px solid #524fff;
     border-radius: 10px;;
     padding: 5px 20px;
     width: 300px;
@@ -153,7 +168,7 @@ body{
 }
 
 .textToDo .textToDo-button:hover{
-    background: rgb(18, 42, 177);
+    background: #524fff;
     cursor: pointer;
     transition: all .2s;
     transform: scale(1.1);
@@ -166,7 +181,10 @@ body{
 .todoList li{
     padding: 5px;
     margin: 5px;
-    border: 2px solid rgb(194, 194, 194);
+    color: #000000;
+    font-weight: 600;
+    background-color: #f0f0f0;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
     border-radius: 5px;
 }
 

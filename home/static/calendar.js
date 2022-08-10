@@ -244,7 +244,7 @@ function keepStore(){
 
 function addToDoList(){
     if(input.value === ''){
-        alert('please input you are going to do');
+        alert('일정을 입력하셔야 해요!');
         return;
     }
 

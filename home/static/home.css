@@ -4,6 +4,7 @@ body {
   margin: 0px;
   text-align: center;
   background-color: rgb(241, 241, 241);
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
 }
 
 .calander {
@@ -18,16 +19,13 @@ body {
   min-width: 300px;
 }
 .homecontent {
-  background-color: rgb(226, 226, 226);
-  width: 80%;
+  background-color: rgb(255, 255, 255);
+  width: 370px;
   border-radius: 10px;
   margin: 0 auto;
-  margin-top: -60px;
-  max-width: 400px;
   padding: 10px;
   box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
-  min-width: 300px;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .title2 {
@@ -58,7 +56,7 @@ body {
 }
 
 .myloglist {
-  background-color: white;
+  background-color: rgb(241, 241, 241);
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 5px;
@@ -197,7 +195,7 @@ body {
 }
 
 .sec_cal .cal_wrap .day:nth-child(7n -1) {
-  color: #3c6ffa;
+  color: #524fff;
 }
 
 .sec_cal .cal_wrap .day:nth-child(7n) {

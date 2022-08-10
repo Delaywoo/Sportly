@@ -8,7 +8,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block css %}<link rel="stylesheet" href="{% static 'join.css' %}?after">{% endblock css %}
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'join.css' %}?after" type="text/css" media="all">{% endblock css %}
     {% block title %}<title>join</title>{% endblock title %}
 </head>
 
@@ -18,45 +19,57 @@
     <h3 class="title">인기 팀</h3>
     <div class="team-list">
         <div class='team'>
-            팀 사진 팀 이름 팀장 이름 등
+            <img src="https://via.placeholder.com/120"alt="샘플이미지">
+            <h5>팀 정보</h5>
             <button style=border:0>가입하기</button>
         </div>
         <div class='team'>
-            팀 사진 팀 이름 팀장 이름 등
-            <button style=border:0>가입하기</button>
-        </div>
-        <div class='team'>
-            팀 사진 팀 이름 팀장 이름 등
-            <button style=border:0>가입하기</button>
-        </div>
-        <div class='team'>
-            팀 사진 팀 이름 팀장 이름 등
+            <img src="https://via.placeholder.com/120"alt="샘플이미지">
+            <h5>팀 정보</h5>
             <button style=border:0>가입하기</button>
         </div>
     </div>
 
-
-    <h3 class="title">최신 등록 팀</h3>
     <div class="team-list">
         <div class='team'>
-            팀 사진 팀 이름 팀장이름 등
+            <img src="https://via.placeholder.com/120"alt="샘플이미지">
+            <h5>팀 정보</h5>
             <button style=border:0>가입하기</button>
         </div>
         <div class='team'>
-            팀 사진 팀 이름 팀장 이름 등
+            <img src="https://via.placeholder.com/120"alt="샘플이미지">
+            <h5>팀 정보</h5>
             <button style=border:0>가입하기</button>
         </div>
-        <div class='team'>
-            팀 사진 팀 이름 팀장 이름 등
-            <button style=border:0>가입하기</button>
-        </div>
-        <div class='team'>
-            팀 사진 팀 이름 팀장 이름 등
-            <button style=border:0>가입하기</button>
-        </div>
-
     </div>
-    {% endblock content %}
+
+
+        <h3 class="title">최신 등록 팀</h3>
+        <div class="team-list">
+                <div class='team'>
+                    <img src="https://via.placeholder.com/120"alt="샘플이미지">
+                    <h5>팀 정보</h5>
+                    <button style=border:0>가입하기</button>
+                </div>
+                <div class='team'>
+                    <img src="https://via.placeholder.com/120"alt="샘플이미지">
+                    <h5>팀 정보</h5>
+                    <button style=border:0>가입하기</button>
+                </div>
+        </div>
+        <div class="team-list">
+            <div class='team'>
+                <img src="https://via.placeholder.com/120"alt="샘플이미지">
+                <h5>팀 정보</h5>
+                <button style=border:0>가입하기</button>
+            </div>
+            <div class='team'>
+                <img src="https://via.placeholder.com/120"alt="샘플이미지">
+                <h5>팀 정보</h5>
+                <button style=border:0>가입하기</button>
+            </div>
+    </div>
+        {% endblock content %}
 </body>
 
 </html>
@@ -64,4 +77,3 @@
 <a href="{%url 'joinpw' %}">
     <h3>가입신청</h3>
 </a>
-

@@ -1,4 +1,9 @@
 
+.body{
+    text-align: center;
+    width: 400px;
+}
+
 .main{
     text-align: center;
     overflow-x: hidden;
@@ -19,7 +24,7 @@
 
 .login-input::placeholder{
     color: rgb(160, 160, 160);
-    font-weight: 800;
+    font-weight: 300;
 }
 
 .title{

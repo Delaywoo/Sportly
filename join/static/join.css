@@ -2,14 +2,22 @@
     margin: 0px;
 }
 
+h5{
+  font-weight: 600;
+  font-size: 15px;
+  margin-top: 5px;
+}
+
 .team {
-  background-color: white;
-  margin: 30px;
-  padding: 20px;
+  background-color: rgb(255, 255, 255);
+  margin: 10px;
+  padding: 5px;
   border-radius: 5px;
+  text-align: center;
   box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
-  width: 100px;
-  height: 100px;
+  width: 140px;
+  height: 200px;
+  
 }
 .joinpw {
   background-color: white;
@@ -26,15 +34,18 @@
 
 }
 .team-list {
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+  width: 320px;
+  margin: 0 auto;
 }
 
 .title {
-  margin-left: 10px;
-  margin-top: 20px;
-  margin-bottom: -5px;
+  font-weight: 800;
+  text-align: left;
+  margin-left: 100px;
+  margin-top: 30px;
 }
 
 button {
@@ -44,7 +55,6 @@ button {
   background-color: #524fff;
   font-size: 15px;
   border-radius: 5px;
-  margin-top: 20px;
   font-weight: 600;
   min-width: 100px;
   box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
