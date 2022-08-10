@@ -6,6 +6,15 @@
     display: flex;
 }
 
+h1 {
+    font-size: 20px;
+    float: right;
+    width: 70%;
+    height: 30px;
+    text-align: left;
+    margin: 0;
+}
+
 h2 {
     text-align: justify;
     padding-left: 20px;
@@ -13,13 +22,78 @@ h2 {
     font-size: 15px;
 }
 
+.emoji {
+    font-size: 50px;
+    float: left;
+    width: 30%;
+    height: 50px;
+}
+
 h4 {
-    background-color: aliceblue;
-    width: 95%;
-    max-width: 400px;
-    height: 100px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    
+}
+
+h5 {
+    background-color: rgb(230, 230, 230);
+    width: 90%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.logbasicupper {
+    margin-top: 10px;
+}
+
+.logbasiccontent {
+    padding: 5px;
+    display: inline-block;
+    width: 100%;
+}
+
+.add-comment {
+    background-color: #524FFF;
+    height: 30px;
+    width: 80px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: 15px;
+    margin: 10px;
+}
+
+#input1 {
+    background-color: tomato;
+    height: 30px;
     border: none;
     border-radius: 5px;
-    background-color:aliceblue;
+}
+
+.mylog_comments {
+    z-index: 1;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: aliceblue;
+    box-shadow: 0 10px 10px 10px grey;
+    height: 120px;
+}
+
+body {
+    position: relative;
+    margin-bottom: 120px;
+}
+
+.each-comment {
     font-size: 15px;
 }

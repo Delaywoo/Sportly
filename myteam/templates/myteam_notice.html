@@ -9,15 +9,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block title %}<title>My team</title>{% endblock title %}
-    {% block css%}<link rel="stylesheet" href="{% static 'css/myteam_notice.css' %}"> {% endblock css%}
+    {% block css%}<link rel="stylesheet" href="{% static 'css/myteams.css' %}?after"> {% endblock css%}
 </head>
 <body>
     {% block content %}
     Myteam:공지 페이지
-    <a href="{% url 'myteam_notice' %}">공지사항</a><br>
-    <a href="{% url 'myteam_log' %}">팀 로그</a><br>
-    <a href="{% url 'myteam_tactic' %}">팀 전술</a><br>
     <br>
+    <div class="teammenus">
+        <a href="{% url 'myteam_notice' %}" class="teammenu-btn">공지사항</a><br>
+        <a href="{% url 'myteam_log' %}" class="teammenu-btn">팀 로그</a><br>
+        <a href="{% url 'myteam_tactic' %}" class="teammenu-btn">팀 전술</a><br>
+    <br>
+    </div>
     <a href="{% url 'notice_create' %}">공지사항+</a>
     {% endblock content %}
 </body>

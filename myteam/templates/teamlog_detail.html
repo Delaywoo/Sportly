@@ -1,14 +1,20 @@
 <!--myteam_log.html에서 팀로그 태그에서 로그 하나를 클릭시
 자세하게 띄워주는 페이지-->
+{% extends 'realbase.html' %}
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    {% block title %}<title>댓글 추가</title>{% endblock title %}
+    {% block css %} {% endblock css %}
 </head>
 <body>
+    {% block content %}
     <a href="{% url 'teamlog_comment' %}">댓글 추가+</a>
+    {% endblock content %}
 </body>
 </html>
