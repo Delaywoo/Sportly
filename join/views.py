@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
-from .models import Join
-from .forms import JoinModelForm, CommentForm
+from .models import Join, JoinPass
+from .forms import JoinModelForm, JoinPassForm
 from distutils.command.clean import clean
+from django.contrib import auth
+from django.contrib.auth.models import User
+
 # Create your views here.
 def joinall(request):
     posts= Join.objects.all().order_by('-date')
@@ -18,8 +21,7 @@ def modelformcreate(request):
     if request.method =='POST' or request.method =='FILES':
         form = JoinModelForm(request.POST, request.FILES)
         if form.is_valid():
-            post = form.save(commit =False)
-            post.save()
+            form.save()
             return redirect('joinall')
 
     else: 
@@ -29,16 +31,25 @@ def modelformcreate(request):
 
 def joindetail(request, join_id):
     join_detail =get_object_or_404(Join, pk=join_id)
-    comment_form =CommentForm()
 
-    return render(request,'join_detail.html',{'join_detail':join_detail},{'comment_form':comment_form})
+    return render(request,'join_detail.html',{'join_detail':join_detail})
 
-def create_comment(request, join_id):
-    filled_form = CommentForm(request.POST)
+def joinpw(request, join_id):
+    joinpwd =get_object_or_404(Join, pk=join_id)
+    join_detail =get_object_or_404(Join, pk=join_id)
 
-    if filled_form.is_valid():
-        finished_form= filled_form.save(commit=False)
-        finished_form.post = get_object_or_404(Join, pk=join_id)
-        finished_form.save()
+    return render(request,'joinpw.html',{'joinpw':joinpwd, 'join_detail':join_detail})
 
-    return redirect('joindetail', join_id)
+
+def joinpassword(request):
+    form = JoinPassForm()
+    return render(request, 'joinpassword.html',{'form':form})
+
+def joinin(request, join_id):
+    if request.method == 'POST':
+        realpassword = get_object_or_404(Join.joinpw, pk=join_id)
+        realpassword == get_object_or_404(JoinPass.joinpassword, pk=join_id)
+        return render(request,'joinpassword')
+
+    else :
+        return render(request,'joinpw')

@@ -1,13 +1,13 @@
 
 from django.forms import ModelForm
-from .models import Join, Comment
+from .models import Join, JoinPass
 
 class JoinModelForm(ModelForm):
     class Meta:
         model = Join
         fields ='__all__'
 
-class CommentForm(ModelForm):
+class JoinPassForm(ModelForm):
     class Meta:
-        model = Comment
-        fields = ['comment']
+        model = JoinPass
+        fields = '__all__'

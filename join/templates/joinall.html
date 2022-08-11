@@ -10,55 +10,19 @@
 </head>
 
 <body>
+    <br>
     {% for post in posts %}
-        <a href="{% url 'joindetail' post.id %}"><h3>팀명: {{ post.title}} </h3>
+        <imag src = "{{ join_detail.photo.url }}" alt="" height="200">
+        <a href="{% url 'joinpw' post.id %}">
+        {{ post.photo }}
+        <h3>팀명: {{ post.title }} </h3>
         <h4>날짜: {{ post.date }}</h4>
 
-        {{ post.body }}
-
+        {{ post.subtitle }}
+            <hr>
     {% endfor %}
+    
 
-    <h3 class="title">인기 팀</h3>
-    <div class="team-list">
-        <div class='team'>
-            팀 사진 팀 이름 팀장 이름 등
-            <button style=border:0>가입하기</button>
-        </div>
-        <div class='team'>
-            팀 사진 팀 이름 팀장 이름 등
-            <button style=border:0>가입하기</button>
-        </div>
-        <div class='team'>
-            팀 사진 팀 이름 팀장 이름 등
-            <button style=border:0>가입하기</button>
-        </div>
-        <div class='team'>
-            팀 사진 팀 이름 팀장 이름 등
-            <button style=border:0>가입하기</button>
-        </div>
-    </div>
-
-
-    <h3 class="title">최신 등록 팀</h3>
-    <div class="team-list">
-        <div class='team'>
-            팀 사진 팀 이름 팀장이름 등
-            <button style=border:0>가입하기</button>
-        </div>
-        <div class='team'>
-            팀 사진 팀 이름 팀장 이름 등
-            <button style=border:0>가입하기</button>
-        </div>
-        <div class='team'>
-            팀 사진 팀 이름 팀장 이름 등
-            <button style=border:0>가입하기</button>
-        </div>
-        <div class='team'>
-            팀 사진 팀 이름 팀장 이름 등
-            <button style=border:0>가입하기</button>
-        </div>
-
-        </div>
 
 
 
@@ -66,8 +30,6 @@
 
 </html>
 
-<a href="{%url 'joinpw' %}">
-    <h3>가입신청</h3>
 </a>
 <a href="{% url 'modelformcreate' %}"> 새 팀만들기</a><br>
 </a>
