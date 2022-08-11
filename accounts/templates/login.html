@@ -8,7 +8,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block css %}<link rel="stylesheet" href="{% static 'reallogsign.css' %}?after"type = "text/css"media="all">{% endblock css %}
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'reallogsign.css' %}?after"type = "text/css"media="all">{% endblock css %}
     {% block title %}<title>login</title>{% endblock title %}
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Gugi&family=Jua&family=Nanum+Gothic&display=swap');
@@ -22,6 +23,7 @@
             {%csrf_token%}
             <h1 class='title'>스포틀리</h1>
             <br>
+
             <input type='text' style=border:0 class='login-input' name="username" placeholder="아이디 입력"><br>
             <input type="password" style=border:0 class='login-input' name="password" placeholder="비밀번호 입력">
             <br>

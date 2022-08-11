@@ -10,14 +10,40 @@
 </head>
 
 <body>
-    <div class="joinpw">
-        <h5 class="teaminfo">팀 이름, 사진, 정보 등</h5>
-        <input style=border:0 class='input-pw' type="password" placeholder="비밀번호 입력">
-        <br>
-        <button style=border:0>입력</button>
-        
-    </div>
+    <h1> 제목 </h1>
+    {{ join_detail.title }}
 
+    <h2> 날짜 </h2>
+    {{ join_detail.date }}
+
+    <h2>한줄 설명</h2>
+    {{ join_detail.subtitle }}
+
+    <h3> 훈련시간 및 설명 </h3>
+    {{ join_detail.body }}
+
+    <h3> 본문에 추가된 첨부파일 </h3>
+    {% if join_detail.photo %}
+        <!---사진 찍어주기-->
+        {{ join_detail.photo.url }}
+        <imag src = "{{ join_detail.photo.url }}" alt="" height="200">
+    
+
+    {% endif %}
+
+    <hr>
+    <form method="POST" action="{% url 'signup' %}">
+
+        {% csrf_token %}
+
+        <h2>가입 비밀번호</h2>
+        <input type="text" placeholder="password" name="joinpwd">
+        <input type="submit" value="팀가입">
+    </form>
+
+    <hr>
+
+    <a href="{% url 'joinpassword' %}" class="btn btn-primary"> 팀가입하기</a>
 </body>
 
 </html>
