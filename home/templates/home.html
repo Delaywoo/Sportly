@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'realbase.html' %}
 {% load static %}
 <!DOCTYPE html>
@@ -108,4 +109,108 @@
 아직 로그인이 되지 않았어요.
 <br>
 <a href="{%url 'login' %}">로그인</a>
+=======
+{% extends 'realbase.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% block css %}<link rel="stylesheet" href="{% static 'home.css' %}?after" type = "text/css" media="all">
+    {% endblock css %}
+    {% block title %}<title>home</title>{% endblock title %}
+
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
+    
+   
+</head>
+
+<body>
+    {% block content %}
+
+    <div class="main">
+        <h1 class="main-title">스포틀리-일정</h1>
+        <div class="month clearfix">
+            <span class="left">
+                <i class="fas fa-chevron-left left"></i>
+            </span>
+            <span class="right">
+                <i class="fas fa-chevron-right right"></i>
+            </span>
+            <p class="month-name"></p>
+        </div>
+        <div class="weekdaycount">
+            <ul class="dayCount-list clearfix">
+                <li>MON</li>
+                <li>TUE</li>
+                <li>WED</li>
+                <li>THU</li>
+                <li>FRI</li>
+                <li>SAT</li>
+                <li>SUN</li>
+            </ul>
+        </div>
+        <div class='dayCount'>
+            <ul class="day clearfix"></ul>
+        </div>
+        </ul>
+
+    </div>
+    <div class="todo">
+        <h1 class="todo-title">
+            Today's To Do List
+        </h1>
+        <div class="textToDo">
+            <input type="text" class="textToDo-text">
+            <button class="textToDo-button add">Add</button>
+        </div>
+        <ul class="todoList"></ul>
+    </div>
+
+    <div class='homecontent'>
+        <div class="mylog">
+            <h2 class='title2'>내 일지</h2>
+            <li class='myloglist'>이모티콘<br> 제목 내용</li>
+            <li class='myloglist'>이모티콘<br> 제목 내용</li>
+            <li class='myloglist'>이모티콘<br> 제목 내용</li>
+        </div>
+    </div>
+
+    <button style=border:0 class='logcreate-button'>로그 작성</button>
+
+    <script type="text/javascript" src="{% static '/calendar.js' %}"></script>
+    <script src="https://kit.fontawesome.com/c92986acdf.js" crossorigin="anonymous"></script>
+    {% endblock content %}
+
+</body>
+
+</html>
+
+
+<!--MENU-->
+<h4>스포틀리</h4>
+<a href="{%url 'home' %}">
+    <h3>HOME</h3>
+</a>
+<a href="{%url 'mylog_list' %}">
+    <h3>MY LOG</h3>
+</a>
+<a href="{%url 'myteam_notice' %}">
+    <h3>MY TEAM</h3>
+</a>
+<a href="{%url 'joinall' %}">
+    <h3>JOIN</h3>
+</a>
+
+{% if user.is_authenticated %}
+안녕하세요, {{ user.username }}님!<br>
+<a href="{%url 'logout' %}">로그아웃</a>
+{% else %}
+아직 로그인이 되지 않았어요.
+<br>
+<a href="{%url 'login' %}">로그인</a>
+>>>>>>> c0466361541fa0c31472cb4d21a422deff3e789f
 {% endif %}

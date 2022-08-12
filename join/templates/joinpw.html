@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,4 +23,56 @@
 
 </html>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./join.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> 제목 </h1>
+    {{ join_detail.title }}
+
+    <h2> 날짜 </h2>
+    {{ join_detail.date }}
+
+    <h2>한줄 설명</h2>
+    {{ join_detail.subtitle }}
+
+    <h3> 훈련시간 및 설명 </h3>
+    {{ join_detail.body }}
+
+    <h3> 본문에 추가된 첨부파일 </h3>
+    {% if join_detail.photo %}
+        <!---사진 찍어주기-->
+        {{ join_detail.photo.url }}
+        <imag src = "{{ join_detail.photo.url }}" alt="" height="200">
+    
+
+    {% endif %}
+
+    <hr>
+    <form method="POST" action="{% url 'signup' %}">
+
+        {% csrf_token %}
+
+        <h2>가입 비밀번호</h2>
+        <input type="text" placeholder="password" name="joinpwd">
+        <input type="submit" value="팀가입">
+    </form>
+
+    <hr>
+
+    <a href="{% url 'joinpassword' %}" class="btn btn-primary"> 팀가입하기</a>
+</body>
+
+</html>
+
+>>>>>>> c0466361541fa0c31472cb4d21a422deff3e789f
 <!-- 가입이 완료되었습니다. MY TEAM에서 확인해 주세요 는 자바스크립트로 띄우기-->
