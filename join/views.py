@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-from django.shortcuts import render, redirect
-from .models import Join
-from join.forms import Joinform
-from distutils.command.clean import clean
-=======
+
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 from .models import Join, JoinPass
@@ -12,7 +7,7 @@ from distutils.command.clean import clean
 from django.contrib import auth
 from django.contrib.auth.models import User
 
->>>>>>> 0896b30a8ed8da04e50de5dafd52929b87d4a1da
+
 # Create your views here.
 def joinall(request):
     posts= Join.objects.all().order_by('-date')
@@ -24,23 +19,7 @@ def joinpw(request):
 def joinnew(request):
     return render(request,'joinnew.html')
 
-<<<<<<< HEAD
-def formcreate(request):
-    if request.method =='POST':
-        form =Joinform(request.POST)
-        if form.is_valid():
-            post= Join()
-            post.title = form.cleaned_data['title']
-            post.body = form.cleaned_data['body']
-            post.save()
 
-            return redirect('joinall')
-    
-    else:
-        form =Joinform()
-    
-    return render(request, 'form_create.html',{'form':form})
-=======
 def modelformcreate(request):
     if request.method =='POST' or request.method =='FILES':
         form = JoinModelForm(request.POST, request.FILES)
@@ -77,4 +56,4 @@ def joinin(request, join_id):
 
     else :
         return render(request,'joinpw')
->>>>>>> 0896b30a8ed8da04e50de5dafd52929b87d4a1da
+

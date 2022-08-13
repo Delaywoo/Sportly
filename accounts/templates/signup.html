@@ -1,88 +1,5 @@
-<<<<<<< HEAD
-<form method="POST" action="{% url 'signup' %}">
-    {% csrf_token %}
-    <p>닉네임</p>
-    <input type="text"   placeholder="nickname" name="last_name">
-    <br>
-    <p>이메일</p>
-    <input type="email"  placeholder="email" name="email">
-    <br>
-    <p>아이디</p>
-    <input type="text" placeholder="username(id)" name="username">
-    <br>
-    <p>비밀번호</p>
-    <input type="text" placeholder="password" name="password">
-    <br>
-    <p>비밀번호 확인</p>
-    <input type="text"  placeholder="password confirm" name="confirm">
-    <br>
-    <input type="submit" value="회원가입">
-</form>
 
 
-
-
-
-<!--<form action="" method="POST"> 
-    {% csrf_token %}
-    <h1 class='title'>스포틀리</h1><br>
-    <input type="text"  id="username" placeholder="사용자 닉네임" name="username"><br>
-    <input type="email" id="email" placeholder="email" name="email"><br>
-    <input type="text"id="user_id" placeholder="ID" name="user_id"><br>
-    <input type="password" id="password" placeholder="비밀번호" name="password"><br>
-    <input type="password" id="repeat" placeholder="비밀번호 확인" name="repeat"><br>-->
-    <!--<button type="submit" value="signup">회원가입하기</button>-->
-    <!--<a href="{% url 'login' %}">회원가입하기</a>
-</form>-->
-
-<!--<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="./reallogsign.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Gugi&family=Jua&family=Nanum+Gothic&display=swap');
-    </style>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-</head>-->
-
-<!--<body class = 'main'>
-    <form action="" method="POST">
-        {% csrf_token %}
-        <h1 class='title'>스포틀리</h1>
-            <br>
-        <div class="form-group">
-            <input type="text" style=border:0 class='login-input' id="username" placeholder="사용자 이름" name="username">
-        </div>
-        <div class="form-group">
-
-            <input type="text" style=border:0 class='login-input' id="user_id" placeholder="ID" name="user_id">
-        </div>
-
-        <div class="form-group">
-
-            <input type="password" style=border:0 class='login-input' id="password" placeholder="비밀번호" name="password">
-        </div>
-
-        <div class="form-group">
-
-            <input type="password" style=border:0 class='login-input' id="re_password" placeholder="비밀번호 확인" name="re_password">
-        </div>
-
-        <div class="form-group">
-
-            <input type="text" style=border:0 class='login-input' id="email" placeholder="email" name="email">
-        </div>
-
-        <button type="submit" style=border:0 class='login-button' value="signup">회원가입하기</button>
-
-    </form>
-      
-
-</body>
-</html>-->
-=======
 {% extends 'realbase.html' %}
 {% load static %}
 
@@ -109,38 +26,34 @@
         <h1 class='title'>스포틀리</h1>
             <br>
         <div class="form-group">
-            <input type="text" style=border:0 class='login-input' id="username" placeholder="사용자 이름" name="username">
+            닉네임
+            <input type="text"   placeholder="nickname" name="last_name" style=border:0 class='login-input' id="username">
         </div>
         <div class="form-group">
-
-            <input type="text" style=border:0 class='login-input' id="user_id" placeholder="ID" name="user_id">
-        </div>
-
-        <div class="form-group">
-
-            <input type="password" style=border:0 class='login-input' id="password" placeholder="비밀번호" name="password">
+            아이디
+            <input type="text" placeholder="username(id)" name="username" style=border:0 class='login-input' id="user_id">
         </div>
 
         <div class="form-group">
-
-            <input type="password" style=border:0 class='login-input' id="re_password" placeholder="비밀번호 확인" name="re_password">
+            비밀번호
+            <input type="text" placeholder="password" name="password" style=border:0 class='login-input' id="password">
         </div>
 
         <div class="form-group">
+            비밀번호 확인
+            <input type="text"  placeholder="password confirm" name="confirm" style=border:0 class='login-input' id="re_password" >
+        </div>
 
-            <input type="text" style=border:0 class='login-input' id="email" placeholder="email" name="email">
+        <div class="form-group">
+            이메일
+            <input type="email"  placeholder="email" name="email" style=border:0 class='login-input' id="email" >
         </div>
 
         <button type="submit" style=border:0 class='login-button' value="signup">회원가입</button>
 
-    </form>
-
-
-    
-
-       
+    </form>       
     {% endblock content %}
 </body>
 
 </html>
->>>>>>> 0896b30a8ed8da04e50de5dafd52929b87d4a1da
+
