@@ -237,3 +237,20 @@ body{
     transition: all .2s;
     transform: scale(1.2);
 }
+
+.homelogcreatebtn{
+    width: 100px;
+    height: 50px;
+    background-color: #B7B2F6;
+    color: white;
+    font-weight: 500;
+    padding: 5px;
+    text-decoration : none;
+    border-radius: 5px;
+    
+}
+
+.floating-button{
+    margin: 0 auto;
+    width: 370px;
+}
