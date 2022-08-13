@@ -8,9 +8,12 @@
 .appbar {
     background-color: #524FFF;
     height: 40px;
-    margin: 0;
-    padding: 0;
+    padding: 0px;
+    position: sticky;
+    top: 0;
     margin-bottom: 20px;
+    width: 100%;
+    z-index: 10;
 }
 
 .appbar-label {

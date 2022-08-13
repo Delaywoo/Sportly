@@ -153,7 +153,7 @@ function preMonthOrYear(){
 function main(){
     setMonthTitle(year,mon);
     makeCalendar(year,mon,getDayOfMon(mon,year));
-    todoTitle.textContent = `${year}.${mon}.${currentDay}: 무슨 일정이 있으신가요?`;
+    todoTitle.textContent = `${year}.${mon}.${currentDay} - 무슨 일정이 있으신가요?`;
     displayToDoOnDays();
 }
 
@@ -209,7 +209,7 @@ Day.addEventListener('click',(event)=>{
     if(event.target.className!=='disabled'){
         clearEvent();
         todoTitle.textContent = `${year}.${mon}.${event.target.textContent}: 무슨 일정이 있으신가요?`;
-        event.target.style.border='3px solid red';
+        event.target.style.border='3px solid #524FFF';
         DayOfChoice = (event.target.textContent)*1;
         MonOfChoice = mon;
         yearOfChoice = year;

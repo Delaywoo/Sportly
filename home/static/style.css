@@ -11,7 +11,7 @@
 
 .left{
     border: none;
-    background-color: #524fff;
+    background-color: #8f8dff;
     color: #f0f0f0;
     margin-left: 10px;
     margin-right: 10px;
@@ -20,7 +20,7 @@
 
 .right{
     border: none;
-    background-color: #524fff;
+    background-color: #8f8dff;
     color: #f0f0f0;
     margin-left: 10px;
     margin-right: 10px;
@@ -28,7 +28,8 @@
 }
 
 .todo-title{
-    font-size: 15px;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .clearfix::after{
@@ -48,7 +49,7 @@ body{
 }
 
 .main{
-    background: #524fff;
+    background: #8f8dff;
     width: 370px;
     margin: 0 auto;
     margin-top: 20px;
@@ -123,13 +124,13 @@ body{
 
 .dayCount {
     width: 100%;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .weekdaycount{
     color: white;
     
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: -20px;
 }
 
@@ -157,10 +158,10 @@ body{
     width: 370px;
     margin: 0 auto;
     margin-top: 20px;
-    background: white;
+    background: rgb(229, 233, 255);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+    
 
 }
 
@@ -205,6 +206,8 @@ body{
 
 .todoList{
     padding: 10px;
+    margin-bottom: -10px;
+    
 }
 
 .todoList li{
@@ -212,8 +215,8 @@ body{
     margin: 5px;
     color: #000000;
     font-weight: 600;
-    background-color: #f0f0f0;
-    box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+    background-color: #ffffff;
+    margin-bottom: 10px;
     border-radius: 5px;
 }
 
