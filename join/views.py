@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-from django.shortcuts import render
-
-# Create your views here.
-def joinall(request):
-    return render(request, 'joinall.html')
-
-def joinpw(request):
-    return render(request,'joinpw.html')
-=======
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 from .models import Join, JoinPass
@@ -63,4 +53,3 @@ def joinin(request, join_id):
 
     else :
         return render(request,'joinpw')
->>>>>>> c0466361541fa0c31472cb4d21a422deff3e789f
