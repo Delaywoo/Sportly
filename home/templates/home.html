@@ -76,17 +76,15 @@
         </div>
     </div>
 
-    <button style=border:0 class='logcreate-button'>로그 작성</button>
+    <div class="floating-button">
+        <span class="to-write">
+        <a class="logcreate-button" href="{% url 'mylog_create' %}">일지 작성</a>
+        </span>
+    </div>
 
     <script type="text/javascript" src="{% static '/calendar.js' %}"></script>
-    {% endblock content %}
 
-</body>
-
-</html>
-
-
-<!--MENU-->
+<!--MENU
 <h4>스포틀리</h4>
 <a href="{%url 'home' %}">
     <h3>HOME</h3>
@@ -99,13 +97,11 @@
 </a>
 <a href="{%url 'joinall' %}">
     <h3>JOIN</h3>
-</a>
+</a>-->
 
-{% if user.is_authenticated %}
-안녕하세요, {{ user.username }}님!<br>
-<a href="{%url 'logout' %}">로그아웃</a>
-{% else %}
-아직 로그인이 되지 않았어요.
-<br>
-<a href="{%url 'login' %}">로그인</a>
-{% endif %}
+
+{% endblock content %}
+
+</body>
+
+</html>

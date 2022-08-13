@@ -15,3 +15,4 @@ class Join(models.Model):
 
 class JoinPass(models.Model):
     joinpassword = models.CharField(null=True, max_length=10)
+

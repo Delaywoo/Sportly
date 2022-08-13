@@ -1,3 +1,4 @@
+
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 from .models import Join, JoinPass
@@ -5,6 +6,7 @@ from .forms import JoinModelForm, JoinPassForm
 from distutils.command.clean import clean
 from django.contrib import auth
 from django.contrib.auth.models import User
+
 
 # Create your views here.
 def joinall(request):
@@ -16,6 +18,7 @@ def joinpw(request):
 
 def joinnew(request):
     return render(request,'joinnew.html')
+
 
 def modelformcreate(request):
     if request.method =='POST' or request.method =='FILES':
@@ -53,3 +56,4 @@ def joinin(request, join_id):
 
     else :
         return render(request,'joinpw')
+
