@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -125,7 +126,12 @@ USE_TZ = False #True로 하면 timezone()사용시 UTC로 처리된다.
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
+
 
 LOGIN_REDIRECT_URLS="/" #로그인 성공시 "/"으로 갈 것.(home으로 간다.)
 # Default primary key field type

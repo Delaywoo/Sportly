@@ -76,7 +76,11 @@
         </div>
     </div>
 
-    <button style=border:0 class='logcreate-button'>로그 작성</button>
+    <div class="floating-button">
+        <span class="to-write">
+        <a class="logcreate-button" href="{% url 'mylog_create' %}">일지 작성</a>
+        </span>
+    </div>
 
     <script type="text/javascript" src="{% static '/calendar.js' %}"></script>
 
