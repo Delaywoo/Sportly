@@ -15,63 +15,35 @@
 <body>
     {% block content %}
 
-    <h3 class="title">인기 팀</h3>
-    <div class="team-list">
-        <div class='team'>
-            <img src="https://via.placeholder.com/120"alt="샘플이미지">
-            <h5>팀 정보</h5>
-            <button style=border:0>가입하기</button>
-        </div>
-        <div class='team'>
-            <img src="https://via.placeholder.com/120"alt="샘플이미지">
-            <h5>팀 정보</h5>
-            <button style=border:0>가입하기</button>
-        </div>
-    </div>
-
-    <div class="team-list">
-        <div class='team'>
-            <img src="https://via.placeholder.com/120"alt="샘플이미지">
-            <h5>팀 정보</h5>
-            <button style=border:0>가입하기</button>
-        </div>
-        <div class='team'>
-            <img src="https://via.placeholder.com/120"alt="샘플이미지">
-            <h5>팀 정보</h5>
-            <button style=border:0>가입하기</button>
-        </div>
-    </div>
-
-
-        <h3 class="title">최신 등록 팀</h3>
+        <h3 class="title">모든 팀</h3>
         <div class="team-list">
                 <div class='team'>
-                    <img src="https://via.placeholder.com/120"alt="샘플이미지">
-                    <h5>팀 이름</h5>
+                    {% for post in posts %}
+                    <img src="{{ join_detail.photo.url }}"alt="팀이미지">
+                    <a href="{% url 'joinpw' post.id %}">
+                        {{ post.photo }}
+                        <h3>팀명: {{ post.title }} </h3>
+                        <h4>날짜: {{ post.date }}</h4>
+                        {{ post.subtitle }}
+                        <hr>
+                        
                     <button style=border:0>가입하기</button>
+                {% endfor %}
                 </div>
                 <div class='team'>
                     <img src="https://via.placeholder.com/120"alt="샘플이미지">
                     <h5>팀 정보</h5>
                     <button style=border:0>가입하기</button>
                 </div>
+                <hr>
+                </a>
+                <a href="{% url 'modelformcreate' %}"> 새 팀만들기</a><br>
+                </a>
         </div>
-        <div class="team-list">
-            <div class='team'>
-                <img src="https://via.placeholder.com/120"alt="샘플이미지">
-                <h5>팀 정보</h5>
-                <button style=border:0>가입하기</button>
-            </div>
-            <div class='team'>
-                <img src="https://via.placeholder.com/120"alt="샘플이미지">
-                <h5>팀 정보</h5>
-                <button style=border:0>가입하기</button>
-            </div>
+
     </div>
         {% endblock content %}
 </body>
 
 </html>
 
-<a href="{%url 'joinpw' %}">
-    <h3>가입신청</h3>
