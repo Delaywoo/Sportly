@@ -36,7 +36,7 @@
 }
 
 #close-btn {
-    color: #524FFF;
+    color: black;
 }
 
 .material-icons {
@@ -68,9 +68,12 @@ section {
 .menu-lists {
     padding-left: 45px;
     list-style-type: none;
+    color: black;
 }
 .menu {
     margin: 30px 0;
+    font-size: 18px;
+    color: black;
 }
 .menu:nth-child(1) {
     margin-top: 50px;
@@ -80,5 +83,5 @@ section {
 }
 
 .logo {
-    width: 80px;
+    width: 160px;
 }
