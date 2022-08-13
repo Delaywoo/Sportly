@@ -1,10 +1,12 @@
+
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
-from .models import Team, Member, JoinPass
+from .models import Team, JoinPass
 from .forms import JoinModelForm, JoinPassForm
 from distutils.command.clean import clean
 from django.contrib import auth
 from django.contrib.auth.models import User
+
 
 # Create your views here.
 def joinall(request):
@@ -13,6 +15,7 @@ def joinall(request):
 
 def joinpw(request):
     return render(request,'joinpw.html')
+
 
 
 def modelformcreate(request):
@@ -40,6 +43,7 @@ def joinpw(request, join_id):
 
 
 def joinpassword(request):
+    pwd = Team.joinpw
     form = JoinPassForm()
     return render(request, 'joinpassword.html',{'form':form})
 

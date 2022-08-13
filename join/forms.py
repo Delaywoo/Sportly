@@ -1,13 +1,15 @@
 
+
 from django.forms import ModelForm
-from .models import Team, Member, JoinPass
+from .models import Team,JoinPass
 
 class JoinModelForm(ModelForm):
     class Meta:
         model = Team
-        fields ='__all__'
+        fields =['title','subtitle','body','joinpw','photo']
 
 class JoinPassForm(ModelForm):
     class Meta:
         model = JoinPass
         fields = '__all__'
+

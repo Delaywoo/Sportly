@@ -1,3 +1,4 @@
+
 <!--피그마의 'MyTeam:로그' 페이지-->
 {% extends 'realbase.html' %}
 {% load static %}
@@ -20,7 +21,10 @@
         <a href="{% url 'myteam_log' %}" class="teammenu-btn">팀 로그</a><br>
         <a href="{% url 'myteam_tactic' %}" class="teammenu-btn">팀 전술</a><br>
     <br>
+    <br>
+    <a href="{% url 'teamlog_detail' %}">팀 로그 하나를 클릭시</a>
     </div>
     {% endblock content %}
 </body>
+
 </html>

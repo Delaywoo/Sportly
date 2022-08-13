@@ -43,7 +43,11 @@ INSTALLED_APPS = [
     'mylog',
     'myteam',
     'join',
+    'colorfield',
 ]
+
+#회원가입 기존 내장 User custom
+#AUTH_USER_MODEL = 'accounts.Customuser' # <app명.class명>
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -115,7 +119,7 @@ TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False #True로 하면 timezone()사용시 UTC로 처리된다.
 
 
 # Static files (CSS, JavaScript, Images)
@@ -124,11 +128,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-    os.path.join(BASE_DIR, 'mylog', 'static')
+    BASE_DIR / 'static'
 ]
 
-LOGIN_REDIRECT_URLS="/"
+
+LOGIN_REDIRECT_URLS="/" #로그인 성공시 "/"으로 갈 것.(home으로 간다.)
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
@@ -137,4 +141,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 import os #media를 사용하기 위해
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')#파일이 저장될 경로.
 MEDIA_URL = '/media/'#사용자에 의해 올라온 파일에 접근할 수 있는 url 경로
-
