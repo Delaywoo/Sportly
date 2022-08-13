@@ -1,3 +1,4 @@
+
 <!--
     피그마의 'Myteam:팀 전술' 페이지
 -->
@@ -24,7 +25,28 @@
         <a href="{% url 'myteam_tactic' %}" class="teammenu-btn">팀 전술</a><br>
     <br>
     </div>
-    <a href="{% url 'tactic_create' %}">전술추가+</a>
+    <br>
+    {% for post in posts %}
+    <hr>
+    {% if post.writer.last_name %}
+    <p>작성자 : {{ post.writer.last_name}}</p>
+    {% else %}<!--만약 last_name이 null이면 익명으로 표시하기.-->
+    <p>작성자 : 익명 </p>
+    {% endif %}
+    제목 : {{post.title}} <br> 
+    날짜 : {{post.date}} <br>
+    내용 : {{post.contents}} <br>
+    사진 : <br>
+    {% if post.photo %}
+        <img src="{{post.photo.url}}" alt="" width="300px" height="220px"> <br>
+    {% endif %}
+    비디오 :<br>
+    {% if post.video %}
+        <video src="{{post.video.url}}"  width="300px" height="220px"></video><br>   
+    {% endif %}
+    {% endfor %}
+    <hr>
+    <a href="{% url 'tacticmodelformcreate' %}">전술 추가</a>
     {% endblock content %}
 </body>
 </html>

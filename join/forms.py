@@ -1,4 +1,5 @@
 
+
 from django.forms import ModelForm
 from .models import Join, JoinPass
 
@@ -11,3 +12,4 @@ class JoinPassForm(ModelForm):
     class Meta:
         model = JoinPass
         fields = '__all__'
+
