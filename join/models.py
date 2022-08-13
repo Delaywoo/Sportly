@@ -1,5 +1,10 @@
 from django.db import models
 from django.conf import settings
+from django.contrib import auth
+from django.contrib.auth.models import User 
+
+
+
 
 # Create your models here.
 class Team(models.Model):
@@ -8,21 +13,18 @@ class Team(models.Model):
     body = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
     joinpw = models.CharField(null=True, max_length=10)
-    photo = models.ImageField(blank=True, null=True, upload_to = 'jointeam_photo')
-    
+    photo = models.ImageField(User,blank=True)
+    member = models.ManyToManyField(User, through='JoinPass', related_name='Member',blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
     def __str__(self):
         return self.title
 
-class Member(models.Model):
-    name = models.CharField(max_length=50)
-    join = models.ManyToManyField(Team, through='JoinPass', related_name='Member',blank=True)
 
-    def __str__(self):
-        return self.name
 
 class JoinPass(models.Model):
     joinpassword = models.CharField(null=True, max_length=10)
     team= models.ForeignKey(Team, on_delete=models.CASCADE)
-    member = models.ForeignKey(Member, on_delete=models.CASCADE)
+    member = models.ForeignKey(User, on_delete=models.CASCADE)
 
 

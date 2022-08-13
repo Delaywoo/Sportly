@@ -8,42 +8,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block css %}<link rel="stylesheet" href="{% static 'join.css' %}?after" type="text/css" media="all">{% endblock css %}
-    {% block title %}<title>join</title>{% endblock title %}
+    <link rel="stylesheet" href="./join.css">
+    <title>Document</title>
 </head>
 
 <body>
+
     {% block content %}
+    <a href="{% url 'modelformcreate' %}"> 새 팀만들기</a><br>
+    
+    {% endblock content %}
 
-        <h3 class="title">모든 팀</h3>
-        <div class="team-list">
-                <div class='team'>
-                    {% for post in posts %}
-                    <img src="{{ join_detail.photo.url }}"alt="팀이미지">
-                    <a href="{% url 'joinpw' post.id %}">
-                        {{ post.photo }}
-                        <h3>팀명: {{ post.title }} </h3>
-                        <h4>날짜: {{ post.date }}</h4>
-                        {{ post.subtitle }}
-                        <hr>
-                        
-                    <button style=border:0>가입하기</button>
-                {% endfor %}
-                </div>
-                <div class='team'>
-                    <img src="https://via.placeholder.com/120"alt="샘플이미지">
-                    <h5>팀 정보</h5>
-                    <button style=border:0>가입하기</button>
-                </div>
-                <hr>
-                </a>
-                <a href="{% url 'modelformcreate' %}"> 새 팀만들기</a><br>
-                </a>
-        </div>
-
-    </div>
-        {% endblock content %}
 </body>
 
 </html>
+
+
 
