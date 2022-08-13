@@ -1,13 +1,20 @@
+
 <!--myteam 공지사항(긴급공지,일반공지,훈련공지)을 작성하는 페이지-->
+{% extends 'realbase.html' %}
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>my team 공지사항 작성하기</title>
+    {% block title %}<title>마이팀 공지사항 작성</title>{% endblock title %}
+    {% block css %} {% endblock css %}
 </head>
 <body>
+    {% block content %}
+    <!--훈련공지 태그 선택시 입력 form이 달라져야 함.--> 
     <!--훈련공지 태그 선택시 입력 form이 달라져야 함.--> 
     <form action=" " method="POST" enctype="multipart/form-data">
         <!--이 방식은 <form> 요소가 파일이나 이미지를 서버로 전송할 때 주로 사용함 위에 enctype-->
@@ -20,5 +27,7 @@
         </table>
         <input type="submit" value="등록하기">
         </form>
+    {% endblock content %}
 </body>
+
 </html>

@@ -1,20 +1,30 @@
+
 <!--
     피그마의 'Myteam:팀 전술' 페이지
 -->
+
+{% extends 'realbase.html' %}
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    {% block title %}<title>마이팀 전술</title>{% endblock title %}
+    {% block css %}<link rel="stylesheet" href="{% static 'css/myteams.css' %}?after"> {% endblock css %}
 </head>
 <body>
-    Myteam:전술 페이지<br>
-    <a href="{% url 'myteam_notice' %}">공지사항</a><br>
-    <a href="{% url 'myteam_log' %}">팀 로그</a><br>
-    <a href="{% url 'myteam_tactic' %}">팀 전술</a><br>
+    {% block content %}
+    Myteam:전술 페이지
     <br>
+    <div class="teammenus">
+        <a href="{% url 'myteam_notice' %}" class="teammenu-btn">공지사항</a><br>
+        <a href="{% url 'myteam_log' %}" class="teammenu-btn">팀 로그</a><br>
+        <a href="{% url 'myteam_tactic' %}" class="teammenu-btn">팀 전술</a><br>
+    <br>
+    </div>
     <br>
     {% for post in posts %}
     <hr>
@@ -37,5 +47,6 @@
     {% endfor %}
     <hr>
     <a href="{% url 'tacticmodelformcreate' %}">전술 추가</a>
+    {% endblock content %}
 </body>
 </html>

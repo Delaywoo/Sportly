@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <form method="POST" action="{% url 'signup' %}">
     {% csrf_token %}
     <p>닉네임</p>
@@ -81,3 +82,65 @@
 
 </body>
 </html>-->
+=======
+{% extends 'realbase.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% block css %}<link rel="stylesheet" href="{% static 'reallogsign.css' %}?after"type = "text/css"media="all">{% endblock css %}
+    {% block title %}<title>signup</title>{% endblock title %}
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gugi&family=Jua&family=Nanum+Gothic&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+
+<body class = 'main'>
+    {% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h1 class='title'>스포틀리</h1>
+            <br>
+        <div class="form-group">
+            <input type="text" style=border:0 class='login-input' id="username" placeholder="사용자 이름" name="username">
+        </div>
+        <div class="form-group">
+
+            <input type="text" style=border:0 class='login-input' id="user_id" placeholder="ID" name="user_id">
+        </div>
+
+        <div class="form-group">
+
+            <input type="password" style=border:0 class='login-input' id="password" placeholder="비밀번호" name="password">
+        </div>
+
+        <div class="form-group">
+
+            <input type="password" style=border:0 class='login-input' id="re_password" placeholder="비밀번호 확인" name="re_password">
+        </div>
+
+        <div class="form-group">
+
+            <input type="text" style=border:0 class='login-input' id="email" placeholder="email" name="email">
+        </div>
+
+        <button type="submit" style=border:0 class='login-button' value="signup">회원가입</button>
+
+    </form>
+
+
+    
+
+       
+    {% endblock content %}
+</body>
+
+</html>
+>>>>>>> 0896b30a8ed8da04e50de5dafd52929b87d4a1da

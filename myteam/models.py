@@ -1,3 +1,4 @@
+
 from datetime import datetime
 from importlib.resources import contents
 from django.db import models
@@ -36,3 +37,4 @@ class Notice(models.Model):
 
     def __str__(self):
         return self.title
+

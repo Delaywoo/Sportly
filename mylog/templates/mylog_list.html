@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--메뉴바에서 mylog를 누르면 가장 처음 보이는 페이지,
 작성했던 로그들이 화면에 나열된다.-->
 
@@ -24,4 +25,59 @@
     {% endfor %}
 
 </body>
+=======
+<!--메뉴바에서 mylog를 누르면 가장 처음 보이는 페이지,
+작성했던 로그들이 화면에 나열된다.-->
+
+{% extends 'realbase.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}<title>MY LOG</title>{% endblock title %}
+    {% block css %}<link rel="stylesheet" href="{% static 'css/mylog_list.css' %}?after">{% endblock css %}
+</head>
+<body>
+    {% block content %}
+
+    <!-- 하단 플로팅 버튼 : 일지 작성 -->
+    <div class="floating-button">
+        <span class="to-write">
+        <a class="create-btn" href="{% url 'modelformcreate' %}">일지 작성</a>
+        </span>
+    </div>
+
+    
+    <!--<a class="mylog-btn" href="{% url 'modelformcreate' %}">내 로그 작성하기</a><br>
+    <a class="mylog-btn" href="{% url 'schedule_create' %}">일정 등록하기</a><br>-->
+    
+    <!--이 아래로 로그들을 띄운다.-->
+    <h1>MY LOGS</h1>
+
+    <div class="myalllogs">
+
+    {% for post in posts %}
+        <div class="onelog">
+            <div class="log-garo">
+                <div class="log-emotion">{{post.mood}}</div>
+                <a class="log-date" href="{% url 'mylog_detail' post.id %}">{{post.log_date2}}</a>
+            </div>
+            <div class="log-content">
+                <h6>배운점 : {{post.learned}}</h6>
+                <h6>부족한점 : {{post.lacked}}</h6>
+                <h6>개선할점 : {{post.improve}}</h6>
+            </div>
+        </div>
+    {% endfor %}
+
+    </div>
+
+
+    {% endblock content %}
+</body>
+>>>>>>> 0896b30a8ed8da04e50de5dafd52929b87d4a1da
 </html>

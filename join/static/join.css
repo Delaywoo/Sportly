@@ -1,0 +1,73 @@
+.body{
+    margin: 0px;
+}
+
+h5{
+  font-weight: 600;
+  font-size: 15px;
+  margin-top: 5px;
+}
+
+.team {
+  background-color: rgb(243, 244, 255);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  width: 140px;
+  height: 200px;
+  
+}
+.joinpw {
+  background-color: white;
+  margin-top: 100px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+  width: 70%;
+  max-width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  margin-top: 200px;
+
+}
+.team-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+  width: 320px;
+  margin: 0 auto;
+}
+
+.title {
+  font-weight: 800;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+button {
+  width: 10%;
+  height: 30px;
+  color: white;
+  background-color: #524fff;
+  font-size: 15px;
+  border-radius: 5px;
+  font-weight: 600;
+  min-width: 100px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+}
+
+.input-pw {
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: rgb(230, 230, 230);
+  width: 100px;
+  height: 20px;
+}
+
+.teaminfo{
+    padding-top: 20px;
+    margin-bottom: 70px;
+}

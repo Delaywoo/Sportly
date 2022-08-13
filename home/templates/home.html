@@ -1,56 +1,76 @@
+
+{% extends 'realbase.html' %}
+{% load static %}
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./home.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src='./home.js'></script>
-
+    <title>Calendar - 달력</title>
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'style.css' %}?  after"type = "text/css"media="all">
+    <link rel="stylesheet" href="{% static 'home.css' %}? after"type = "text/css"media="all">
+    {% endblock css %}
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
+    
+    <script src="https://kit.fontawesome.com/c92986acdf.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <p>navbar</p>
-    <div class="calander">
-        <div class="sec_cal">
-            <div class="cal_nav">
-                <a href="javascript:;" class="nav-btn go-prev">prev</a>
-                <div class="year-month"></div>
-                <a href="javascript:;" class="nav-btn go-next">next</a>
+    {% block content %}
+
+    <div class="main">
+        <div class="month clearfix">
+            <div class ='montharrow'>
+                <button class = 'left'>←</button><button class = 'right'>→	</button>
             </div>
-            <div class="cal_wrap">
-                <div class="days">
-                    <div class="day">월</div>
-                    <div class="day">화</div>
-                    <div class="day">수</div>
-                    <div class="day">목</div>
-                    <div class="day">금</div>
-                    <div class="day">토</div>
-                    <div class="day">일</div>
-                </div>
-                <div class="dates"></div>
-            </div>
+            
+            
+            <span class="left">
+                <i class="fas fa-chevron-left left"></i>
+            </span>
+            <span class="right">
+                <i class="fas fa-chevron-right right"></i>
+            </span>
+
+            <p class="month-name"></p>
+            
         </div>
+        <div class="weekdaycount">
+            <ul class="dayCount-list clearfix">
+                <li>MON</li>
+                <li>TUE</li>
+                <li>WED</li>
+                <li>THU</li>
+                <li>FRI</li>
+                <li>SAT</li>
+                <li>SUN</li>
+            </ul>
+        </div>
+        <div class='dayCount'>
+            <ul class="day clearfix"></ul>
+        </div>
+        </ul>
+
+    </div>
+    <div class="todo">
+        <h1 class="todo-title">
+            Today's To Do List
+        </h1>
+        <div class="textToDo">
+            <input type="text" class="textToDo-text">
+            <button class="textToDo-button add">Add</button>
+        </div>
+        <ul class="todoList"></ul>
     </div>
 
+   
 
     <div class='homecontent'>
-        <div class='cal'>
-            <h2 class='title2'> 날짜</h2>
-
-            <div class='cal-notification'>
-                <h2 class='title2'>일정 알림</h2>
-                <p class='cal-time'>일정 시간</p>
-            </div>
-
-        </div>
-
+        
         <div class="mylog">
-            <h2 class='title2'>내 일지</h2>
+            
             <li class='myloglist'>이모티콘<br> 제목 내용</li>
             <li class='myloglist'>이모티콘<br> 제목 내용</li>
             <li class='myloglist'>이모티콘<br> 제목 내용</li>
@@ -59,6 +79,8 @@
 
     <button style=border:0 class='logcreate-button'>로그 작성</button>
 
+    <script type="text/javascript" src="{% static '/calendar.js' %}"></script>
+    {% endblock content %}
 
 </body>
 
@@ -79,17 +101,6 @@
 <a href="{%url 'joinall' %}">
     <h3>JOIN</h3>
 </a>
-<!--
-{% if user.is_authenticated %}
-안녕하세요, {{ user.username }}님!<br>
-<a href="{%url 'logout' %}">로그아웃</a>
-{% else %}
-아직 로그인이 되지 않았어요.
-<br>
-<a href="{%url 'login' %}">로그인</a>
-<a href="{%url 'signup' %}">회원가입</a>
-{% endif %}
--->
 
 {% if user.is_authenticated %}
     {% if user.last_name %}

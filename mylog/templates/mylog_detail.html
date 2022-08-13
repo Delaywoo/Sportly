@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--내 로그 자세히 보기. 로그 목록에서 하나 클릭시
 하나의 로그를 자세히 띄움. 댓글을 작성 및 확인 가능-->
 <!DOCTYPE html>
@@ -74,4 +75,66 @@
 
 
 </body>
+=======
+<!--내 로그 자세히 보기. 로그 목록에서 하나 클릭시
+하나의 로그를 자세히 띄움. 댓글을 작성 및 확인 가능-->
+{% extends 'realbase.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}<title>my log 자세히 보기</title>{% endblock title %}
+    {% block css %}<link rel="stylesheet" href="{% static 'css/mylog_detail.css' %}?after">{% endblock css %}
+</head>
+<body>
+    {% block content %}
+
+    <div class="logbasicupper">
+        <h3 class="emoji">{{mylog_detail.mood}}</h3>
+        <h1> 사용자</h1>
+        <!--<h1> {{ user.username }}</h1>-->
+        <h1>{{mylog_detail.log_date2}}</h1>
+    </div>
+    
+    <div class="logbasiccontent">
+        <h4>배운 점</h4>
+        <h5>{{mylog_detail.learned}}</h5>
+        <h4>부족한 점</h4>
+        <h5>{{mylog_detail.lacked}}</h5>
+        <h4>개선할 점</h4>
+        <h5>{{mylog_detail.improve}}</h5>
+        <br>
+        <h4>사진</h4>
+        {% if mylog_detail.photo %}
+            <img src="{{mylog_detail.photo.url}}" alt="" width="90%">
+        {% endif %}
+        <h4>비디오</h4>
+        {% if mylog_detail.video %}
+            <video src="{{mylog_detail.video.url}}"  width="90%" height="100px"></video>   
+        {% endif %}
+    </div>
+
+    <!--댓글 목록들-->
+    {% for comment in mylog_detail.comment_set.all %}
+    <p class="each-comment">{{comment}}</p>
+    {% endfor %}
+    
+    
+    <div class="mylog_comments">
+        <h4>나의 댓글 작성</h4>
+        <form method="POST" action="{% url 'create_comment' mylog_detail.id %}"> 
+            {% csrf_token %}
+            {{comment_form.comment}}
+            <!--<input id="input1" type="text">-->
+            <input id="input2" type ="submit" class="add-comment" value="댓글 추가">
+        </form>
+    </div>
+
+    {% endblock content %}
+</body>
+>>>>>>> 0896b30a8ed8da04e50de5dafd52929b87d4a1da
 </html>

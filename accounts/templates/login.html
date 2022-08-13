@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 스포틀리 로그인 페이지
 <form method="POST" action="{% url 'login' %}">
     {% csrf_token %}
@@ -24,20 +25,27 @@
 
 
 <!--<!DOCTYPE html>
+=======
+{% extends 'realbase.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+>>>>>>> 0896b30a8ed8da04e50de5dafd52929b87d4a1da
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./reallogsign.css">
+    {% block css %}<link rel="stylesheet" href="{% static 'reallogsign.css' %}?after"type = "text/css"media="all">{% endblock css %}
+    {% block title %}<title>login</title>{% endblock title %}
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Gugi&family=Jua&family=Nanum+Gothic&display=swap');
     </style>
 </head>
 
 <body>
+    {% block content %}
     <div class='main'>
         <form action="{%url 'login' %}" method="POST">
             {%csrf_token%}
@@ -49,9 +57,10 @@
             <button type="submit" value="login" style=border:0 class='login-button'> 로그인 </button>
         </form>
         <br>
-        <a href="signup" class='bottom-text'>회원가입 하기
+        <a href="signup" class='bottom-text'>회원가입
     </div>
     </div>
+    {% endblock content %}
 </body>
 
 </html>-->

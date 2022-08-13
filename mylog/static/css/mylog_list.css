@@ -1,0 +1,86 @@
+* {
+    text-align: center;
+}
+
+.floating-button {
+    display: flex;
+    position: fixed;
+    right: 40%;
+    bottom: 15px;
+    z-index: 2;
+  }
+
+  .create-btn {
+    text-decoration: none;
+    color:aliceblue;
+    width: 100%;
+  }
+
+  .create-btn:visited {
+    color: aliceblue;
+  }
+
+.to-write {
+    font-size: 15px;
+    display: flex;
+    position: relative;
+    height: 40px;
+    cursor: pointer;
+    font-weight: 700;
+    background-color: #524FFF;
+    border-radius: 15px;
+    padding: 5%;
+    width: 100px;
+    box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.47);
+}
+
+.myalllogs {
+    background-color: rgb(226, 226, 226);
+    width: 90%;
+    text-align: center;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.onelog {
+    background-color: white;
+    width: 90%;
+    border-radius: 5px;
+    margin: 3%;
+    margin-top: 5%;
+    margin-bottom:5%;
+    align-items: center;
+}
+
+.log-garo {
+    display: flex;
+}
+
+h6 {
+    text-align: left;
+}
+.log-content {
+    padding: 10px;
+}
+
+h1 {
+    font-weight: bolder;
+    padding: 20px;
+}
+
+.log-emotion {
+    float: left;
+    font-size: 30px;
+    text-align: center;
+    padding: 5px;
+}
+
+
+.log-date {
+    text-decoration: none;
+    font-size: 20px;
+    vertical-align: middle;
+    float:right;
+    width: 85%;
+    color: black;
+}
