@@ -11,7 +11,7 @@
 
 .left{
     border: none;
-    background-color: #8f8dff;
+    background-color: #8999f3;
     color: #f0f0f0;
     margin-left: 10px;
     margin-right: 10px;
@@ -20,7 +20,7 @@
 
 .right{
     border: none;
-    background-color: #8f8dff;
+    background-color: #8999f3;
     color: #f0f0f0;
     margin-left: 10px;
     margin-right: 10px;
@@ -30,6 +30,7 @@
 .todo-title{
     font-size: 18px;
     font-weight: 600;
+    color: white;
 }
 
 .clearfix::after{
@@ -49,7 +50,7 @@ body{
 }
 
 .main{
-    background: #8f8dff;
+    background: #8999f3;
     width: 370px;
     margin: 0 auto;
     margin-top: 20px;
@@ -74,6 +75,7 @@ body{
     float: left;
     background: white;
     padding: 3px;
+    border-radius: 4px;
     width: 9%;
     height: 30px;
     margin-right: 14px;
@@ -87,7 +89,7 @@ body{
 .main .day li:hover{
     cursor: pointer;
     transition: all .2s;
-    transform: scale(1.08);
+    transform: scale(1.2);
 }
 
 .month{
@@ -158,7 +160,7 @@ body{
     width: 370px;
     margin: 0 auto;
     margin-top: 20px;
-    background: rgb(229, 233, 255);
+    background: #8999f3;
     padding: 20px;
     border-radius: 10px;
     
@@ -172,15 +174,14 @@ body{
 
 .textToDo .textToDo-text[type="text"]{
     border: none;
-    border: 3px solid #524fff;
-    border-radius: 10px;;
+    border-radius: 5px;;
     padding: 5px 20px;
     width: 300px;
 }
 
 .textToDo .textToDo-text[type="text"]:focus{
     outline: none;
-    box-shadow: 0px 5px 10px 5px rgba(0,0,0,0.1);
+    
 }
 
 .textToDo .textToDo-button{
@@ -188,8 +189,8 @@ body{
     border: none;
     color: white;
     padding: 6px 10px;
-    background: rgb(160, 155, 255);
-    border-radius: 20px;
+    background: rgb(108, 103, 185);
+    border-radius: 10px;
     transition: all .2s;
 }
 
@@ -197,12 +198,12 @@ body{
     outline: none;
 }
 
-.textToDo .textToDo-button:hover{
-    background: #524fff;
+/* .textToDo .textToDo-button:hover{
+    background: #555f97;
     cursor: pointer;
     transition: all .2s;
-    transform: scale(1.1);
-}
+    transform: scale(1.2);
+} */
 
 .todoList{
     padding: 10px;
@@ -211,13 +212,14 @@ body{
 }
 
 .todoList li{
-    padding: 5px;
+    padding: 10px;
     margin: 5px;
     color: #000000;
     font-weight: 600;
     background-color: #ffffff;
     margin-bottom: 10px;
     border-radius: 5px;
+    overflow:auto;
 }
 
 .deleteBtn{
