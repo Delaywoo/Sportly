@@ -86,25 +86,11 @@
     <input type="button" value="등록하기">-->
 
 
-    {{mylog_detail.learned}}
+    <!--{{mylog_detail.learned}}-->
 
     <form action=" " method="POST" enctype="multipart/form-data">
     <!--이 방식은 <form> 요소가 파일이나 이미지를 서버로 전송할 때 주로 사용함 위에 enctype-->
         {%csrf_token%}
-    <!--views.py 에서 render()의 세번째 인자로 넘겨준 딕셔너리형 데이터는 html 내에서 \{\{}}에 갑싸진 채로 표현 가능하다.-->
-    
-    <!--<h1>오늘의 운동 만족도는 어떠셨나요?</h1>
-    <button type="submit"   id="0">😡</button>
-    <button type="submit" id="1">😕</button>
-    <button type="submit"  id="2">😐</button>
-    <button type="submit"  id="3">🙂</button>
-    <button type="submit"  id="4">😜</button>
-    <script>
-        $('#0').on("click",function(){
-            alert('클릭이벤트 발생');
-        })
-    </script>-->
-
     <table>
         {{form.as_table}}
         <!--위에 form말고 form.as_table로 쓰면 자동으로 table에 감싸진 것처럼 나온다.-->

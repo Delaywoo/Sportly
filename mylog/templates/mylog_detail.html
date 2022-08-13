@@ -11,6 +11,11 @@
 </head>
 <body>
     내 로그 자세히 보는 페이지
+    {% if mylog_detail.writer.last_name %}
+    <p>작성자 : {{mylog_detail.writer.last_name}}</p>
+    {% else %}<!--만약 last_name이 null이면 익명으로 표시하기.-->
+    <p>작성자 : 익명 </p>
+    {% endif %}
     <h1>날짜2</h1>
     {{mylog_detail.log_date2}}
     <h3>기분</h3>
@@ -40,6 +45,13 @@
     <hr>
     <!--댓글 목록들-->
     {% for comment in mylog_detail.comment_set.all %}
+    {% if comment.writer.last_name %}
+    <p>작성자 : {{comment.writer.last_name}}</p>
+    {% else %}<!--만약 last_name이 null이면 익명으로 표시하기.-->
+    <p>작성자 : 익명 </p>
+    {% endif %}
+    <p>날짜 : {{comment.date}} </p>
+    <p></p>
     <p>{{comment}}</p>
     <hr>
     {% endfor %}

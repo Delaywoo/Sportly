@@ -9,11 +9,51 @@
     <title>My team</title>
 </head>
 <body>
-    Myteam:공지 페이지
+    Myteam:공지 페이지<br>
     <a href="{% url 'myteam_notice' %}">공지사항</a><br>
     <a href="{% url 'myteam_log' %}">팀 로그</a><br>
     <a href="{% url 'myteam_tactic' %}">팀 전술</a><br>
     <br>
-    <a href="{% url 'notice_create' %}">공지사항+</a>
+    {% for post in posts %} 
+        <hr>
+        {% if post.writer.last_name %}
+        <p>작성자 : {{ post.writer.last_name}}</p>
+        {% else %}<!--만약 last_name이 null이면 익명으로 표시하기.-->
+        <p>작성자 : 익명 </p>
+        {% endif %}
+        
+        제목 : {{post.title}} <br>
+        날짜 : {{post.date}}<br>
+        확인 체크 : {{post.count}}<br>
+        분류 : {{post.tag}}<br>
+    
+        {% if post.tag == '일반' or post.tag == '긴급'%}
+        내용 : {{post.contents}}<br>
+        사진 :<br>
+            {% if post.photo %}
+            <img src="{{post.photo.url}}" alt="" height="600"><br>
+            {% endif %}
+        비디오 :<br>
+            {% if post.video %}
+            <video src="{{post.video.url}}"  width="1000px" height="700px"></video>  <br> 
+            {% endif %}
+        {% endif %}
+
+        {% if post.tag == '훈련' %}
+        훈련 날짜 : {{post.datetime}}<br>
+        훈련 장소 : {{post.location}}<br>
+        사진 :<br>
+            {% if post.photo %}
+            <img src="{{post.photo.url}}" alt="" width="300px" height="220px"><br>
+            {% endif %}
+        비디오 :<br>
+            {% if post.video %}
+            <video src="{{post.video.url}}"  width="300px" height="220px"></video>  <br> 
+            {% endif %}
+        {% endif%}
+
+    {% endfor %}
+    <hr>
+    <a href="{% url 'noticemodelformcreate' %}">공지사항 추가하기</a>
 </body>
 </html>

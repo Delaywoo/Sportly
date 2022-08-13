@@ -26,5 +26,19 @@
     <br>
 
     <input type="button" class="mylogcreate-button" value="등록하기">
+
+
+    <hr>
+    <form action=" " method="POST" enctype="multipart/form-data">
+        <!--이 방식은 <form> 요소가 파일이나 이미지를 서버로 전송할 때 주로 사용함 위에 enctype-->
+            {%csrf_token%}
+        <table>
+            {{form.as_table}}
+            <!--위에 form말고 form.as_table로 쓰면 자동으로 table에 감싸진 것처럼 나온다.-->
+            <!--.as_p로 쓰면 자동으로 <p>에 감싸진 것처럼 나온다.-->
+            <!--.as_ul로 쓰면 자동으로 <ul>에 감싸진 것처럼 나온다.-->
+        </table>
+        <input type="submit" value="등록하기">
+    </form>
 </body>
 </html>

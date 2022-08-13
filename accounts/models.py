@@ -1,7 +1,7 @@
 from django.db import models
 #from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractUser
-
+"""
 # Create your models here.
 class Customuser(AbstractUser):
     #user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -12,3 +12,4 @@ class Customuser(AbstractUser):
     REQUIRED_FIELDS = [nickname,useremail]  # 필수로 받고 싶은 필드들 넣기 
     def __str__(self):
         return self.username #username은 아이디
+"""

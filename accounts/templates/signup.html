@@ -1,10 +1,10 @@
 <form method="POST" action="{% url 'signup' %}">
     {% csrf_token %}
     <p>닉네임</p>
-    <input type="text"   placeholder="nickname" name="nickname">
+    <input type="text"   placeholder="nickname" name="last_name">
     <br>
     <p>이메일</p>
-    <input type="email"  placeholder="email" name="useremail">
+    <input type="email"  placeholder="email" name="email">
     <br>
     <p>아이디</p>
     <input type="text" placeholder="username(id)" name="username">
@@ -17,6 +17,7 @@
     <br>
     <input type="submit" value="회원가입">
 </form>
+
 
 
 

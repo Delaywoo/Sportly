@@ -9,4 +9,7 @@ urlpatterns = [
     path('tactic_create/',tactic_create,name='tactic_create'),
     path('teamlog_comment/',teamlog_comment,name='teamlog_comment'),
     path('teamlog_detail/',teamlog_detail,name='teamlog_detail'),
+    path('noticemodelformcreate/',noticemodelformcreate ,name='noticemodelformcreate'),
+    path('tacticmodelformcreate/',tacticmodelformcreate ,name='tacticmodelformcreate'),
+   
 ]

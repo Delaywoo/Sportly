@@ -42,10 +42,11 @@ INSTALLED_APPS = [
     'mylog',
     'myteam',
     'join',
+    'colorfield',
 ]
 
 #회원가입 기존 내장 User custom
-AUTH_USER_MODEL = 'accounts.Customuser' # <app명.class명>
+#AUTH_USER_MODEL = 'accounts.Customuser' # <app명.class명>
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -117,7 +118,7 @@ TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False #True로 하면 timezone()사용시 UTC로 처리된다.
 
 
 # Static files (CSS, JavaScript, Images)

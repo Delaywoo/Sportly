@@ -1,20 +1,28 @@
-import email
+
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User #장고에 이미 내장되어 있는 객체
 from django.contrib import auth
 from django.contrib.auth import login, authenticate
+#from django.core.exceptions import ValidationError
 
-from .forms import SignupForm
-from .models import Customuser
+#from .forms import SignupForm
+#from .models import Customuser
 
 # 회원 가입
 def signup(request):
     # signup 으로 POST 요청이 왔을 때, 새로운 유저를 만드는 절차를 밟는다.
     if request.method == 'POST':
         # password와 confirm에 입력된 값이 같다면
-        if request.POST['password'] == request.POST['confirm']:
-            # user 객체를 새로 생성
-            user = User.objects.create_user(username=request.POST['username'], password=request.POST['password'])
+        if request.POST['password'] == request.POST['confirm']: 
+            username=request.POST.get('username')
+            if User.objects.filter(username=username).exists(): #기존 아이디와 중복될 경우.
+                return render(request, 'alert.html')
+                #raise ValidationError(username +"은 기존 아이디와 중복됩니다.")
+            password=request.POST.get('password')
+            email=request.POST.get('email')
+            last_name=request.POST.get('last_name')
+            # user 객체를 새로 생성 및 저장
+            user = User.objects.create_user(username=username, password=password, email=email, last_name=last_name)
             # 로그인 한다
             auth.login(request, user)
             return redirect('/')
@@ -41,7 +49,7 @@ def login(request):
         # 존재하지 않는다면
         else:
             # 딕셔너리에 에러메세지를 전달하고 다시 login.html 화면으로 돌아간다.
-            return render(request, 'login.html', {'error' : 'username or password is incorrect.'})
+            return render(request, 'badlogin.html', {'error' : 'username or password is incorrect.'})
     # login으로 GET 요청이 들어왔을때, 로그인 화면을 띄워준다.
     else:
         return render(request, 'login.html')
@@ -52,7 +60,6 @@ def logout(request):
     if request.method == 'POST':
         auth.logout(request)
         return redirect('/')
-
     # logout으로 GET 요청이 들어왔을 때, 로그인 화면을 띄워준다.
     return render(request, 'login.html')
 
