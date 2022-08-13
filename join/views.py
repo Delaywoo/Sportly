@@ -47,9 +47,11 @@ def joinpassword(request):
 
 def joinin(request, join_id):
     if request.method == 'POST':
+        passform = JoinPassForm(request.POST)
         realpassword = get_object_or_404(Join.joinpw, pk=join_id)
-        realpassword == get_object_or_404(JoinPass.joinpassword, pk=join_id)
-        return render(request,'joinpassword')
+        if passform.is_valid():
+            realpassword == get_object_or_404(JoinPass.joinpassword, pk=join_id) 
+            return redirect(request,'joinall')
 
     else :
         return render(request,'joinpw')
