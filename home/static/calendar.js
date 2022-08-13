@@ -74,10 +74,10 @@ function makeCalendar(year,mon,dayCount){
 
             onlyOneList.textContent = `${i}`;
             if(currentYear === yearOfChoice && currentMon === MonOfChoice && currentDay === DayOfChoice){
-                onlyOneList.style.border = '1px solid red';
+                onlyOneList.style.border = '3px solid red';
             }
             else{
-                onlyOneList.style.border = '1px solid black';
+                onlyOneList.style.border = '3px solid black';
             }
 
             if(0===getDay(year,mon,i)){
@@ -102,7 +102,7 @@ function makeCalendar(year,mon,dayCount){
         const list = document.createElement('li');
         list.textContent = `${i}`;
         if(i===DayOfChoice&&year===yearOfChoice&&mon===MonOfChoice){
-            list.style.border = '1px solid red';
+            list.style.border = '3px solid red';
             Day.addEventListener('click',(event)=>{
                 if(event.target!==list){
                     list.style.border = 'none';
@@ -153,7 +153,7 @@ function preMonthOrYear(){
 function main(){
     setMonthTitle(year,mon);
     makeCalendar(year,mon,getDayOfMon(mon,year));
-    todoTitle.textContent = `${year}.${mon}.${currentDay}: 무슨 일정이 있으신가요?`;
+    todoTitle.textContent = `${year}.${mon}.${currentDay} - 무슨 일정이 있으신가요?`;
     displayToDoOnDays();
 }
 
@@ -209,7 +209,7 @@ Day.addEventListener('click',(event)=>{
     if(event.target.className!=='disabled'){
         clearEvent();
         todoTitle.textContent = `${year}.${mon}.${event.target.textContent}: 무슨 일정이 있으신가요?`;
-        event.target.style.border='1px solid red';
+        event.target.style.border='3px solid #524FFF';
         DayOfChoice = (event.target.textContent)*1;
         MonOfChoice = mon;
         yearOfChoice = year;

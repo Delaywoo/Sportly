@@ -8,9 +8,12 @@
 .appbar {
     background-color: #524FFF;
     height: 40px;
-    margin: 0;
-    padding: 0;
+    padding: 0px;
+    position: sticky;
+    top: 0;
     margin-bottom: 20px;
+    width: 100%;
+    z-index: 10;
 }
 
 .appbar-label {
@@ -36,7 +39,7 @@
 }
 
 #close-btn {
-    color: black;
+    color: #524FFF;
 }
 
 .material-icons {
@@ -68,12 +71,9 @@ section {
 .menu-lists {
     padding-left: 45px;
     list-style-type: none;
-    color: black;
 }
 .menu {
     margin: 30px 0;
-    font-size: 18px;
-    color: black;
 }
 .menu:nth-child(1) {
     margin-top: 50px;
@@ -83,5 +83,5 @@ section {
 }
 
 .logo {
-    width: 160px;
+    width: 80px;
 }

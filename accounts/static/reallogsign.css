@@ -10,6 +10,14 @@
     
 }
 
+.noid{
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
 .login-input{
     margin: 10px;
     border-radius: 5px;
@@ -24,7 +32,8 @@
 
 .login-input::placeholder{
     color: rgb(160, 160, 160);
-    font-weight: 300;
+    font-weight: 600;
+    margin-right: 18px;
 }
 
 .title{
