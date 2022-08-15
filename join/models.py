@@ -26,4 +26,7 @@ class JoinPass(models.Model):
     joinpassword = models.CharField(null=True, max_length=10)
     team= models.ForeignKey(Team, on_delete=models.CASCADE)
     member = models.ForeignKey(User, on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.team
 

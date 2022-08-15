@@ -11,5 +11,5 @@ class JoinModelForm(ModelForm):
 class JoinPassForm(ModelForm):
     class Meta:
         model = JoinPass
-        fields = '__all__'
+        fields = ['joinpassword']
 
