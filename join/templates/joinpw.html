@@ -24,12 +24,9 @@
 
     <h3> 본문에 추가된 첨부파일 </h3>
     {% if join_detail.photo %}
-        <!---사진 찍어주기-->
-        {{ join_detail.photo.url }}
-        <imag src = "{{ join_detail.photo.url }}" alt="" height="200">
-    
-
+        <img src="{{join_detail.photo.url}}" alt="" height="600">
     {% endif %}
+
 
     <hr>
     <form method="POST" action="{% url 'signup' %}">

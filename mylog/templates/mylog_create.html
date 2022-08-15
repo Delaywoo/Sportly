@@ -95,7 +95,7 @@
     <table>
         <div class="create_date">{{form.log_date2}}</div>
     </table>
-
+<!-- 
     <h1>오늘의 운동 만족도는 어떠셨나요?</h1>
     <ul class="feeling-list">
         <li class="emojifeeling">&#128545;</li>
@@ -114,10 +114,27 @@
                 // document.querySelectorAll(".emojifeeling")[feelingnumber].style.fontSize = "40px";
             }
         });
-    </script>
+    </script> -->
+    
+    <!--연우 : 이렇게 해봤는데,,, 라디오 버튼이 이상함 ㅠㅠ-->
+    <!-- <div>
+        <input type="radio" class="log-creates">
+        <label for="mood1">&#128545;</label>
+        <input type="radio" class="log-creates">
+        <label for="mood2">&#128533;</label>
+        <input type="radio" class="log-creates">
+        <label for="mood3">&#128528;</label>
+        <input type="radio" class="log-creates">
+        <label for="mood4">&#128578;</label>
+        <input type="radio" class="log-creates">
+        <label for="mood5">&#128540;</label>
+    </div> -->
 
     <!--views.py 에서 render()의 세번째 인자로 넘겨준 딕셔너리형 데이터는 html 내에서 \{\{}}에 갑싸진 채로 표현 가능하다.-->
     <table>
+
+        {{form.as_table}}
+
         <h2>배운점<br></h2>
             {{form.learned}}
         <h2>부족한점<br></h2>
@@ -144,4 +161,3 @@
     {% endblock content %}
 </body>
 </html>
->>>>>>> 0896b30a8ed8da04e50de5dafd52929b87d4a1da
