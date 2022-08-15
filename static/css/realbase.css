@@ -18,14 +18,36 @@
 
 .appbar-label {
     display: flex;
-    align-items: center;
     top: 30px;
     left: 30px;
     transition: .5s;
 }
 
+.greet-ment {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.login-btn {
+    text-decoration: none;
+    font-size: 15px;
+    background-color:#524fffa5 ;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 3px;
+    box-shadow: 3px 3px 3px 0 gray;
+}
+
+.moving-appbar {
+}
+
 .material-symbols-rounded {
-    padding-left: 8px;
     font-size: 40px;
   font-variation-settings:
   'FILL' 0,
@@ -69,12 +91,13 @@ section {
 }
 .menu-lists {
     list-style-type: none;
+    padding: 0;
 }
 .menu {
-    margin: 30px 0;
+    margin: 10px 0;
 }
 .menu:nth-child(1) {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 .menu a {
     text-decoration: none;
@@ -87,7 +110,7 @@ section {
     width: 160px;
 }
 
-#home-icon {
+#menu-icon {
     padding: 10px;
   font-variation-settings:
   'FILL' 0,

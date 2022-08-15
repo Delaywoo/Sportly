@@ -20,7 +20,7 @@
             <span class="material-symbols-rounded"id="menu-btn">menu</span>
             <input type="button" value="Menu2" class="menu-btn">
         </label>
-        <section>
+        <section class="moving-appbar">
             <label class="appbar-label">
                 <span class="material-symbols-rounded" id="close-btn">close</span>
                 <input type="button" value="Cancel" class="close-btn">
@@ -29,27 +29,28 @@
 
 
             {% if user.is_authenticated %}
-    {% if user.last_name %}
-    <p>안녕하세요. {{ user.last_name}}님!</p>
-    {% else %}<!--만약 last_name이 null이면 익명으로 표시하기.-->
-    <p>안녕하세요. 익명님!</p>
-    {% endif %}
-    <a href="javascript:{document.getElementById('logout').submit()}">로그아웃</a>
-    <form id="logout" method="POST" action="{% url 'logout' %}">
-        {% csrf_token %} <input type="hidden" />
-    </form>
-{% else %}
-    <a href="{% url 'signup' %}">회원가입</a>
-    <a href="{% url 'login' %}">로그인</a>
-{% endif %}
+                {% if user.last_name %}
+                <p class="greet-ment">안녕하세요. {{ user.last_name}}님!</p>
+                {% else %}<!--만약 last_name이 null이면 익명으로 표시하기.-->
+                <p class="greet-ment">안녕하세요. 익명님!</p>
+                {% endif %}
+                <a href="javascript:{document.getElementById('logout').submit()}"  class="login-btn">로그아웃</a>
+                <form id="logout" method="POST" action="{% url 'logout' %}">
+                    {% csrf_token %} <input type="hidden" />
+                </form>
+            {% else %}
+                <a href="{% url 'signup' %}" class="login-btn">회원가입</a>
+                <a href="{% url 'login' %}" class="login-btn">로그인</a>
+            {% endif %}
 
 
             <ul class="menu-lists">
-                <li class="menu"><a href="{%url 'home' %}"><span class="material-symbols-outlined" id="home-icon">home</span>HOME</a></li>
-                <li class="menu"><a href="{%url 'mylog_list' %}"><span class="material-symbols-outlined" id="mylog-icon">web_stories</span>MY LOG</a></li>
-                <li class="menu"><a href="{%url 'myteam_notice' %}">MY TEAM</a></li>
-                <li class="menu"><a href="{%url 'joinall' %}">JOIN</a></li>
-                <li class="menu"><a href="{%url 'logout' %}">LOGOUT</a></li>
+                <li class="menu"><a href="{%url 'home' %}"><span class="material-symbols-outlined" id="menu-icon">home</span>HOME</a></li>
+                <li class="menu"><a href="{%url 'mylog_list' %}"><span class="material-symbols-outlined" id="menu-icon">web_stories</span>MY LOG</a></li>
+                <li class="menu"><a href="{%url 'myteam_notice' %}"><span class="material-symbols-outlined" id="menu-icon">group</span>MY TEAM</a></li>
+                <li class="menu"><a href="{%url 'joinall' %}"><span class="material-symbols-outlined" id="menu-icon">group_add</span>JOIN</a></li>
+                <hr>
+                <!-- <li class="menu"><a href="javascript:{document.getElementById('logout').submit()}"><span class="material-symbols-outlined" id="menu-icon">logout</span>LOGOUT</a></li> -->
             </ul>
         </section>
     </main>
