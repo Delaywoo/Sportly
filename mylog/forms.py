@@ -18,7 +18,7 @@ class MylogModelForm(forms.ModelForm): #괄호 안은 forms 안의 ModelForm을 
         ('😜', '😜') 
     )
         widgets = {
-            'mood':forms.RadioSelect}
+            'mood':forms.RadioSelect()}
         def __init__(self, *args, **kwargs):
             super(MylogModelForm, self).__init__(*args, **kwargs)
 
