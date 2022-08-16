@@ -19,7 +19,4 @@ class NoticeModelForm(forms.ModelForm):
         ('훈련', '훈련'),
         )
         widgets = {
-            'name':forms.TextInput (
-                attrs={'class':'notice-input','placeholder':'제목 입력'}
-            ),
             'tag':forms.RadioSelect}

@@ -16,8 +16,7 @@
 
 <body>
     {% block content %}
-    Myteam:공지 페이지
-    <br>
+    
     <div class="teammenus">
         <a href="{% url 'myteam_notice' %}" class="teammenu-btn">공지사항</a><br>
         <a href="{% url 'myteam_log' %}" class="teammenu-btn">팀 로그</a><br>
@@ -70,9 +69,11 @@
         {% endif %}
         {% endif%}
 
-        {% endfor %}
-    </div>
+        
+        </div>
+    {% endfor %}
 
+    
     <div class = 'btndiv'>
         <a href="{% url 'noticemodelformcreate' %}" class = 'bottombtn'>공지사항 추가하기</a>
     </div>
