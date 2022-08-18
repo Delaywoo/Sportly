@@ -14,9 +14,8 @@ class Team(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     joinpw = models.CharField(null=True, max_length=10)
     photo = models.ImageField(blank=True, null=True, upload_to = 'jointeam_photo')
-    member = models.ManyToManyField(User, through='JoinPass', related_name='Member',blank=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
-
+    #member = models.ManyToManyField(User, through='JoinPass', related_name='Member',blank=True)
+    
     def __str__(self):
         return self.title
 
@@ -29,4 +28,6 @@ class JoinPass(models.Model):
     
     def __str__(self):
         return self.team
+
+
 

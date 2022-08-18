@@ -7,7 +7,7 @@ from distutils.command.clean import clean
 from django.contrib import auth
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-
+from django.views.generic import FormView
 
 # Create your views here.
 def joinall(request):
@@ -57,16 +57,23 @@ def joinpw(request, join_id):
 def joinin(request, join_id):
     joinpwd =get_object_or_404(Team, pk=join_id)
     join_detail =get_object_or_404(Team, pk=join_id)
+    joinpassword = Team.objects.get(pk =join_id)
     join_filled = JoinPassForm(request.POST)
     #real_filled = Team(request.POST)
     if join_filled.is_valid():
-        real = get_object_or_404(Team, pk = join_id)
-        realpassword = real.joinpw
-        #real_filled.joinpw = get_object_or_404(Team, pk=join_id)
+        #real = get_object_or_404(Team, pk = join_id)
+        realpassword = joinpassword.joinpw
+        #real_filled.joinpw = get_object_or_404(Team, pk=joi
+        # n_id)
         if realpassword == join_filled:
             return render(request,'myteam_log.html')
         else:
-            return render(request,'joinpw.html',{'joinpw':joinpwd, 'join_detail':join_detail})
+            return render(request,'myteam_log.html')
 
     else :
-        return render(request,'joinpw.html',{'joinpw':joinpwd, 'join_detail':join_detail})
+        return render(request,'myteam_log.html')
+
+
+#def realjoin(request, join_id):
+#        if(request.method =='POST'):
+#            post = 

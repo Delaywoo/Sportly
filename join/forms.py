@@ -1,7 +1,7 @@
 
 
 from django.forms import ModelForm
-from .models import Team,JoinPass
+from .models import *
 
 class JoinModelForm(ModelForm):
     class Meta:
@@ -12,4 +12,3 @@ class JoinPassForm(ModelForm):
     class Meta:
         model = JoinPass
         fields = ['joinpassword']
-

@@ -25,7 +25,7 @@
     width: 80%;
     max-width: 300px;
     height: 40px;
-    padding-left: 20px;
+    
     min-width: 300px;
 
 }
@@ -33,11 +33,10 @@
 .login-input::placeholder{
     color: rgb(160, 160, 160);
     font-weight: 600;
-    margin-right: 18px;
 }
 
 .title{
-    color: #524FFF;
+    color: #554AF0;
     font-family: 'Gugi', cursive;
     font-size: 50px;
     font-weight: 100;
@@ -48,7 +47,7 @@
     width: 10%;
     height: 30px;
     color: white;
-    background-color: #524FFF;
+    background-color: #554AF0;
     font-size: 15px;
     border-radius: 5px;
     margin-top: 40px;
