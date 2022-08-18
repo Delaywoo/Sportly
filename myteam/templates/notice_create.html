@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block title %}<title>마이팀 공지사항 작성</title>{% endblock title %}
-    {% block css %}<link rel="stylesheet" href="{% static '/css/notice_create.css' %}?after"> {% endblock css %}
+    {% block css %}<link rel="stylesheet" href="{% static '/css/myteam_creates.css' %}?after"> {% endblock css %}
 </head>
 <body>
     {% block content %}
@@ -36,7 +36,6 @@
             <h6>날짜 선택</h6>
             <input type="date" name="date" class="notice-writing">
 
-            <h6>제목</h6>
             {{form.tag}}
 
             <h6>공지 내용</h6>
