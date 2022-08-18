@@ -16,12 +16,12 @@ h5 {
     background-color: white;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    padding: 20px;
     box-shadow: 0 0 4px gray;
-    width: 80%;
-    max-width: 500px;
+    width: 90%;
+    max-width: 550px;
     margin: auto;
     margin-top: 15px;
+    padding-top: 15px;
 }
 
 h6 {

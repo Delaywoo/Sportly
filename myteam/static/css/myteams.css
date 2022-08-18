@@ -1,3 +1,5 @@
+
+
 .teammenu-btn {
     text-decoration: none;
     background-color: #524FFF;
@@ -35,69 +37,85 @@
     background-color: white;
 }
 
-.bottombtn{
-    background-color: #524FFF;
-    color: rgb(255, 255, 255);
-    font-weight: 600;
-    border-radius: 5px;
-    clear: both;
-    padding: 5px;
+.bottombtn:link, .bottombtn:visited{
+    color: white;
     text-decoration: none;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
 }
 
-.btndiv{
-    clear: both;
-    margin-top: 130px;
-    margin-bottom: 50px;
+.btndiv {
+    text-align: center;
+    font-size: 17px;
+    cursor: pointer;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    font-weight: 700;
+    background-color:#554AF0;
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.47);
 }
 
 
 p{
     font-size: 10px;
-    font-weight: 600;
     float: right;
-    margin-right: 20px;
     clear: both;
 }
 
 h2{
     float: left;
     margin-left: 30px;
-    
-   
-    
     font-size: 15px;
     font-weight: 600;
 }
 
 .date{
     float: left;
-    font-size: 17px;
-    color: #524FFF;
-    margin-left: 30px;
+    font-size: 13px;
     margin-bottom: 10px;
-    font-weight: 700;
-  
-   
-    
+}
+
+.notice-icon {
+    font-size: 40px;
+}
+
+.first-line, .second-line {
+    display: flex;
+    padding: 0;
+    align-items: center;
 }
 
 .check{
-    font-size: 10px;
-    float: left;
-    margin-left: 30px;
-    clear: both;    
-    margin-bottom: 5px;
+    font-size: 15px;
+    margin-left: auto;
     color: rgb(97, 97, 97);
+}
+
+.notice-type {
+    background-color: rgb(240, 240, 240);
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: bolder;
+    margin-left: 20px;
+    padding: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 .title{
     float: left;
     clear: both;
     font-size: 17px;
-    margin-left: 30px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .title2{
@@ -105,25 +123,37 @@ h2{
     clear: both;
     font-size: 15px;
     font-weight: 500;
-    margin-left: 30px;
-    margin-top: 10px;
     clear: both;
 }
 
 .realcontent{
     background-color: white;
     clear: both;
-    margin-left: 30px;
-    margin-right: 30px;
     border-radius: 5px;
     font-size: 15px;
-    padding: 20px;
-
+    text-align: left;
 }
 
 img{
     clear: both;
-    
     width: 70%;
     margin-left: -20px;
+}
+
+
+.all-notices {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.each-notice {
+    background-color: white;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.notice-writer {
+    font-size: 15px;
+    margin-left: 10px;
 }
