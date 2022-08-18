@@ -1,80 +1,4 @@
-<<<<<<< HEAD
-<!--내 로그 자세히 보기. 로그 목록에서 하나 클릭시
-하나의 로그를 자세히 띄움. 댓글을 작성 및 확인 가능-->
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>my log 자세히 보기</title>
-    <link rel="stylesheet" href="css/mylog_detail.css">
-</head>
-<body>
-    내 로그 자세히 보는 페이지
-    {% if mylog_detail.writer.last_name %}
-    <p>작성자 : {{mylog_detail.writer.last_name}}</p>
-    {% else %}<!--만약 last_name이 null이면 익명으로 표시하기.-->
-    <p>작성자 : 익명 </p>
-    {% endif %}
-    <h1>날짜2</h1>
-    {{mylog_detail.log_date2}}
-    <h3>기분</h3>
-    {{mylog_detail.mood}}
-    <h3>배운 점</h3>
-    {{mylog_detail.learned}}
-    <h3>부족한 점</h3>
-    {{mylog_detail.lacked}}
-    <h3>개선할 점</h3>
-    {{mylog_detail.improve}}
-    <h3>사진</h3>
-    {% if mylog_detail.photo %}
-        <img src="{{mylog_detail.photo.url}}" alt="" height="600">
-    {% endif %}
-    <h3>비디오</h3>
-    {% if mylog_detail.video %}
-        <video src="{{mylog_detail.video.url}}"  width="1000px" height="700px"></video>   
-    {% endif %}
 
-    <hr>
-    <h3>댓글</h3>
-    <form method="POST" action="{% url 'create_comment' mylog_detail.id %}"> 
-        {% csrf_token %}
-        {{comment_form}}
-        <input type ="submit">
-    </form>
-    <hr>
-    <!--댓글 목록들-->
-    {% for comment in mylog_detail.comment_set.all %}
-    {% if comment.writer.last_name %}
-    <p>작성자 : {{comment.writer.last_name}}</p>
-    {% else %}<!--만약 last_name이 null이면 익명으로 표시하기.-->
-    <p>작성자 : 익명 </p>
-    {% endif %}
-    <p>날짜 : {{comment.date}} </p>
-    <p></p>
-    <p>{{comment}}</p>
-    <hr>
-    {% endfor %}
-    
-    <!--연우 작성 코드-->
-    <!--<div class="up-basic-info">
-        <img class="myprofileimg" src="#"> 사용자가 등록한 프로필 사진
-        <h1>지연우</h1> innerHTML 텍스트 : 작성자 이름
-        <h3>2022.07.24</h3> 작성 날짜: #currentdate에서 입력받은 날짜
-    </div>
-
-    <div class="mylog-content">
-        <h2>배운 점</h2>
-        <h4>이런것들을 배웠습니다.</h4> innerHTML 텍스트 : 사용자가 등록한 배운점
-        <h2>부족한 점</h2>
-        <h4>이런것들이 부족합니다.</h4> innerHTML 텍스트 : 사용자가 등록한 부족한점
-        <h2>개선할 점</h2>
-        <h4>이런것들을 개선해야 합니다.</h4> innerHTML 텍스트 : 사용자가 등록한 개선할점
-    </div>-->
-
-
-</body>
 =======
 <!--내 로그 자세히 보기. 로그 목록에서 하나 클릭시
 하나의 로그를 자세히 띄움. 댓글을 작성 및 확인 가능-->
@@ -89,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block title %}<title>my log 자세히 보기</title>{% endblock title %}
     {% block css %}<link rel="stylesheet" href="{% static 'css/mylog_detail.css' %}?after">{% endblock css %}
+
 </head>
 <body>
     {% block content %}
@@ -136,5 +61,4 @@
 
     {% endblock content %}
 </body>
->>>>>>> 0896b30a8ed8da04e50de5dafd52929b87d4a1da
 </html>

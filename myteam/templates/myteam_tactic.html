@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block title %}<title>마이팀 전술</title>{% endblock title %}
     {% block css %}
-    <link rel="stylesheet" href="{% static 'css/myteams.css' %}?after"> {% endblock css %}
+    <link rel="stylesheet" href="{% static 'css/myteamstactic.css' %}?after"> {% endblock css %}
 </head>
 
 <body>
@@ -29,33 +29,40 @@
     <br>
     {% for post in posts %}
 
-    <div class='contents'>
-        {% if post.writer.last_name %}
-        <p>작성자 : {{ post.writer.last_name}}</p>
-        {% else %}
-        <!--만약 last_name이 null이면 익명으로 표시하기.-->
-        <p>작성자 : 익명 </p>
-        {% endif %}
-        <p class='title'>{{post.title}}</p> <br>
-        <p class='date'>{{post.date}}</p> <br>
-        <div class='realcontent'>{{post.contents}}</div> <br>
-        <p class = 'title2'>사진</p> <br>
-        {% if post.photo %}
-        <img src="{{post.photo.url}}" alt="" > <br>
-        {% endif %}
-        <p class = 'title2'>비디오</p> <br>
-        {% if post.video %}
-        <video src="{{post.video.url}}" ></video><br>
-        {% endif %}
+    <div class='teamlist'>
+        <div class='contents'>
+            <div class='title'>{{post.title}}</div>
+            {% if post.writer.last_name %}
+            <div class = 'name'>작성자 : {{ post.writer.last_name}}</div>
+            {% else %}
+            <!--만약 last_name이 null이면 익명으로 표시하기.-->
+            <div class = 'name'>작성자 : 익명 </div>
+            {% endif %}
+            
+            <p class='date'>{{post.date}}</p> <br>
+            <div class='realcontent'>{{post.contents}}</div> <br>
+            
+            {% if post.photo %}
+            <p class='title2'>사진</p> <br>
+            <img src="{{post.photo.url}}" alt=""> <br>
+            {% endif %}
+            
+            {% if post.video %}
+            <p class='title2'>비디오</p> <br>
+            <video src="{{post.video.url}}"></video>
+            {% endif %}
+        </div>
         {% endfor %}
-
     </div>
 
-    <div class = 'btndiv'>
-        <a href="{% url 'tacticmodelformcreate' %}" class = 'bottombtn'>전술 추가</a>
+
+    
+
+    <div class='btndiv'>
+        <a href="{% url 'tacticmodelformcreate' %}" class='bottombtn'>전술 추가</a>
     </div>
 
-   
+
     {% endblock content %}
 </body>
 

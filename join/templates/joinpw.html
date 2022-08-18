@@ -29,6 +29,7 @@
 
 
     <hr>
+    <!--
     <form method="POST" action="{% url 'signup' %}">
 
         {% csrf_token %}
@@ -36,11 +37,19 @@
         <h2>가입 비밀번호</h2>
         <input type="text" placeholder="password" name="joinpwd">
         <input type="submit" value="팀가입">
-    </form>
+    </form>-->
+    <div class="container">
+        <h5 class="my-3 border-bottom pb-2">가입 비밀번호</h5>
+        <form action="{% url 'joinin' joinpw.id%}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+            {{ joinpass.as_table }}  
+            </table>
+            <button type="submit" class="btn btn-primary">가입하기</button>
+        </form>
 
-    <hr>
 
-    <a href="{% url 'joinpassword' %}" class="btn btn-primary"> 팀가입하기</a>
+    </div>
 </body>
 
 </html>
