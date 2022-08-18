@@ -44,11 +44,17 @@
             <input type="text" name="improve" class="mylog-writing">
             
             <h6>사진</h6>
-            <input type="image" name="photo" class="mylog-writing">
+            <div class="img-upload">
+                <label for="img-file"><div>+</div></label>
+                <input type="file" name="photo" id="img-file" accept="image/*" class="mylog-writing">
+            </div>
 
             <h6>동영상</h6>
-            <input type="file" name="video" class="mylog-writing">
-
+            <div class="img-upload">
+                <label for="img-file"><div>+</div></label>
+                <input type="file" name="video" id="img-file" accept="video/mp4, video/mkv, video/x-m4v,video/*" >
+                <!--업로드한 사진 미리보기 기능 추가해야함 !-->
+            </div>
         
         </table>
         <input type="submit" value="등록하기" class="mylog-input">
