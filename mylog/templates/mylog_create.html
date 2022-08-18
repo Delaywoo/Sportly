@@ -13,151 +13,47 @@
     
 <body>
     {% block content %}
-    <!--
-    <input type ="date" id="currentDate">
-    <script>
-        document.getElementById('currentDate').value = new Date().toISOString().substring(0,10);;
-    </script>
+    <!--훈련공지 태그 선택시 입력 form이 달라져야 함.--> 
+    <!--훈련공지 태그 선택시 입력 form이 달라져야 함.--> 
+    <h5>로그 작성</h5>
 
-    <h1>오늘의 운동 만족도는 어떠셨나요?</h1>
-    <ul class="feeling-list">
-        <li class="emojifeeling">&#128545;</li>
-        <li class="emojifeeling">&#128533;</li>
-        <li class="emojifeeling">&#128528;</li>
-        <li class="emojifeeling">&#128578;</li>
-        <li class="emojifeeling">&#128540;</li>
-    </ul>
-    <script>
-        var feelingnumber; //feelingnumber 라는 변수 = 0,1,2,3,4 순서대로 만족도 높아짐!!! -> mylog에서 기록 저장시 함께 저장
-        document.querySelectorAll('.feeling-list')[0].addEventListener("click", function(e) {
-            if(e.target.dataset.id != null) {
-                feelingnumber = e.target.dataset.id;
-                // console.log(feelingnumber);
-                // 추가사항: 선택한 이모티콘의 사이즈가 40px로 커지도록!!
-                // document.querySelectorAll(".emojifeeling")[feelingnumber].style.fontSize = "40px";
-            }
-        });
-    </script>
-
-    <div class="page-background">
-        <form action="#" method="post">
-            <div>
-                <label for="learned" class="title1">배운 점</label>
-                <br>
-                <input type="text" name="learned" class="writing-can" id="learned" rows="4">-->
-                <!--js: 글자 줄 수 만큼 칸 늘어나게 하는 기능 추가해야함!-->
-            
-            <!--</div>
-            <div>
-                <label for="lacked" class="title1">부족한 점</label>
-                <br>
-                <input type="text" name="lacked" class="writing-can" id="lacked" rows="4">
-            </div>
-            <div>
-                <label for="improve" class="title1">개선할 점</label>
-                <br>
-                <input type="text" name="improve" class="writing-can" id="improve" rows="4">
-            </div>
-        </form>-->
-
-        <!--사진/동영상 업로드-->
-        <!--<h2>사진/비디오 추가</h2>
-        <div class="img-upload">
-            <label for="img-file"><div>+</div></label>
-            <input type="file" id="img-file" accept="image/*,video/mp4, video/mkv, video/x-m4v,video/*" multiple>-->
-            <!--업로드한 사진 미리보기 기능 추가해야함 !-->
-        <!--</div>-->
-
-            
-        <!--업로드한 비디오 미리보기 기능-->
-        <!--<video id="video-play"></video>
-        <script>
-            const inputFile = document.getElementById("img-file");
-            const video = document.getElementById("video-play");
-
-            inputFile.addEventListener("change", function(){
-                const file = inputFile.files[0];
-                const videourl = URL.createObjectURL(file);
-                video.setAttribute("src", videourl);
-                video.play();
-            });
-        </script>
-
-        <input type="button" class="mylogcreate-button" value="등록하기">
-    </div>
-
-    <input type="button" value="등록하기">-->
-
+    <div class="form-div">
     <form action=" " method="POST" enctype="multipart/form-data">
-    <!--이 방식은 <form> 요소가 파일이나 이미지를 서버로 전송할 때 주로 사용함 위에 enctype-->
-    {%csrf_token%}
-
-    <table>
-        <div class="create_date">{{form.log_date2}}</div>
-    </table>
-<!-- 
-    <h1>오늘의 운동 만족도는 어떠셨나요?</h1>
-    <ul class="feeling-list">
-        <li class="emojifeeling">&#128545;</li>
-        <li class="emojifeeling">&#128533;</li>
-        <li class="emojifeeling">&#128528;</li>
-        <li class="emojifeeling">&#128578;</li>
-        <li class="emojifeeling">&#128540;</li>
-    </ul>
-    <script>
-        var feelingnumber; //feelingnumber 라는 변수 = 0,1,2,3,4 순서대로 만족도 높아짐!!! -> mylog에서 기록 저장시 함께 저장
-        document.querySelectorAll('.feeling-list')[0].addEventListener("click", function(e) {
-            if(e.target.dataset.id != null) {
-                feelingnumber = e.target.dataset.id;
-                // console.log(feelingnumber);
-                // 추가사항: 선택한 이모티콘의 사이즈가 40px로 커지도록!!
-                // document.querySelectorAll(".emojifeeling")[feelingnumber].style.fontSize = "40px";
-            }
-        });
-    </script> -->
-    
-    <!--연우 : 이렇게 해봤는데,,, 라디오 버튼이 이상함 ㅠㅠ-->
-    <!-- <div>
-        <input type="radio" class="log-creates">
-        <label for="mood1">&#128545;</label>
-        <input type="radio" class="log-creates">
-        <label for="mood2">&#128533;</label>
-        <input type="radio" class="log-creates">
-        <label for="mood3">&#128528;</label>
-        <input type="radio" class="log-creates">
-        <label for="mood4">&#128578;</label>
-        <input type="radio" class="log-creates">
-        <label for="mood5">&#128540;</label>
-    </div> -->
-
-    <!--views.py 에서 render()의 세번째 인자로 넘겨준 딕셔너리형 데이터는 html 내에서 \{\{}}에 갑싸진 채로 표현 가능하다.-->
-    <table>
-
-        {{form.as_table}}
-
-        <h2>배운점<br></h2>
-            {{form.learned}}
-        <h2>부족한점<br></h2>
-            {{form.lacked}}
-        <h2>개선할점<br></h2>
-            {{form.improve}}
-
-        <h2>사진/비디오 추가</h2>
-        <div class="img-upload">
-            <label for="img-file"><div>+</div></label>
-            <input type="file" id="img-file" accept="image/*,video/mp4, video/mkv, video/x-m4v,video/*" multiple>
-            <!--업로드한 사진 미리보기 기능 추가해야함 !-->
-        </div>
+        <!--이 방식은 <form> 요소가 파일이나 이미지를 서버로 전송할 때 주로 사용함 위에 enctype-->
+            {%csrf_token%}
+        <table>
+            <!-- {{form.as_table}} -->
+            <!--위에 form말고 form.as_table로 쓰면 자동으로 table에 감싸진 것처럼 나온다.-->
+            <!--.as_p로 쓰면 자동으로 <p>에 감싸진 것처럼 나온다.-->
+            <!--.as_ul로 쓰면 자동으로 <ul>에 감싸진 것처럼 나온다.-->
         
-        {{form.photo}}
-        {{form.video}}
-        <!--위에 form말고 form.as_table로 쓰면 자동으로 table에 감싸진 것처럼 나온다.-->
-        <!--.as_p로 쓰면 자동으로 <p>에 감싸진 것처럼 나온다.-->
-        <!--.as_ul로 쓰면 자동으로 <ul>에 감싸진 것처럼 나온다.-->
-    </table>
-    <input type="submit" value="등록하기" class="mylogcreate-button">
-    </form>
+            <!-- fields=['title','date','tag','contents','photo','video','datetime','location'] -->
+            <!-- fields = ['mood','log_date2','learned','lacked','improve','photo','video'] -->
+            
+            <h6>만족도</h6>
+            {{form.mood}}
 
+            <h6>날짜 선택</h6>
+            <input type="date" name="log_date2" class="mylog-writing">
+
+            <h6>배운 점</h6>
+            <input type="text" name="learned" class="mylog-writing">
+            <h6>부족한 점</h6>
+            <input type="text" name="lacked" class="mylog-writing">
+            <h6>아쉬운 점</h6>
+            <input type="text" name="improve" class="mylog-writing">
+            
+            <h6>사진</h6>
+            <input type="image" name="photo" class="mylog-writing">
+
+            <h6>동영상</h6>
+            <input type="file" name="video" class="mylog-writing">
+
+        
+        </table>
+        <input type="submit" value="등록하기" class="mylog-input">
+        </form>
+    </div>
     {% endblock content %}
 </body>
 </html>
