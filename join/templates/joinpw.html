@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,4 +67,47 @@
 
 </html>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./join.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="team-introduce">
+        <img src="{{join_detail.photo.url}}" alt="" height="200px">
+        <h4>&#128293; 제목 &#128293;</h4>
+        <h5>{{join_detail.title}}</h5>
+        <h4>&#128293; 운동 종목 &#128293;</h4>
+        <h5>{{join_detail.subtitle}}</h5>
+        <h4>&#128293; 팀 소개 &#128293;</h4>
+        <h5>{{join_detail.body}}</h5>
+        <br>
+        
+    </div>
+
+    <div class="container">
+        <h5 class="my-3 border-bottom pb-2">가입 비밀번호</h5>
+        <form action="{% url 'joinin' joinpw.id%}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+            {{ joinpass.as_table }}  
+            </table>
+            <button type="submit" class="btn btn-primary">가입하기</button>
+    </form>
+
+
+    </div>
+</body>
+
+</html>
+
+>>>>>>> 9e042adbeb5f6589ec938371cbd0d2c307e598b3
 <!-- 가입이 완료되었습니다. MY TEAM에서 확인해 주세요 는 자바스크립트로 띄우기-->
