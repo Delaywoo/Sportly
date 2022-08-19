@@ -22,17 +22,10 @@ def home1(request):
         form = ScheduleForm()
     return render(request, 'home.html', {'schedules':schedules}, {'form':form})"""
 
-def home(request): 
-    if request.method == 'POST' or request.method == 'FILES': #해당되는 urls.py에서 요청한 대상이 post 요청을 보낸 경우
-        form = ScheduleForm(request.POST,request.FILES)
-        if form.is_valid(): #정상적인 값이 입력된 경우
-            unfinished = form.save(commit=False)
-            unfinished.writer = request.user 
-            unfinished.save()
-        return redirect('home')
-    else: #get 요청을 보낸 경우
-        form = ScheduleForm()
-    return render(request, 'home.html',{'form':form})
+def home(request):  #여기서 date_range에 오늘값이 아니라 화면에서 입력한 숫자가 들어가도록 해야함.
+    #schedules = Schedule.objects.filter(date__range=[date.today(), date.today()]) #order_by('-date')
+    schedules = Schedule.objects.filter() #.order_by('-date') #오늘 날짜만 가져옴.
+    return render(request, 'home.html', {'schedules':schedules})
 
 
 @login_required(login_url='/login/')
@@ -41,7 +34,7 @@ def schedulemodelformcreate(request):
         form = ScheduleForm(request.POST,request.FILES)
         if form.is_valid(): #정상적인 값이 입력된 경우
             unfinished = form.save(commit=False)
-            unfinished.writer = request.user 
+            unfinished.writer = request.user  #여기 unfinished.date는 입력받은 날짜를 넣어야함.
             unfinished.save()
         return redirect('home')
     else: #get 요청을 보낸 경우

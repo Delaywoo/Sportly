@@ -1,4 +1,3 @@
-
 {% extends 'realbase.html' %}
 {% load static %}
 
@@ -10,47 +9,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendar - 달력</title>
     {% block css %}
-    <link rel="stylesheet" href="{% static 'style.css' %}?  after"type = "text/css"media="all">
-    <link rel="stylesheet" href="{% static 'home.css' %}? after"type = "text/css"media="all">
+    <link rel="stylesheet" href="{% static 'style.css' %}?  after" type="text/css" media="all">
+    <link rel="stylesheet" href="{% static 'home.css' %}? after" type="text/css" media="all">
     {% endblock css %}
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c92986acdf.js" crossorigin="anonymous"></script>
 </head>
-    <body>
-        {% block content %}
 
-        <div class="main">
-            <div class="month clearfix">
-                <div class ='montharrow'>
-                    <button class = 'left'>←</button><button class = 'right'>→	</button>
-                </div>
-                
-                
-                <span class="left">
-                    <i class="fas fa-chevron-left left"></i>
-                </span>
-                <span class="right">
-                    <i class="fas fa-chevron-right right"></i>
-                </span>
+<body>
+    {% block content %}
 
-                <p class="month-name"></p>
-                
+    <div class="main">
+        <div class="month clearfix">
+            <div class='montharrow'>
+                <button class='left'>←</button><button class='right'>→ </button>
             </div>
-            <div class="weekdaycount">
-                <ul class="dayCount-list clearfix">
-                    <li>MON</li>
-                    <li>TUE</li>
-                    <li>WED</li>
-                    <li>THU</li>
-                    <li>FRI</li>
-                    <li>SAT</li>
-                    <li>SUN</li>
-                </ul>
-            </div>
-            <div class='dayCount'>
-                <ul class="day clearfix"></ul>
-            </div>
-            
+
+
+            <span class="left">
+                <i class="fas fa-chevron-left left"></i>
+            </span>
+            <span class="right">
+                <i class="fas fa-chevron-right right"></i>
+            </span>
+
+            <p class="month-name"></p>
+
+        </div>
+        <div class="weekdaycount">
+            <ul class="dayCount-list clearfix">
+                <li>MON</li>
+                <li>TUE</li>
+                <li>WED</li>
+                <li>THU</li>
+                <li>FRI</li>
+                <li>SAT</li>
+                <li>SUN</li>
+            </ul>
+        </div>
+        <div class='dayCount'>
+            <ul class="day clearfix"></ul>
         </div>
 
         <div class="todo">
@@ -62,27 +60,19 @@
                     <input type="text" id= "title" name="title" class="textToDo-text">
                     <button class="textToDo-button add">Add</button>
                 </form>
-                
-                <!--
-                <form action=" " method="POST" enctype="multipart/form-data">
-                    이 방식은 <form> 요소가 파일이나 이미지를 서버로 전송할 때 주로 사용함 위에 enctype
-                        {%csrf_token%}
-                    <table>
-                        {{form.as_table}}
-                    </table>
-                    <button type ="submit" class="textToDo-button add">Add</button>
-                    </form>-->
-                <!--<input type="text" class="textToDo-text">-->
-                <!--<button class="textToDo-button add">Add</button>-->
             </div>
             
             {% if user.is_authenticated %}
                 <div>
                     <p>일정 추가하기</p>
-                    <form action = "{% url 'home' %}"  method="POST" enctype="multipart/form-data">
+                    <form action = "{% url 'schedulemodelformcreate' %}"  method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
                         <input type="text" id= "title" name="title">
-                        <input type="date" id="date" name="date">
+                        <input type="date" id="date" name="date"  value="{{ form.date.value|default_if_none:'' }}"> <!--required pattern="\d{4}-\d{2}-\d{2}"-->
+                        
+                        <!--<input type="hidden" name="team_color" id="team_color"
+                        value="{{ form.team_color.value|default_if_none:'' }}">-->
+                        
                         <input type="submit">추가하기</input>
                     </form>
                 </div>
@@ -95,39 +85,21 @@
         </div>
 
         <div>
-            {% for schedule in schedules %}
-            날짜 : {{schedule.date}}
-            내용 : {{schedule.title}}
+            {% for schedule in schedules %} <!--home함수 사용-->
+            날짜 : {{schedule.date}} <br>
+            내용 : {{schedule.title}} <hr>
             {% endfor %}
-
         </div>
         <ul class="todoList"></ul>
     </div>
 
-    <div class = 'btndiv'>
-        <a href="{% url 'mylogmodelformcreate' %}" class = 'bottombtn'>로그 작성하기</a>
-    </div>
+
 
     <script type="text/javascript" src="{% static '/calendar.js' %}"></script>
-
-<!--MENU
-<h4>스포틀리</h4>
-<a href="{%url 'home' %}">
-    <h3>HOME</h3>
-</a>
-<a href="{%url 'mylog_list' %}">
-    <h3>MY LOG</h3>
-</a>
-<a href="{%url 'myteam_notice' %}">
-    <h3>MY TEAM</h3>
-</a>
-<a href="{%url 'joinall' %}">
-    <h3>JOIN</h3>
-</a>-->
 
 
     {% endblock content %}
 
-    </body>
+</body>
 
 </html>

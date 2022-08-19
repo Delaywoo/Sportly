@@ -16,7 +16,7 @@ class JoinPassForm(ModelForm):
 class RealJoinForm(ModelForm):
     class Meta:
         model = RealJoin
-        fields = '__all__'
+        fields = ['realjoinpw']
 
 class RealPwdForm(ModelForm):
     class Meta:

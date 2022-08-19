@@ -6,7 +6,7 @@ const pre = document.querySelector('.left');
 const next = document.querySelector('.right');
 
 const todoField = document.querySelector('.todo');
-const todoTitle = document.querySelector('.todo-title');
+const todoTitle = document.querySelector('.todo-title'); //
 const todoList = document.querySelector('.todoList');
 
 const input = document.querySelector('input[type="text"]');
@@ -26,6 +26,8 @@ let mon = currentMon;
 
 let clickEventArr = [];
 let storeToDo = [];
+
+let ymd2;
 
 function isLeapYear(year){
     return (year%4==0)&&(year%400==0||year%100!=0);
@@ -153,9 +155,10 @@ function preMonthOrYear(){
 function main(){
     setMonthTitle(year,mon);
     makeCalendar(year,mon,getDayOfMon(mon,year));
-    todoTitle.textContent = `${year}.${mon}.${currentDay} - 무슨 일정이 있으신가요?`;
+    todoTitle.textContent = `${year}.${mon}.${currentDay} - 무슨 일정이 있으신가요?`; //여기도
     displayToDoOnDays();
 }
+
 
 function displayToDoOnDays(){
     todoList.innerHTML='';
@@ -218,6 +221,10 @@ Day.addEventListener('click',(event)=>{
         clickEventArr.push(event.target);
         console.log(clickEventArr);
         input.focus();
+
+        ymd2 = new Date('${year}-${mon}-${event.target.textContent}')
+        document.getElementById("date").value=YMD2;
+
     }
     
 });
@@ -292,6 +299,13 @@ todoList.addEventListener('click',(event)=>{
         todoList.removeChild(event.target.parentNode.parentNode);
     }
 }); 
+
+
+const sche_date = year+'-'+mon+'-'+DayOfChoice;
+const YMD2 = new Date('${year}-${mon}-${event.target.textContent}')
+document.getElementById("date").value=YMD2;
+
+//${year}.${mon}.${event.target.textContent};
 
 main();
 
