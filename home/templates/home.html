@@ -1,71 +1,58 @@
-
 {% extends 'realbase.html' %}
 {% load static %}
 
 <!DOCTYPE html>
-    <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Calendar - 달력</title>
-        {% block css %}
-        <link rel="stylesheet" href="{% static 'style.css' %}?  after"type = "text/css"media="all">
-        <link rel="stylesheet" href="{% static 'home.css' %}? after"type = "text/css"media="all">
-        {% endblock css %}
-        <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
-        
-        <script src="https://kit.fontawesome.com/c92986acdf.js" crossorigin="anonymous"></script>
-    </head>
+<html lang="ko">
 
-<<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendar - 달력</title>
     {% block css %}
-    <link rel="stylesheet" href="{% static 'style.css' %}?  after"type = "text/css"media="all">
-    <link rel="stylesheet" href="{% static 'home.css' %}? after"type = "text/css"media="all">
+    <link rel="stylesheet" href="{% static 'style.css' %}?  after" type="text/css" media="all">
+    <link rel="stylesheet" href="{% static 'home.css' %}? after" type="text/css" media="all">
     {% endblock css %}
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c92986acdf.js" crossorigin="anonymous"></script>
 </head>
-    <body>
-        {% block content %}
 
-        <div class="main">
-            <div class="month clearfix">
-                <div class ='montharrow'>
-                    <button class = 'left'>←</button><button class = 'right'>→	</button>
-                </div>
-                
-                
-                <span class="left">
-                    <i class="fas fa-chevron-left left"></i>
-                </span>
-                <span class="right">
-                    <i class="fas fa-chevron-right right"></i>
-                </span>
+<body>
+    {% block content %}
 
-                <p class="month-name"></p>
-                
+    <div class="main">
+        <div class="month clearfix">
+            <div class='montharrow'>
+                <button class='left'>←</button><button class='right'>→ </button>
             </div>
-            <div class="weekdaycount">
-                <ul class="dayCount-list clearfix">
-                    <li>MON</li>
-                    <li>TUE</li>
-                    <li>WED</li>
-                    <li>THU</li>
-                    <li>FRI</li>
-                    <li>SAT</li>
-                    <li>SUN</li>
-                </ul>
-            </div>
-            <div class='dayCount'>
-                <ul class="day clearfix"></ul>
-            </div>
-            
+
+
+            <span class="left">
+                <i class="fas fa-chevron-left left"></i>
+            </span>
+            <span class="right">
+                <i class="fas fa-chevron-right right"></i>
+            </span>
+
+            <p class="month-name"></p>
+
         </div>
-        
+        <div class="weekdaycount">
+            <ul class="dayCount-list clearfix">
+                <li>MON</li>
+                <li>TUE</li>
+                <li>WED</li>
+                <li>THU</li>
+                <li>FRI</li>
+                <li>SAT</li>
+                <li>SUN</li>
+            </ul>
+        </div>
+        <div class='dayCount'>
+            <ul class="day clearfix"></ul>
+        </div>
+
+    </div>
+
     <div class="todo">
         <h1 class="todo-title">
             Today's To Do List
@@ -77,13 +64,13 @@
         <ul class="todoList"></ul>
     </div>
 
-    <div class = 'btndiv'>
-        <a href="{% url 'mylogmodelformcreate' %}" class = 'bottombtn'>로그 작성하기</a>
+    <div class='btndiv'>
+        <a href="{% url 'mylogmodelformcreate' %}" class='bottombtn'>로그 작성하기</a>
     </div>
 
     <script type="text/javascript" src="{% static '/calendar.js' %}"></script>
 
-<!--MENU
+    <!--MENU
 <h4>스포틀리</h4>
 <a href="{%url 'home' %}">
     <h3>HOME</h3>
@@ -101,6 +88,6 @@
 
     {% endblock content %}
 
-    </body>
+</body>
 
 </html>

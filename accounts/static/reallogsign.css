@@ -18,6 +18,14 @@
     margin-bottom: 50px;
 }
 
+h3{
+    margin: 0 auto;
+    margin-top: 5px;
+    font-size: 15px;
+    
+    
+}
+
 .login-input{
     margin: 10px;
     border-radius: 5px;
