@@ -1,3 +1,4 @@
+
 <!--myteam.tactic.html에서 전술 추가를 클릭하면 나오는 페이지
 피그마의 'Myteam:전술추가'페이지-->
 {% extends 'realbase.html' %}
@@ -23,27 +24,28 @@
 
     <div class="form-div">
     <form action=" " method="POST" enctype="multipart/form-data">
-        <!--이 방식은 <form> 요소가 파일이나 이미지를 서버로 전송할 때 주로 사용함 위에 enctype-->
             {%csrf_token%}
         <table>
-            <!-- {{form.as_table}} -->
-            <!--위에 form말고 form.as_table로 쓰면 자동으로 table에 감싸진 것처럼 나온다.-->
-            <!--.as_p로 쓰면 자동으로 <p>에 감싸진 것처럼 나온다.-->
-            <!--.as_ul로 쓰면 자동으로 <ul>에 감싸진 것처럼 나온다.-->
-        
-                <!-- fields=['title','date','photo','video','contents'] -->
-
             <h6>제목</h6>
             <input type="text" name="title" class="tactic-writing">
 
             <h6>날짜 선택</h6>
             <input type="date" name="date" class="tactic-writing">
             
-            <h6>사진</h6>
-            <input type="image" name="photo" class="tactic-writing">
+            <div class="medias">
+                <h6 class="media-title">🖼 사진</h6>
+                <div class="img-upload">
+                    <label for="img-file"><div>+</div></label>
+                    <input type="file" name="photo" id="img-file" accept="image/*" class="mylog-writing" required>
+                </div>
 
-            <h6>동영상</h6>
-            <input type="file" name="video" class="tactic-writing">
+                <h6 class="medias-title">🎥 동영상</h6> 
+                <div class="img-upload">
+                    <label for="img-file"><div>+</div></label>
+                    <input type="file" name="video" id="img-file" accept="video/mp4, video/mkv, video/x-m4v,video/*" >
+                    <!--업로드한 사진 미리보기 기능 추가해야함 !-->
+                </div>
+            </div>
 
             <h6>전략 설명</h6>
             <input type="text" name="contents" class="tactic-writing">

@@ -14,8 +14,5 @@ urlpatterns = [
     path('mylog_detail/<int:mylog_id>',mylog_detail,name='mylog_detail'),
     #댓글 작성
     path('create_comment/<int:mylog_id>', create_comment, name='create_comment'),
-    #mood 변경
-    path('schedulemodelformcreate/',schedulemodelformcreate,name='schedulemodelformcreate'),
-    #삭제할 경로
-    path('schedule1/',schedule1,name='schedule1'),
+    
 ]
