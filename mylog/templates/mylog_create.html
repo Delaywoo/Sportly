@@ -19,7 +19,7 @@
     <h5>로그 작성</h5>
 
     <div class="form-div">
-    <form action=" " method="POST" enctype="multipart/form-data">
+    <form action="" method="POST" enctype="multipart/form-data">
         <!--이 방식은 <form> 요소가 파일이나 이미지를 서버로 전송할 때 주로 사용함 위에 enctype-->
             {%csrf_token%}
         <table>
@@ -31,26 +31,41 @@
             <!-- fields=['title','date','tag','contents','photo','video','datetime','location'] -->
             <!-- fields = ['mood','log_date2','learned','lacked','improve','photo','video'] -->
             
-            <h6>만족도</h6>
-            {{form.mood}}
+            <div class="mood">
+                <input type="radio" name="mood" id="😡" value="😡" class="mood-choice">
+                <label for="😡">😡</label>
 
-            <h6>날짜 선택</h6>
+                <input type="radio" name="mood" id="😕" value="😕" class="mood-choice">
+                <label for="😕">😕</label>
+
+                <input type="radio" name="mood" id="😐" value="😐" class="mood-choice">
+                <label for="😐">😐</label>
+
+                <input type="radio" name="mood" id="🙂" value="🙂" class="mood-choice">
+                <label for="🙂">🙂</label>
+
+                <input type="radio" name="mood" id="😜" value="😜" class="mood-choice">
+                <label for="😜">😜</label>
+            </div>
+
+
+            <h6>📆 날짜 선택</h6>
             <input type="date" name="log_date2" class="mylog-writing">
 
-            <h6>배운 점</h6>
+            <h6>&#128395; 배운 점</h6>
             <input type="text" name="learned" class="mylog-writing">
-            <h6>부족한 점</h6>
+            <h6>&#128395; 부족한 점</h6>
             <input type="text" name="lacked" class="mylog-writing">
-            <h6>아쉬운 점</h6>
+            <h6>&#128395; 아쉬운 점</h6>
             <input type="text" name="improve" class="mylog-writing">
             
-            <h6>사진</h6>
+            <h6>🖼 사진</h6>
             <div class="img-upload">
                 <label for="img-file"><div>+</div></label>
                 <input type="file" name="photo" id="img-file" accept="image/*" class="mylog-writing">
             </div>
 
-            <h6>동영상</h6>
+            <h6>🎥 동영상</h6>
             <div class="img-upload">
                 <label for="img-file"><div>+</div></label>
                 <input type="file" name="video" id="img-file" accept="video/mp4, video/mkv, video/x-m4v,video/*" >

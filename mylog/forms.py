@@ -18,9 +18,10 @@ class MylogModelForm(forms.ModelForm): #괄호 안은 forms 안의 ModelForm을 
         ('😜', '😜') 
         )
         widgets = {
-            'mood':forms.RadioSelect}
+            'mood':forms.RadioSelect(
+                attrs = {'class': 'mood-radio'}
+            )}
         
-    
 
 class CommentForm(forms.ModelForm):
     class Meta:

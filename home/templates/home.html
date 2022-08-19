@@ -4,19 +4,18 @@
 
 <!DOCTYPE html>
     <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Calendar - 달력</title>
-        {% block css %}
-        <link rel="stylesheet" href="{% static 'style.css' %}?  after"type = "text/css"media="all">
-        <link rel="stylesheet" href="{% static 'home.css' %}? after"type = "text/css"media="all">
-        {% endblock css %}
-        <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
-        
-        <script src="https://kit.fontawesome.com/c92986acdf.js" crossorigin="anonymous"></script>
-    </head>
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar - 달력</title>
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'style.css' %}?  after"type = "text/css"media="all">
+    <link rel="stylesheet" href="{% static 'home.css' %}? after"type = "text/css"media="all">
+    {% endblock css %}
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c92986acdf.js" crossorigin="anonymous"></script>
+</head>
     <body>
         {% block content %}
 
@@ -51,9 +50,9 @@
             <div class='dayCount'>
                 <ul class="day clearfix"></ul>
             </div>
-            </ul>
-
+            
         </div>
+
         <div class="todo">
             <h1 class="todo-title">
                 Today's To Do List
@@ -100,10 +99,31 @@
             날짜 : {{schedule.date}}
             내용 : {{schedule.title}}
             {% endfor %}
+
         </div>
+        <ul class="todoList"></ul>
+    </div>
 
-        <script type="text/javascript" src="{% static '/calendar.js' %}"></script>
+    <div class = 'btndiv'>
+        <a href="{% url 'mylogmodelformcreate' %}" class = 'bottombtn'>로그 작성하기</a>
+    </div>
 
+    <script type="text/javascript" src="{% static '/calendar.js' %}"></script>
+
+<!--MENU
+<h4>스포틀리</h4>
+<a href="{%url 'home' %}">
+    <h3>HOME</h3>
+</a>
+<a href="{%url 'mylog_list' %}">
+    <h3>MY LOG</h3>
+</a>
+<a href="{%url 'myteam_notice' %}">
+    <h3>MY TEAM</h3>
+</a>
+<a href="{%url 'joinall' %}">
+    <h3>JOIN</h3>
+</a>-->
 
 
     {% endblock content %}
