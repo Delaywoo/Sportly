@@ -5,10 +5,12 @@ from .models import Comment, Mylog, Schedule
 from django.utils import timezone
 from .forms import MylogModelForm,CommentForm,ScheduleForm
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_protect
 # Create your views here.
 
 #mylog_create.html을 보여주는 함수
 @login_required(login_url='/login/')
+@csrf_protect
 def mylog_create(request):
     return render(request,'mylog_create.html')
 
@@ -64,10 +66,10 @@ def schedulemodelformcreate(request):
             unfinished = form.save(commit=False)
             unfinished.writer = request.user 
             unfinished.save()
-        return redirect('schedule1')
+        return redirect('home')
     else: #get 요청을 보낸 경우
         form = ScheduleForm() #모델폼을 그대로 찍어 보내줘라.
-    return render(request, 'schdule_create.html', {'form':form})
+    return render(request, 'home.html', {'form':form})
     
 def schedule1(request):
     posts=Schedule.objects.filter().order_by('-sche_date') #최신글 순서로 정렬

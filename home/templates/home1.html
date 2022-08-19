@@ -1,0 +1,95 @@
+{% extends 'realbase.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calendar - 달력</title>
+        {% block css %}
+        <link rel="stylesheet" href="{% static 'style.css' %}?  after"type = "text/css"media="all">
+        <link rel="stylesheet" href="{% static 'home.css' %}? after"type = "text/css"media="all">
+        {% endblock css %}
+        <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
+        
+        <script src="https://kit.fontawesome.com/c92986acdf.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        {% block content %}
+
+        <div class="main">
+            <div class="month clearfix">
+                <div class ='montharrow'>
+                    <button class = 'left'>←</button><button class = 'right'>→	</button>
+                </div>
+                
+                
+                <span class="left">
+                    <i class="fas fa-chevron-left left"></i>
+                </span>
+                <span class="right">
+                    <i class="fas fa-chevron-right right"></i>
+                </span>
+
+                <p class="month-name"></p>
+                
+            </div>
+            <div class="weekdaycount">
+                <ul class="dayCount-list clearfix">
+                    <li>MON</li>
+                    <li>TUE</li>
+                    <li>WED</li>
+                    <li>THU</li>
+                    <li>FRI</li>
+                    <li>SAT</li>
+                    <li>SUN</li>
+                </ul>
+            </div>
+            <div class='dayCount'>
+                <ul class="day clearfix"></ul>
+            </div>
+            </ul>
+
+        </div>
+        <div class="todo">
+            <h1 class="todo-title">
+                Today's To Do List
+            </h1>
+            <div class="textToDo">
+                <form action = "{% url 'home' %}"  method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="text" id= "title" name="title" class="textToDo-text">
+                    <input type="date" id="date" name="date">
+                    <button class="textToDo-button add">Add</button>
+                </form>
+                
+                
+                <!--
+                <form action=" " method="POST" enctype="multipart/form-data">
+                    이 방식은 <form> 요소가 파일이나 이미지를 서버로 전송할 때 주로 사용함 위에 enctype
+                        {%csrf_token%}
+                    <table>
+                        {{form.as_table}}
+                    </table>
+                    <button type ="submit" class="textToDo-button add">Add</button>
+                    </form>-->
+                <!--<input type="text" class="textToDo-text">-->
+                <!--<button class="textToDo-button add">Add</button>-->
+            </div>
+            <ul class="todoList">
+            {% for schedule in schedules %}
+            날짜 : {{schedule.date}}
+            내용 : {{schedule.title}}
+            {% endfor %}
+            </ul>
+        </div>
+
+        <script type="text/javascript" src="{% static '/calendar.js' %}"></script>
+
+    {% endblock content %}
+
+    </body>
+
+</html>

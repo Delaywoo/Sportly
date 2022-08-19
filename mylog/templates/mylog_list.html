@@ -17,10 +17,9 @@
     {% block content %}
 
     <!-- 하단 플로팅 버튼 : 일지 작성 -->
-    <div class="floating-button">
-        <span class="to-write">
-        <a class="create-btn" href="{% url 'mylogmodelformcreate' %}">일지 작성</a>
-        </span>
+
+    <div class = 'btndiv'>
+        <a href="{% url 'mylogmodelformcreate' %}" class = 'bottombtn'>로그 작성</a>
     </div>
 
     
@@ -31,7 +30,6 @@
     <h1>MY LOGS</h1>
 
     <div class="myalllogs">
-
     {% for post in posts %}
         <div class="onelog">
             <div class="log-garo">
@@ -39,9 +37,23 @@
                 <a class="log-date" href="{% url 'mylog_detail' post.id %}">{{post.log_date2}}</a>
             </div>
             <div class="log-content">
-                <h6>배운점 : {{post.learned}}</h6>
-                <h6>부족한점 : {{post.lacked}}</h6>
-                <h6>개선할점 : {{post.improve}}</h6>
+
+                <h5>배운 점</h5>
+                <h6>{{post.learned}}</h6>
+                <h5>부족한 점</h5>
+                <h6>{{post.lacked}}</h6>
+                <h5>개선할 점</h5>
+                <h6>{{post.improve}}</h6>
+                
+                {% if post.photo %}
+                <h5>사진</h5>
+                <img src="{{post.photo.url}}" alt="" width="200px"><br>
+                {% endif %}
+                
+                {% if post.video %}
+                <h5>비디오</h5>
+                <video src="{{post.video.url}}" width="200px"></video>
+                {% endif %}
             </div>
         </div>
     {% endfor %}

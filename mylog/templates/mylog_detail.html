@@ -1,5 +1,4 @@
 
-=======
 <!--내 로그 자세히 보기. 로그 목록에서 하나 클릭시
 하나의 로그를 자세히 띄움. 댓글을 작성 및 확인 가능-->
 {% extends 'realbase.html' %}
@@ -17,36 +16,45 @@
 </head>
 <body>
     {% block content %}
-
+    
     <div class="logbasicupper">
         <h3 class="emoji">{{mylog_detail.mood}}</h3>
-        <h1> 사용자</h1>
-        <!--<h1> {{ user.username }}</h1>-->
-        <h1>{{mylog_detail.log_date2}}</h1>
+        <h1>{{mylog_detail.writer}}</h1>
+        <h3>{{mylog_detail.log_date2}}</h3>
     </div>
+    <hr>
     
     <div class="logbasiccontent">
-        <h4>배운 점</h4>
+        <h4>&#128293; 배운 점 &#128293;</h4>
         <h5>{{mylog_detail.learned}}</h5>
-        <h4>부족한 점</h4>
+        <h4>&#128293; 부족한 점 &#128293;</h4>
         <h5>{{mylog_detail.lacked}}</h5>
-        <h4>개선할 점</h4>
+        <h4>&#128293; 개선할 점 &#128293;</h4>
         <h5>{{mylog_detail.improve}}</h5>
         <br>
-        <h4>사진</h4>
+        
         {% if mylog_detail.photo %}
+            <h4>&#128293; 사진 &#128293;</h4>
             <img src="{{mylog_detail.photo.url}}" alt="" width="90%">
         {% endif %}
-        <h4>비디오</h4>
+        
         {% if mylog_detail.video %}
-            <video src="{{mylog_detail.video.url}}"  width="90%" height="100px"></video>   
+            <h4>&#128293; 비디오 &#128293;</h4>
+            <video src="{{mylog_detail.video.url}}"  width="90%"></video>   
         {% endif %}
+
     </div>
 
     <!--댓글 목록들-->
-    {% for comment in mylog_detail.comment_set.all %}
-    <p class="each-comment">{{comment}}</p>
-    {% endfor %}
+    <div class="comment-part">
+        <h4 style="padding-bottom: 20px;">&#128171; 댓글 &#128171;</h4>
+        {% for comment in mylog_detail.comment_set.all %}
+        <div class="onecomment">
+            <p class="each-writer">&#128173; {{comment.writer}}</p>
+            <p class="each-comment">{{comment.comment}} </p>
+        </div>
+        {% endfor %}
+    </div>
     
     
     <div class="mylog_comments">
@@ -58,6 +66,8 @@
             <input id="input2" type ="submit" class="add-comment" value="댓글 추가">
         </form>
     </div>
+
+
 
     {% endblock content %}
 </body>

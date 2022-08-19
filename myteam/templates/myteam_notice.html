@@ -24,6 +24,7 @@
         <br>
     </div>
 
+
     <div class="all-notices">
         {% for post in posts %}
 
@@ -32,7 +33,18 @@
                 <div class="first-line">
                     <p class ='notice-icon'>&#128266;</p>
                     <p class ='notice-type'># {{post.tag}}</p>
-                    <p class ='check'>✅ {{post.count}}</p>
+                    <p class ='check'>✅ {{post.check_count}} </p>
+
+                    <div>
+                        <form action="{% url 'checks' post.pk %}" method='POST'>
+                          {% csrf_token %}
+                          {% if user in notice.check_users.all %} 
+                            <input type="submit" value=' 확인 취소'> <!--확인취소가 안뜨긴 하나 기능 구현엔 문제 없음.-->
+                          {% else %}
+                            <input type="submit" value='확인하기'> 
+                          {% endif %}
+                        </form>
+                    </div>
                     
                 </div>
 
@@ -87,6 +99,7 @@
     <div class = 'btndiv'>
         <a href="{% url 'noticemodelformcreate' %}" class = 'bottombtn'>공지사항 추가하기</a>
     </div>
+
 
     {% endblock content %}
 </body>
