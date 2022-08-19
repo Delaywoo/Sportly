@@ -89,7 +89,7 @@ function makeCalendar(year,mon,dayCount){
 
             //현재 년, 월 같을 때
             
-            Day.addEventListener('click',(event)=>{
+            Day.addEventListener('click',(event)=>{ //클릭시
                 if(event.target!==onlyOneList){
                     onlyOneList.style.border = '3px solid black';
                 }
