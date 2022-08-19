@@ -2,7 +2,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="ko">
+    <html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -51,15 +51,53 @@
             <ul class="day clearfix"></ul>
         </div>
 
-    </div>
+        <div class="todo">
+            <h1 class="todo-title">
+                Today's To Do List
+            </h1>
+            <div class="textToDo">
+                <form>
+                    <input type="text" id= "title" name="title" class="textToDo-text">
+                    <button class="textToDo-button add">Add</button>
+                </form>
+                
+                <!--
+                <form action=" " method="POST" enctype="multipart/form-data">
+                    이 방식은 <form> 요소가 파일이나 이미지를 서버로 전송할 때 주로 사용함 위에 enctype
+                        {%csrf_token%}
+                    <table>
+                        {{form.as_table}}
+                    </table>
+                    <button type ="submit" class="textToDo-button add">Add</button>
+                    </form>-->
+                <!--<input type="text" class="textToDo-text">-->
+                <!--<button class="textToDo-button add">Add</button>-->
+            </div>
+            
+            {% if user.is_authenticated %}
+                <div>
+                    <p>일정 추가하기</p>
+                    <form action = "{% url 'home' %}"  method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="text" id= "title" name="title">
+                        <input type="date" id="date" name="date">
+                        <input type="submit">추가하기</input>
+                    </form>
+                </div>
+            {% else %}
+                <p>로그인시 일정 추가 기능을 사용할 수 있습니다.</p>
+            {% endif %}
 
-    <div class="todo">
-        <h1 class="todo-title">
-            Today's To Do List
-        </h1>
-        <div class="textToDo">
-            <input type="text" class="textToDo-text">
-            <button class="textToDo-button add">Add</button>
+
+            <ul class="todoList"></ul>
+        </div>
+
+        <div>
+            {% for schedule in schedules %}
+            날짜 : {{schedule.date}}
+            내용 : {{schedule.title}}
+            {% endfor %}
+
         </div>
         <ul class="todoList"></ul>
     </div>

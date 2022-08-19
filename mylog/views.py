@@ -1,9 +1,9 @@
 
 import django
 from django.shortcuts import redirect, render, get_object_or_404
-from .models import Comment, Mylog, Schedule
+from .models import Comment, Mylog
 from django.utils import timezone
-from .forms import MylogModelForm,CommentForm,ScheduleForm
+from .forms import MylogModelForm,CommentForm
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect
 # Create your views here.
@@ -58,19 +58,5 @@ def create_comment(request, mylog_id):
         filled_form.save() #이제 저장하세요.
     return redirect('mylog_detail',mylog_id)
 
-@login_required(login_url='/login/')
-def schedulemodelformcreate(request): 
-    if request.method == 'POST' or request.method == 'FILES': #해당되는 urls.py에서 요청한 대상이 post 요청을 보낸 경우
-        form = ScheduleForm(request.POST,request.FILES)
-        if form.is_valid(): #정상적인 값이 입력된 경우
-            unfinished = form.save(commit=False)
-            unfinished.writer = request.user 
-            unfinished.save()
-        return redirect('home')
-    else: #get 요청을 보낸 경우
-        form = ScheduleForm() #모델폼을 그대로 찍어 보내줘라.
-    return render(request, 'home.html', {'form':form})
+
     
-def schedule1(request):
-    posts=Schedule.objects.filter().order_by('-sche_date') #최신글 순서로 정렬
-    return render(request,'schedule1.html',{'posts':posts})
