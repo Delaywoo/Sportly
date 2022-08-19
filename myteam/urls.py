@@ -12,6 +12,6 @@ urlpatterns = [
     path('teamlog_detail/',teamlog_detail,name='teamlog_detail'),
     path('noticemodelformcreate/',noticemodelformcreate ,name='noticemodelformcreate'),
     path('tacticmodelformcreate/',tacticmodelformcreate ,name='tacticmodelformcreate'),
-   
+    path('<int:notice_pk>/checks/',checks,name='checks',)
 ]
 

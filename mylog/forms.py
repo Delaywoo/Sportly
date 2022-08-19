@@ -16,25 +16,45 @@ class MylogModelForm(forms.ModelForm): #괄호 안은 forms 안의 ModelForm을 
         ('😐', '😐'),
         ('🙂', '🙂'),
         ('😜', '😜') 
-    )
+        )
         widgets = {
             'mood':forms.RadioSelect}
-        def __init__(self, *args, **kwargs):
-            super(MylogModelForm, self).__init__(*args, **kwargs)
+        
+    
 
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ['comment']
     
-    def __init__(self, *args, **kwargs):
-            super(CommentForm, self).__init__(*args, **kwargs)
+    
     
 
 class ScheduleForm(forms.ModelForm):
     class Meta:
         model = Schedule
-        fields = ['title','sche_date','color'] 
+        fields = ['date','title'] 
+        """
+        widgets = {
+            'date': forms.DateInput(
+                attrs={
+                    'class': "textToDo-text",
+                    'name': "date",
+                    "id" : "date"
+                }
+            ),
+            'title': forms.TextInput(
+                attrs={
+                    'class': "textToDo-text",
+                    'placeholder': '할 일'
+                    'name' : title,
+                    'id',"title"
+                }
+            )
+        }"""
+        
+
+        """
         COLOR_CHOICES=(
         ('red','red'),
         ('orange','orange'),
@@ -44,6 +64,6 @@ class ScheduleForm(forms.ModelForm):
         ('purple','purple')
         )
         widgets = {
-                'color':forms.RadioSelect}
-    def __init__(self, *args, **kwargs):
-            super(CommentForm, self).__init__(*args, **kwargs)    
+                'color':forms.RadioSelect}"""
+    #def __init__(self, *args, **kwargs):
+     #       super(CommentForm, self).__init__(*args, **kwargs)    

@@ -2,12 +2,14 @@
 from django.urls import path
 from .views import *
 from join.views import joinall
-from mylog.views import mylog_list
+from mylog.views import mylog_list, mylog_detail,schedulemodelformcreate
 from myteam.views import myteam_notice
 from accounts.views import login,logout,signup
 
 urlpatterns=[
-    path('', home, name="home"),
+    path('home', home, name="home"),#현재 오류뜨는 페이지
+    path('', home1, name="home1"),
+
     path('joinall', joinall, name="joinall" ),
     path('', home, name="home"),
     path('mylog_list',mylog_list,name="mylog_list"),
@@ -15,4 +17,8 @@ urlpatterns=[
     path('', login, name='login'),
     path('logout/', logout, name='logout'),
     path('signup/', signup, name='signup'),
+    path('mylog_deatail',mylog_detail,name='mylog_deatil'),
+    path('calendar/',calendar,name = 'calendar'),
+    path('schedulemodelformcreate/',schedulemodelformcreate,name='schedulemodelformcreate'),
+
 ]
