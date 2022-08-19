@@ -1,7 +1,0 @@
-{% for post in posts %}
-        <h3>작성자 : {{post.writer.last_name}}</h3>
-        <a href="{% url 'mylog_detail' post.id %}"><h3>날짜2 : {{post.log_date2}}</h3></a> <!--클릭시 detail페이지로 이동, post.id는 추가로 필요한 정보를 넘겨주는 거다.--> 
-        <h6>기분 : {{post.mood}}</h6>
-        <h6>배운점 : {{post.learned}}</h6>
-        <hr>
-{% endfor %}
