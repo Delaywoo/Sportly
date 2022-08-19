@@ -1,7 +1,7 @@
 
 from xml.dom.minidom import Comment
 from django import forms
-from .models import Mylog,Comment,Schedule
+from .models import Mylog,Comment
 #from colorfield.fields import ColorWidget
 
 class MylogModelForm(forms.ModelForm): #괄호 안은 forms 안의 ModelForm을 상속받은 클래스라는 것을 의미
@@ -27,44 +27,4 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ['comment']
-    
-    
-    
 
-class ScheduleForm(forms.ModelForm):
-    class Meta:
-        model = Schedule
-        fields = ['date','title'] 
-        """
-        widgets = {
-            'date': forms.DateInput(
-                attrs={
-                    'class': "textToDo-text",
-                    'name': "date",
-                    "id" : "date"
-                }
-            ),
-            'title': forms.TextInput(
-                attrs={
-                    'class': "textToDo-text",
-                    'placeholder': '할 일'
-                    'name' : title,
-                    'id',"title"
-                }
-            )
-        }"""
-        
-
-        """
-        COLOR_CHOICES=(
-        ('red','red'),
-        ('orange','orange'),
-        ('yellow','yellow'),
-        ('green','green'),
-        ('blue','blue'),
-        ('purple','purple')
-        )
-        widgets = {
-                'color':forms.RadioSelect}"""
-    #def __init__(self, *args, **kwargs):
-     #       super(CommentForm, self).__init__(*args, **kwargs)    

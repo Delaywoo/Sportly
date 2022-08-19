@@ -45,34 +45,4 @@ class Comment(models.Model):
     def __str__(self):
         return self.comment #제목을 title 키의 value로. 이 함수는 db를 변경시켜주는 것은 아니라서 migrate 안해줘도 된다.
 
-class Schedule(models.Model):
-    writer = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    title = models.CharField(max_length=300)
-    date = models.DateField()
-    def __str__(self):
-        return self.title #제목을 title 키의 value로. 이 함수는 db를 변경시켜주는 것은 아니라서 migrate 안해줘도 된다.
-
-    """
-    COLOR_CHOICES=(
-        ('red','red'),
-        ('orange','orange'),
-        ('yellow','yellow'),
-        ('green','green'),
-        ('blue','blue'),
-        ('purple','purple')
-    )"""
-    #color = models.TextField( choices = COLOR_CHOICES,default='red')
-    
-    
-    #color = models.ColorField.(default='#FF0000')
-"""
-class ColorField(models.CharField):
-    def __init__(self, *args, **kwargs):
-        kwargs['max_length'] = 10
-        super(ColorField, self).__init__(*args, **kwargs)
-
-    def formfield(self, **kwargs):
-        kwargs['widget'] = ColorWidget
-        return super(ColorField, self).formfield(**kwargs)
-        """
 
