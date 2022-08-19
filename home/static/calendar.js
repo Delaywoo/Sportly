@@ -27,7 +27,7 @@ let mon = currentMon;
 let clickEventArr = [];
 let storeToDo = [];
 
-let ymd2;
+
 
 function isLeapYear(year){
     return (year%4==0)&&(year%400==0||year%100!=0);
@@ -211,9 +211,23 @@ Day.addEventListener('click',(event)=>{
     if(event.target.tagName==='UL')return;
     if(event.target.className!=='disabled'){
         clearEvent();
-        todoTitle.textContent = `${year}.${mon}.${event.target.textContent}: 무슨 일정이 있으신가요?`;
+        todoTitle.textContent = `${year}-${mon}-${event.target.textContent}`;
+        
+        //var ymd = String(todoTitle)
+
+        //var sYear = ymd.substring(0,4);
+        //var sMonth = ymd.substring(5,7);
+        //var sDate = ymd.substring(8,10);
+
+        //var ymd3=new Date(sYear, sMonth-1, sDate);
+
+        //var YMD = new Date(todoTitle)
+        //document.getElementById("date").value=2022-08-20;
+        document.getElementById("date").value=todoTitle.textContent;
+        document.getElementById("date_choice").value=todoTitle.textContent;
+
         event.target.style.border='3px solid #524FFF';
-        DayOfChoice = (event.target.textContent)*1;
+        DayOfChoice = (event.target.textContent)*1; 
         MonOfChoice = mon;
         yearOfChoice = year;
         
@@ -222,8 +236,7 @@ Day.addEventListener('click',(event)=>{
         console.log(clickEventArr);
         input.focus();
 
-        ymd2 = new Date('${year}-${mon}-${event.target.textContent}')
-        document.getElementById("date").value=YMD2;
+        
 
     }
     
@@ -301,10 +314,12 @@ todoList.addEventListener('click',(event)=>{
 }); 
 
 
-const sche_date = year+'-'+mon+'-'+DayOfChoice;
-const YMD2 = new Date('${year}-${mon}-${event.target.textContent}')
-document.getElementById("date").value=YMD2;
+//const sche_date = year+'-'+mon+'-'+DayOfChoice;
+//const YMD2 = new Date('${year}-${mon}-${event.target.textContent}')
+//document.getElementById("date").value=YMD2;
 
+//ymd2 = new Date('${year}-${mon}-${event.target.textContent}')
+ //       document.getElementById("date").value=YMD2;
 //${year}.${mon}.${event.target.textContent};
 
 main();
