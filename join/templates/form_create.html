@@ -1,12 +1,42 @@
+{% extends 'realbase.html' %}
+{% load static %}
 
-<h1>Team 생성</h1>
+{% block title %}<title>팀 생성</title>{% endblock title %}
+{% block css %}<link rel="stylesheet" href="{% static 'form_create.css' %}?after"> {% endblock css %}
 
-<form action="" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <table>
-        {{ form.as_table }}  
-    </table>
-    <input type="submit" value="새 글 생성하기">
+{% block content %}
 
-</form>
+<div class="team-create">
+    <h5>&#127941; 새로운 팀 생성 &#127941;</h5>
+    <hr>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            
+            <h6>&#128204; 팀명</h6>
+            <input type="text" name="title" class="make-team">
 
+            <h6>&#128204; 운동 종목</h6>
+            <input type="text" name="subtitle" class="make-team">
+
+            <h6>&#128204; 팀 소개</h6>
+            <input type="text" name="body" class="make-team">
+                
+            <div class="medias">
+                <h6 class="media-title">&#128204; 팀 로고 사진</h6>
+                <div class="img-upload">
+                    <label for="img-file"><div>+</div></label>
+                    <input type="file" name="photo" id="img-file" accept="image/*" class="make-team">
+                </div>
+            </div>
+
+            <h6>&#128204; 비밀번호 설정</h6>
+            <input type="number" name="joinpw" class="make-team">
+
+        </table>
+
+        <input type="submit" value="팀 생성" class="maketeam-input">
+
+    </form>
+</div>
+{% endblock content %}
