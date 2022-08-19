@@ -7,8 +7,7 @@ from myteam.views import myteam_notice
 from accounts.views import login,logout,signup
 
 urlpatterns=[
-    path('home', home, name="home"),#현재 오류뜨는 페이지
-    path('', home1, name="home1"),
+    path('home', home, name="home"),
 
     path('joinall', joinall, name="joinall" ),
     path('', home, name="home"),

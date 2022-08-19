@@ -24,78 +24,7 @@
         <br>
     </div>
 
-<<<<<<< HEAD
-    <br>
-    {% for post in posts %} 
-        <hr>
-        {% if post.writer.last_name %}
-        <p>작성자 : {{ post.writer.last_name}}</p>
-        {% else %}<!--만약 last_name이 null이면 익명으로 표시하기.-->
-        <p>작성자 : 익명 </p>
-        {% endif %}
-        
-        제목 : {{post.title}} <br>
-        날짜 : {{post.date}}<br>
-        
-        
-    
-        <div>
-            <form action="{% url 'checks' post.pk %}" method='POST'>
-              {% csrf_token %}
-              {% if user in notice.check_users.all %} 
-                <input type="submit" value=' 확인 취소'> <!--확인취소가 안뜨긴 하나 기능 구현엔 문제 없음.-->
-              {% else %}
-                <input type="submit" value='확인하기'> : {{post.check_count}}
-              {% endif %}
-            </form>
-        </div>
 
-        <!--
-            <div style="display:flex;margin-left: 15px;">
-                {% if user in community.like.all %}
-                <div class="heart-like-button liked"></div>
-                {% else %}
-                <div class="heart-like-button"></div>
-                {% endif %}
-                <div id ="like_count" style="font-size: 20px;">{{community.like_count}}</div>
-            </div>
-
-        -->
-
-
-        분류 : {{post.tag}}<br>
-    
-        {% if post.tag == '일반' or post.tag == '긴급'%}
-        내용 : {{post.contents}}<br>
-        {% if post.photo %}
-            사진 :<br>
-            <img src="{{post.photo.url}}" alt="" height="600"><br>
-        {% endif %}
-        {% if post.video %}
-            비디오 :<br>
-            <video src="{{post.video.url}}"  width="1000px" height="700px"></video>  <br> 
-        {% endif %}
-        {% endif %}
-
-        {% if post.tag == '훈련' %}
-        훈련 날짜 : {{post.datetime}}<br>
-        훈련 장소 : {{post.location}}<br>
-        {% if post.photo %}
-            사진 :<br>
-            <img src="{{post.photo.url}}" alt="" height="600"><br>
-        {% endif %}
-        {% if post.video %}
-            비디오 :<br>
-            <video src="{{post.video.url}}"  width="1000px" height="700px"></video>  <br> 
-        {% endif %}
-        {% endif %}
-
-    {% endfor %}
-    <hr>
-
-
-    <a href="{% url 'noticemodelformcreate' %}">공지사항 추가하기</a>
-=======
     <div class="all-notices">
         {% for post in posts %}
 
@@ -104,7 +33,18 @@
                 <div class="first-line">
                     <p class ='notice-icon'>&#128266;</p>
                     <p class ='notice-type'># {{post.tag}}</p>
-                    <p class ='check'>✅ {{post.count}}</p>
+                    <p class ='check'>✅ {{post.check_count}} </p>
+
+                    <div>
+                        <form action="{% url 'checks' post.pk %}" method='POST'>
+                          {% csrf_token %}
+                          {% if user in notice.check_users.all %} 
+                            <input type="submit" value=' 확인 취소'> <!--확인취소가 안뜨긴 하나 기능 구현엔 문제 없음.-->
+                          {% else %}
+                            <input type="submit" value='확인하기'> 
+                          {% endif %}
+                        </form>
+                    </div>
                     
                 </div>
 
@@ -160,7 +100,7 @@
         <a href="{% url 'noticemodelformcreate' %}" class = 'bottombtn'>공지사항 추가하기</a>
     </div>
 
->>>>>>> b8e087eec415944ac37a8dd5efa8eaf53c19aada
+
     {% endblock content %}
 </body>
 
