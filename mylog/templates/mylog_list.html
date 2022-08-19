@@ -36,18 +36,13 @@
                 <a class="log-date" href="{% url 'mylog_detail' post.id %}">{{post.log_date2}}</a>
             </div>
             <div class="log-content">
-                <div class="onething">
-                    <h5>배운점</h5>
-                    <h6>{{post.learned}}</h6>
-                </div>
-                <div class="onething">
-                    <h5>부족한점</h5>
-                    <h6>{{post.lacked}}</h6>
-                </div>
-                <div class="onething">
-                    <h5>개선할점</h5>
-                    <h6>{{post.improve}}</h6>
-                </div>
+
+                <h5>배운 점</h5>
+                <h6>{{post.learned}}</h6>
+                <h5>부족한 점</h5>
+                <h6>{{post.lacked}}</h6>
+                <h5>개선할 점</h5>
+                <h6>{{post.improve}}</h6>
                 
                 {% if post.photo %}
                 <h5>사진</h5>

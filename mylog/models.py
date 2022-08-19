@@ -9,7 +9,7 @@ from django.utils import timezone
 # Create your models here.
 class Mylog(models.Model):
     writer = models.ForeignKey(User, on_delete=models.CASCADE, null=True)#writer=...(, 향후 User와 연결시 작성 예정.)
-    log_date2=models.DateTimeField(default=timezone.now )
+    log_date2=models.DateField(default=timezone.now )
     #mood=models.IntegerField() #각 이모티콘이 1~5의 값을 가짐.
     MOOD_CHOICES = (
         ('😡', '😡'),
