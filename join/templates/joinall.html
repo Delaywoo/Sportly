@@ -19,26 +19,28 @@
 
     {% block content %}
     <h3 class="title">팀 목록</h3>
-    <a href="{% url 'modelformcreate' %}"> 새 팀만들기</a><br>
+    <a href="{% url 'modelformcreate' %}" class="maketeam"> 새 팀 만들기</a><br>
 
     <div class="team-list">
+        {% for post in posts %}
         <div class='team'>
-            {% for post in posts %}
-            {% if post.photo %}
-            <img src="{{post.photo.url}}" alt="" height="600">
-            {% endif %}
-             <a href="{% url 'joinpw' post.id %}">
-             <h3>팀명: {{ post.title }} </h3>
-               <h4>날짜: {{ post.date }}</h4>
+            <div class = 'left'>
+                {% if post.photo %}
+                <img src="{{post.photo.url}}" alt="" width="120px" height="120px">
+                {% endif %}
+                <a href="{% url 'joinpw' post.id %}">
+            </div>
 
-             {{ post.subtitle }}
-             <button style=border:0>가입하기</button>
-             <hr>
-            {% endfor %}
+            <div class = 'right'>
+                <h3 class='teamname'>{{ post.title }} </h3>
+                <h4 class='date'>{{ post.date }}</h4>
+                <button style=border:0>가입하기</button>
+            </div>
         </div>
+        {% endfor %}
     </div>
 
-    
+
     {% endblock content %}
 
 
