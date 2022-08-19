@@ -1,4 +1,4 @@
-
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,33 +11,52 @@
 </head>
 
 <body>
+    <h1> 제목 </h1>
+    {{ join_detail.title }}
 
-    <div class="team-introduce">
-        <img src="{{join_detail.photo.url}}" alt="" height="200px">
-        <h4>&#128293; 제목 &#128293;</h4>
-        <h5>{{join_detail.title}}</h5>
-        <h4>&#128293; 운동 종목 &#128293;</h4>
-        <h5>{{join_detail.subtitle}}</h5>
-        <h4>&#128293; 팀 소개 &#128293;</h4>
-        <h5>{{join_detail.body}}</h5>
-        <br>
-        
-    </div>
+    <h2> 날짜 </h2>
+    {{ join_detail.date }}
 
-    <div class="container">
-        <h5 class="my-3 border-bottom pb-2">가입 비밀번호</h5>
-        <form action="{% url 'joinin' joinpw.id%}" method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            <table>
-            {{ joinpass.as_table }}  
-            </table>
-            <button type="submit" class="btn btn-primary">가입하기</button>
-    </form>
+    <h2>한줄 설명</h2>
+    {{ join_detail.subtitle }}
+
+    <h3> 훈련시간 및 설명 </h3>
+    {{ join_detail.body }}
+
+    <h3> 본문에 추가된 첨부파일 </h3>
+    {% if join_detail.photo %}
+        <img src="{{join_detail.photo.url}}" alt="" height="600">
+    {% endif %}
 
 
+    <hr>
+    <!--
+    <form method="POST" action="{% url 'signup' %}">
+
+        {% csrf_token %}
+
+        <h2>가입 비밀번호</h2>
+        <input type="text" placeholder="password" name="joinpwd">
+        <input type="submit" value="팀가입">
+    </form>-->
+
+                <!--<li><a href="{% url 'signup' %}">Sign up</a></li>-->
+        <form action="{% url 'realjoin' joinpw.id %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}  
+            <div>
+                <label for="body">입장</label><br/>
+                <table>
+                    {{ realjoin.as_table }}  
+                </table>
+                <button type="submit" class="btn btn-primary">입장하기</button>
+
+                <!--<textarea name="body" id="body" cols="10" rows="1"></textarea>-->
+            </div>
+        </form>
     </div>
 </body>
 
 </html>
+
 
 <!-- 가입이 완료되었습니다. MY TEAM에서 확인해 주세요 는 자바스크립트로 띄우기-->
