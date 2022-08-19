@@ -33,7 +33,7 @@ class Notice(models.Model):
     )
     tag= models.TextField( choices = TAG_CHOICES,default='일반')
     contents= models.TextField(null=True)
-    photo =  models.ImageField(blank=False, null=False, upload_to = 'notice_photo')
+    photo =  models.ImageField(blank=True, null=False, upload_to = 'notice_photo')
     video = models.FileField(blank=True, null=True, upload_to = 'notice_file') #파일 업로드 사이즈 최댓값은 기본 2.5mb, 따로 설정 가능.
     datetime = models.DateTimeField(default=timezone.now)
     location = models.TextField(null=True,blank=True)
