@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,11 +14,12 @@
     {% block title %} <title>Document</title>{% endblock title %}
     {% block css %} {% endblock css %}
 </head>
-<body>    
-    
+
+<body>
+
     <main class="appbar">
         <label class="appbar-label">
-            <span class="material-symbols-rounded"id="menu-btn">menu</span>
+            <span class="material-symbols-rounded" id="menu-btn">menu</span>
             <input type="button" value="Menu2" class="menu-btn">
         </label>
         <section class="moving-appbar">
@@ -29,6 +31,7 @@
 
 
             {% if user.is_authenticated %}
+
                 {% if user.last_name %}
                 <p class="greet-ment">안녕하세요. {{ user.last_name}}님!</p>
                 {% else %}<!--만약 last_name이 null이면 익명으로 표시하기.-->
@@ -41,6 +44,7 @@
             {% else %}
                 <a href="{% url 'signup' %}" class="login-btn">회원가입</a>
                 <a href="{% url 'login' %}" class="login-btn">로그인</a>
+
             {% endif %}
 
 
@@ -58,7 +62,8 @@
     <script src="{% static 'javascript/realbase.js' %}"></script>
 
 
-{% block content %}
+    {% block content %}
     {% endblock content %}
 </body>
+
 </html>

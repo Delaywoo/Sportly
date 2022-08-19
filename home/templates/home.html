@@ -1,7 +1,10 @@
+
 {% extends 'realbase.html' %}
 {% load static %}
+
 <!DOCTYPE html>
-<html lang="en">
+    <html lang="ko">
+    
 
 <head>
     <meta charset="UTF-8">
@@ -12,47 +15,45 @@
     <link rel="stylesheet" href="{% static 'home.css' %}? after"type = "text/css"media="all">
     {% endblock css %}
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap" rel="stylesheet">
-    
     <script src="https://kit.fontawesome.com/c92986acdf.js" crossorigin="anonymous"></script>
 </head>
+    <body>
+        {% block content %}
 
-<body>
-    {% block content %}
+        <div class="main">
+            <div class="month clearfix">
+                <div class ='montharrow'>
+                    <button class = 'left'>←</button><button class = 'right'>→	</button>
+                </div>
+                
+                
+                <span class="left">
+                    <i class="fas fa-chevron-left left"></i>
+                </span>
+                <span class="right">
+                    <i class="fas fa-chevron-right right"></i>
+                </span>
 
-    <div class="main">
-        <div class="month clearfix">
-            <div class ='montharrow'>
-                <button class = 'left'>←</button><button class = 'right'>→	</button>
+                <p class="month-name"></p>
+                
+            </div>
+            <div class="weekdaycount">
+                <ul class="dayCount-list clearfix">
+                    <li>MON</li>
+                    <li>TUE</li>
+                    <li>WED</li>
+                    <li>THU</li>
+                    <li>FRI</li>
+                    <li>SAT</li>
+                    <li>SUN</li>
+                </ul>
+            </div>
+            <div class='dayCount'>
+                <ul class="day clearfix"></ul>
             </div>
             
-            
-            <span class="left">
-                <i class="fas fa-chevron-left left"></i>
-            </span>
-            <span class="right">
-                <i class="fas fa-chevron-right right"></i>
-            </span>
-
-            <p class="month-name"></p>
-            
         </div>
-        <div class="weekdaycount">
-            <ul class="dayCount-list clearfix">
-                <li>MON</li>
-                <li>TUE</li>
-                <li>WED</li>
-                <li>THU</li>
-                <li>FRI</li>
-                <li>SAT</li>
-                <li>SUN</li>
-            </ul>
-        </div>
-        <div class='dayCount'>
-            <ul class="day clearfix"></ul>
-        </div>
-        </ul>
-
-    </div>
+        
     <div class="todo">
         <h1 class="todo-title">
             Today's To Do List
@@ -64,22 +65,8 @@
         <ul class="todoList"></ul>
     </div>
 
-   
-
-    <div class='homecontent'>
-        
-        <div class="mylog">
-            
-            <li class='myloglist'>이모티콘<br> 제목 내용</li>
-            <li class='myloglist'>이모티콘<br> 제목 내용</li>
-            <li class='myloglist'>이모티콘<br> 제목 내용</li>
-        </div>
-    </div>
-
-    <div class="floating-button">
-       
-        <a class="homelogcreatebtn" style="border:0"   href="{% url 'mylog_create' %}">일지 작성</a>
-        
+    <div class = 'btndiv'>
+        <a href="{% url 'mylogmodelformcreate' %}" class = 'bottombtn'>로그 작성하기</a>
     </div>
 
     <script type="text/javascript" src="{% static '/calendar.js' %}"></script>
@@ -100,8 +87,8 @@
 </a>-->
 
 
-{% endblock content %}
+    {% endblock content %}
 
-</body>
+    </body>
 
 </html>
