@@ -11,5 +11,5 @@ urlpatterns=[
     path('joinpw/<int:join_id>', joinpw, name='joinpw'),
     path('joinin/<int:join_id>', joinin, name='joinin' ),
 
-    #path('realjoin/<int:join_id',realjoin, name = 'realjoin')
+    path('realjoin/<int:join_id>',realjoin, name = 'realjoin')
 ]

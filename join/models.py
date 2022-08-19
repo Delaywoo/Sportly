@@ -13,7 +13,7 @@ class Team(models.Model):
     body = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
     joinpw = models.CharField(null=True, max_length=10)
-    photo = models.ImageField(blank=True, null=True, upload_to = 'jointeam_photo')
+    photo = models.ImageField(blank=False, null=False, upload_to = 'jointeam_photo')
     #member = models.ManyToManyField(User, through='JoinPass', related_name='Member',blank=True)
     
     def __str__(self):
@@ -29,5 +29,12 @@ class JoinPass(models.Model):
     def __str__(self):
         return self.team
 
+class RealJoin(models.Model):
+    realjoinpw = models.CharField(null=True, max_length=10)
 
+class RealPwd(models.Model):
+    realpwd= models.CharField(null=True, max_length=10)
 
+class Check(models.Model):
+    real = models.ForeignKey('RealPwd',on_delete=models.CASCADE )
+    input = models.CharField(null=True, max_length=10)

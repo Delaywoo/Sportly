@@ -48,7 +48,19 @@
             <button type="submit" class="btn btn-primary">가입하기</button>
         </form>
 
+                <!--<li><a href="{% url 'signup' %}">Sign up</a></li>-->
+        <form action="{% url 'realjoin' joinpw.id %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}  
+            <div>
+                <label for="body">입장</label><br/>
+                <table>
+                    {{ realjoin.as_table }}  
+                </table>
+                <button type="submit" class="btn btn-primary">입장하기</button>
 
+                <!--<textarea name="body" id="body" cols="10" rows="1"></textarea>-->
+            </div>
+        </form>
     </div>
 </body>
 

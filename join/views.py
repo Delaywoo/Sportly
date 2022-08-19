@@ -1,8 +1,9 @@
 
+from tkinter import E
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
-from .models import Team, JoinPass
-from .forms import JoinModelForm, JoinPassForm
+from .models import *
+from .forms import *
 from distutils.command.clean import clean
 from django.contrib import auth
 from django.contrib.auth.models import User
@@ -39,7 +40,9 @@ def joinpw(request, join_id):
     joinpwd =get_object_or_404(Team, pk=join_id)
     join_detail =get_object_or_404(Team, pk=join_id)
     joinin_form =JoinPassForm()
-    return render(request,'joinpw.html',{'joinpw':joinpwd, 'join_detail':join_detail, 'joinpass':joinin_form})
+    realjoinform=RealJoinForm()
+    return render(request,'joinpw.html',{'joinpw':joinpwd, 'join_detail':join_detail,
+     'joinpass':joinin_form, 'realjoin':realjoinform})
 
 #def joinpassword(request,join_id):
  #   if request.method == 'POST':
@@ -74,6 +77,16 @@ def joinin(request, join_id):
         return render(request,'myteam_log.html')
 
 
-#def realjoin(request, join_id):
-#        if(request.method =='POST'):
-#            post = 
+def realjoin(request, join_id):
+        
+        input = RealJoin()
+        input.pw = request.POST['realjoinpw']
+        original =get_object_or_404(Team,pk=join_id)
+        originalpw = original.joinpw
+        if input.pw == originalpw:
+                return render(request,'myteam_log.html')
+
+        else:
+            return render(request,'joinall.html')
+        
+
