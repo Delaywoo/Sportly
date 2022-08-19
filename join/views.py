@@ -61,4 +61,3 @@ def realjoin(request, join_id):
     else:
         return redirect('joinall')
         
-

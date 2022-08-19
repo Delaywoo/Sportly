@@ -1,6 +1,6 @@
 
 
-from django.forms import ModelForm
+from django.forms import ModelForm, forms
 from .models import *
 
 class JoinModelForm(ModelForm):
@@ -26,3 +26,4 @@ class CheckForm(ModelForm):
     class Meta:
         model = Check
         fields = ['input']
+

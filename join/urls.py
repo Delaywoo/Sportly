@@ -8,5 +8,5 @@ urlpatterns=[
     path('',joinall, name="joinall"),
     path('modelformcreate/', modelformcreate ,name='modelformcreate'),
     path('joinpw/<int:join_id>', joinpw, name='joinpw'),
-    path('realjoin/<int:join_id>',realjoin, name = 'realjoin')
+    path('realjoin/<int:join_id>',realjoin, name = 'realjoin'),
 ]
