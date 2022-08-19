@@ -79,15 +79,17 @@ def joinin(request, join_id):
 
 def realjoin(request, join_id):
         
-        input = RealJoin()
-        input.pw = request.POST['realjoinpw']
-        original = Team.objects.filter()
-        original =get_object_or_404(Team,pk=join_id)
-        originalpw = original.joinpw
-        if input.pw == originalpw:
-                return render(request,'myteam_log.html')
-
-        else:
-            return render(request,'joinall.html')
+    #input = RealJoin()
+    #input.pw = request.POST['realjoinpw']
+    inputpw = request.POST['realjoinpw']
+    print(inputpw)
+    #original = Team.objects.filter()
+    original = get_object_or_404(Team,pk=join_id)
+    originalpw = original.joinpw
+    print(originalpw)
+    if inputpw == originalpw:
+        return render(request,'myteam_log.html')
+    else:
+        return redirect('joinall')
         
 

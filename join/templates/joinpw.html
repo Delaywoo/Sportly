@@ -1,73 +1,4 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./join.css">
-    <title>Document</title>
-</head>
-
-<body>
-    <h1> 제목 </h1>
-    {{ join_detail.title }}
-
-    <h2> 날짜 </h2>
-    {{ join_detail.date }}
-
-    <h2>한줄 설명</h2>
-    {{ join_detail.subtitle }}
-
-    <h3> 훈련시간 및 설명 </h3>
-    {{ join_detail.body }}
-
-    <h3> 본문에 추가된 첨부파일 </h3>
-    {% if join_detail.photo %}
-        <img src="{{join_detail.photo.url}}" alt="" height="600">
-    {% endif %}
-
-
-    <hr>
-    <!--
-    <form method="POST" action="{% url 'signup' %}">
-
-        {% csrf_token %}
-
-        <h2>가입 비밀번호</h2>
-        <input type="text" placeholder="password" name="joinpwd">
-        <input type="submit" value="팀가입">
-    </form>-->
-    <div class="container">
-        <h5 class="my-3 border-bottom pb-2">가입 비밀번호</h5>
-        <form action="{% url 'joinin' joinpw.id%}" method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            <table>
-            {{ joinpass.as_table }}  
-            </table>
-            <button type="submit" class="btn btn-primary">가입하기</button>
-        </form>
-
-                <!--<li><a href="{% url 'signup' %}">Sign up</a></li>-->
-        <form action="{% url 'realjoin' joinpw.id %}" method="POST" enctype="multipart/form-data">
-            {% csrf_token %}  
-            <div>
-                <label for="body">입장</label><br/>
-                <table>
-                    {{ realjoin.as_table }}  
-                </table>
-                <button type="submit" class="btn btn-primary">입장하기</button>
-
-                <!--<textarea name="body" id="body" cols="10" rows="1"></textarea>-->
-            </div>
-        </form>
-    </div>
-</body>
-
-</html>
-
-=======
 <!DOCTYPE html>
 <html lang="en">
 
@@ -109,5 +40,4 @@
 
 </html>
 
->>>>>>> 9e042adbeb5f6589ec938371cbd0d2c307e598b3
 <!-- 가입이 완료되었습니다. MY TEAM에서 확인해 주세요 는 자바스크립트로 띄우기-->
