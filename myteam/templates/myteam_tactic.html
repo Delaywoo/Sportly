@@ -1,4 +1,3 @@
-
 <!--
     피그마의 'Myteam:팀 전술' 페이지
 -->
@@ -8,45 +7,63 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block title %}<title>마이팀 전술</title>{% endblock title %}
-    {% block css %}<link rel="stylesheet" href="{% static 'css/myteams.css' %}?after"> {% endblock css %}
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'css/myteamstactic.css' %}?after"> {% endblock css %}
 </head>
+
 <body>
     {% block content %}
-    Myteam:전술 페이지
-    <br>
+    
     <div class="teammenus">
         <a href="{% url 'myteam_notice' %}" class="teammenu-btn">공지사항</a><br>
         <a href="{% url 'myteam_log' %}" class="teammenu-btn">팀 로그</a><br>
         <a href="{% url 'myteam_tactic' %}" class="teammenu-btn">팀 전술</a><br>
-    <br>
+        <br>
     </div>
     <br>
     {% for post in posts %}
-    <hr>
-    {% if post.writer.last_name %}
-    <p>작성자 : {{ post.writer.last_name}}</p>
-    {% else %}<!--만약 last_name이 null이면 익명으로 표시하기.-->
-    <p>작성자 : 익명 </p>
-    {% endif %}
-    제목 : {{post.title}} <br> 
-    날짜 : {{post.date}} <br>
-    내용 : {{post.contents}} <br>
-    사진 : <br>
-    {% if post.photo %}
-        <img src="{{post.photo.url}}" alt="" width="300px" height="220px"> <br>
-    {% endif %}
-    비디오 :<br>
-    {% if post.video %}
-        <video src="{{post.video.url}}"  width="300px" height="220px"></video><br>   
-    {% endif %}
-    {% endfor %}
-    <hr>
-    <a href="{% url 'tacticmodelformcreate' %}">전술 추가</a>
+
+    <div class='teamlist'>
+        <div class='contents'>
+            <div class='title'>{{post.title}}</div>
+            {% if post.writer.last_name %}
+            <div class = 'name'>작성자 : {{ post.writer.last_name}}</div>
+            {% else %}
+            <!--만약 last_name이 null이면 익명으로 표시하기.-->
+            <div class = 'name'>작성자 : 익명 </div>
+            {% endif %}
+            
+            <p class='date'>{{post.date}}</p> <br>
+            <div class='realcontent'>{{post.contents}}</div> <br>
+            
+            {% if post.photo %}
+            <p class='title2'>사진</p> <br>
+            <img src="{{post.photo.url}}" alt=""> <br>
+            {% endif %}
+            
+            {% if post.video %}
+            <p class='title2'>비디오</p> <br>
+            <video src="{{post.video.url}}"></video>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+
+    
+
+    <div class='btndiv'>
+        <a href="{% url 'tacticmodelformcreate' %}" class='bottombtn'>전술 추가</a>
+    </div>
+
+
     {% endblock content %}
 </body>
+
 </html>

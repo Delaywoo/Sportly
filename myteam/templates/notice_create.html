@@ -10,23 +10,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block title %}<title>마이팀 공지사항 작성</title>{% endblock title %}
-    {% block css %} {% endblock css %}
+    {% block css %}<link rel="stylesheet" href="{% static '/css/myteam_creates.css' %}?after"> {% endblock css %}
 </head>
 <body>
     {% block content %}
     <!--훈련공지 태그 선택시 입력 form이 달라져야 함.--> 
     <!--훈련공지 태그 선택시 입력 form이 달라져야 함.--> 
+    <h4>팀명</h4>
+    <h5>공지사항 작성</h5>
+
+    <div class="form-div">
     <form action=" " method="POST" enctype="multipart/form-data">
         <!--이 방식은 <form> 요소가 파일이나 이미지를 서버로 전송할 때 주로 사용함 위에 enctype-->
             {%csrf_token%}
         <table>
-            {{form.as_table}}
+            <!-- {{form.as_table}} -->
             <!--위에 form말고 form.as_table로 쓰면 자동으로 table에 감싸진 것처럼 나온다.-->
             <!--.as_p로 쓰면 자동으로 <p>에 감싸진 것처럼 나온다.-->
             <!--.as_ul로 쓰면 자동으로 <ul>에 감싸진 것처럼 나온다.-->
+        
+            <!-- fields=['title','date','tag','contents','photo','video','datetime','location'] -->
+            <h6>제목</h6>
+            <input type="text" name="title" class="notice-writing">
+
+            <h6>날짜 선택</h6>
+            <input type="date" name="date" class="notice-writing">
+
+            {{form.tag}}
+
+            <h6>공지 내용</h6>
+            <input type="text" name="contents" class="notice-writing">
+            
+            <h6>사진</h6>
+            <input type="image" name="photo" class="notice-writing">
+
+            <h6>동영상</h6>
+            <input type="file" name="video" class="notice-writing">
+
+            <h6>훈련 시간</h6>
+            <input type="datetime-local" name="datetime" class="notice-writing">
+
+            <h6>훈련 장소</h6>
+            <input type="text" name="location" class="notice-writing">
+
+        
         </table>
-        <input type="submit" value="등록하기">
+        <input type="submit" value="등록하기" class="notice-input">
         </form>
+    </div>
     {% endblock content %}
 </body>
 

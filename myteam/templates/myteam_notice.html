@@ -1,28 +1,30 @@
-
 <!--메뉴바에서 my team을 클릭하면 """가장 먼저""" 이동하는 페이지.
 피그마의 'MyTeam:공지' 페이지이다.-->
 {% extends 'realbase.html' %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block title %}<title>My team</title>{% endblock title %}
-    {% block css%}<link rel="stylesheet" href="{% static 'css/myteams.css' %}?after"> {% endblock css%}
+    {% block css%}
+    <link rel="stylesheet" href="{% static 'css/myteams.css' %}?after"> {% endblock css%}
 </head>
+
 <body>
     {% block content %}
-    Myteam:공지 페이지
-    <br>
+    
     <div class="teammenus">
         <a href="{% url 'myteam_notice' %}" class="teammenu-btn">공지사항</a><br>
         <a href="{% url 'myteam_log' %}" class="teammenu-btn">팀 로그</a><br>
         <a href="{% url 'myteam_tactic' %}" class="teammenu-btn">팀 전술</a><br>
-    <br>
+        <br>
     </div>
 
+<<<<<<< HEAD
     <br>
     {% for post in posts %} 
         <hr>
@@ -93,6 +95,72 @@
 
 
     <a href="{% url 'noticemodelformcreate' %}">공지사항 추가하기</a>
+=======
+    <div class="all-notices">
+        {% for post in posts %}
+
+            <div class='each-notice'>
+                
+                <div class="first-line">
+                    <p class ='notice-icon'>&#128266;</p>
+                    <p class ='notice-type'># {{post.tag}}</p>
+                    <p class ='check'>✅ {{post.count}}</p>
+                    
+                </div>
+
+                <div class="second-line">
+
+                <p class = 'title'>{{post.title}}</p><br>
+                    {% if post.writer.last_name %}
+                    <p class="notice-writer">{{ post.writer.last_name}}</p>
+                    {% else %}
+                    <!--만약 last_name이 null이면 익명으로 표시하기.-->
+                    <p class="notice-writer">익명 </p>
+                    {% endif %}
+                </div>
+
+                {% if post.tag == '일반' or post.tag == '긴급'%}
+                    <div class = 'realcontent'>{{post.contents}}</div>
+                    <br>
+                    
+                    {% if post.photo %}
+                    <p class = 'title2'>사진</p> <br>
+                    <img src="{{post.photo.url}}" alt=""><br>
+                    {% endif %}
+                    
+                    {% if post.video %}
+                    <p class = 'title2'>비디오</p><br>
+                    <video src="{{post.video.url}}" width="1000px" height="700px"></video>
+                    {% endif %}
+                {% endif %}
+
+                {% if post.tag == '훈련' %}
+                훈련 날짜 : {{post.datetime}}<br>
+                훈련 장소 : {{post.location}}<br>
+                
+                {% if post.photo %}
+                사진 :<br>
+                <img src="{{post.photo.url}}" alt="" width="300px" height="220px"><br>
+                {% endif %}
+                
+                {% if post.video %}
+                비디오 :<br>
+                <video src="{{post.video.url}}" width="300px" height="220px"></video> <br>
+                {% endif %}
+                {% endif%}
+
+                <p class = 'date'>{{post.date}}</p><br>
+            
+            </div>
+            <hr>
+        {% endfor %}
+    </div>
+    
+    <div class = 'btndiv'>
+        <a href="{% url 'noticemodelformcreate' %}" class = 'bottombtn'>공지사항 추가하기</a>
+    </div>
+
+>>>>>>> b8e087eec415944ac37a8dd5efa8eaf53c19aada
     {% endblock content %}
 </body>
 

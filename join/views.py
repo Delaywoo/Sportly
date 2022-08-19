@@ -1,23 +1,21 @@
 
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
-from .models import Join, JoinPass
+from .models import Team, JoinPass
 from .forms import JoinModelForm, JoinPassForm
 from distutils.command.clean import clean
 from django.contrib import auth
 from django.contrib.auth.models import User
-
+from django.contrib.auth.decorators import login_required
+from django.views.generic import FormView
 
 # Create your views here.
 def joinall(request):
-    posts= Join.objects.all().order_by('-date')
+    posts= Team.objects.all().order_by('-date')
     return render(request, 'joinall.html', {'posts':posts})
 
 def joinpw(request):
     return render(request,'joinpw.html')
-
-def joinnew(request):
-    return render(request,'joinnew.html')
 
 
 def modelformcreate(request):
@@ -33,27 +31,49 @@ def modelformcreate(request):
 
 
 def joindetail(request, join_id):
-    join_detail =get_object_or_404(Join, pk=join_id)
+    join_detail =get_object_or_404(Team, pk=join_id)
 
     return render(request,'join_detail.html',{'join_detail':join_detail})
 
 def joinpw(request, join_id):
-    joinpwd =get_object_or_404(Join, pk=join_id)
-    join_detail =get_object_or_404(Join, pk=join_id)
+    joinpwd =get_object_or_404(Team, pk=join_id)
+    join_detail =get_object_or_404(Team, pk=join_id)
+    joinin_form =JoinPassForm()
+    return render(request,'joinpw.html',{'joinpw':joinpwd, 'join_detail':join_detail, 'joinpass':joinin_form})
 
-    return render(request,'joinpw.html',{'joinpw':joinpwd, 'join_detail':join_detail})
+#def joinpassword(request,join_id):
+ #   if request.method == 'POST':
+  #      realpassword = get_object_or_404(Team.joinpw, pk=join_id)
+   #     realpassword == get_object_or_404(JoinPass.joinpassword, pk=join_id)
+    #    return render(request,'joinall')
 
+    #else :
+     #   return render(request,'joinpw')    
+    #pwd = Team.joinpw
+    #form = JoinPassForm()
+    #return render(request, 'joinpassword.html',{'form':form})
 
-def joinpassword(request):
-    form = JoinPassForm()
-    return render(request, 'joinpassword.html',{'form':form})
-
+@login_required(login_url='/login/')
 def joinin(request, join_id):
-    if request.method == 'POST':
-        realpassword = get_object_or_404(Join.joinpw, pk=join_id)
-        realpassword == get_object_or_404(JoinPass.joinpassword, pk=join_id)
-        return render(request,'joinpassword')
+    joinpwd =get_object_or_404(Team, pk=join_id)
+    join_detail =get_object_or_404(Team, pk=join_id)
+    joinpassword = Team.objects.get(pk =join_id)
+    join_filled = JoinPassForm(request.POST)
+    #real_filled = Team(request.POST)
+    if join_filled.is_valid():
+        #real = get_object_or_404(Team, pk = join_id)
+        realpassword = joinpassword.joinpw
+        #real_filled.joinpw = get_object_or_404(Team, pk=joi
+        # n_id)
+        if realpassword == join_filled:
+            return render(request,'myteam_log.html')
+        else:
+            return render(request,'myteam_log.html')
 
     else :
-        return render(request,'joinpw')
+        return render(request,'myteam_log.html')
 
+
+#def realjoin(request, join_id):
+#        if(request.method =='POST'):
+#            post = 

@@ -10,16 +10,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block title %}<title>로그 작성 일지</title>{% endblock title %}
     {% block css %}<link rel="stylesheet" href="{% static '/css/mylog_create.css' %}?after">{% endblock css %}
-</head>
+
+
 <body>
     {% block content %}
-    <form action="" method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
+    <!--훈련공지 태그 선택시 입력 form이 달라져야 함.--> 
+    <!--훈련공지 태그 선택시 입력 form이 달라져야 함.--> 
+    <h5>로그 작성</h5>
+
+    <div class="form-div">
+    <form action=" " method="POST" enctype="multipart/form-data">
+        <!--이 방식은 <form> 요소가 파일이나 이미지를 서버로 전송할 때 주로 사용함 위에 enctype-->
+            {%csrf_token%}
         <table>
-            {{ form.as_table }} 
+            <!-- {{form.as_table}} -->
+            <!--위에 form말고 form.as_table로 쓰면 자동으로 table에 감싸진 것처럼 나온다.-->
+            <!--.as_p로 쓰면 자동으로 <p>에 감싸진 것처럼 나온다.-->
+            <!--.as_ul로 쓰면 자동으로 <ul>에 감싸진 것처럼 나온다.-->
+        
+            <!-- fields=['title','date','tag','contents','photo','video','datetime','location'] -->
+            <!-- fields = ['mood','log_date2','learned','lacked','improve','photo','video'] -->
+            
+            <h6>만족도</h6>
+            {{form.mood}}
+
+            <h6>날짜 선택</h6>
+            <input type="date" name="log_date2" class="mylog-writing">
+
+            <h6>배운 점</h6>
+            <input type="text" name="learned" class="mylog-writing">
+            <h6>부족한 점</h6>
+            <input type="text" name="lacked" class="mylog-writing">
+            <h6>아쉬운 점</h6>
+            <input type="text" name="improve" class="mylog-writing">
+            
+            <h6>사진</h6>
+            <div class="img-upload">
+                <label for="img-file"><div>+</div></label>
+                <input type="file" name="photo" id="img-file" accept="image/*" class="mylog-writing">
+            </div>
+
+            <h6>동영상</h6>
+            <div class="img-upload">
+                <label for="img-file"><div>+</div></label>
+                <input type="file" name="video" id="img-file" accept="video/mp4, video/mkv, video/x-m4v,video/*" >
+                <!--업로드한 사진 미리보기 기능 추가해야함 !-->
+            </div>
+        
         </table>
-        <input type="submit" value="등록하기">
-    </form>
+        <input type="submit" value="등록하기" class="mylog-input">
+        </form>
+    </div>
     {% endblock content %}
 </body>
 </html>
