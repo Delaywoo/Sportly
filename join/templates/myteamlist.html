@@ -1,0 +1,53 @@
+
+{% extends 'realbase.html' %}
+{% load static %}
+<!--join에서 팀 가입시 보이는 화면. 내 팀 목록이 보인다.-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./join.css">
+    <title>Document</title>
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'join.css' %}?after" type="text/css" media="all">{% endblock css %}
+    {% block title %}<title>join</title>{% endblock title %}
+</head>
+
+<body>
+
+    {% block content %}
+
+    <h3 class="title">팀 목록</h3>
+    <!--<a href="{% url 'modelformcreate' %}" class="maketeam"> 새 팀 만들기</a><br>-->
+
+    <div class="team-list">
+        {% for myteam in myteams %}
+        <div class='team'>
+            <div class = 'left'>
+                {% if myteam.photo %}
+                <img src="{{myteam.photo.url}}" alt="" width="120px" height="120px">
+                {% endif %}
+            </div>
+
+            <div class = 'right'>
+                <h3 href="{% url 'myteam_notice' %}" class='teamname'>{{ myteam.title }} </h3> 
+                <!--팀 제목 클릭시 해당 팀의 공지사항 페이지로 이동하도록 url 연결하기!!-->
+                <h4 class='subtitle'>{{ myteam.subtitle }}</h4>
+                <!--<button style=border:0>가입하기</button>-->
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+    {% endblock content %}
+
+
+
+
+</body>
+
+</html>
