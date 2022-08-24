@@ -72,12 +72,12 @@ def checks(request, notice_pk):
         notice = get_object_or_404(Notice, pk=notice_pk)
 
         if notice.check_users.filter(pk=request.user.pk).exists(): #해당 게시글을 좋아요한 사람중에 pk가 현재 유저의 pk랑 같은 것이 존재하는지 하지 않는지를 판단한다
-           notice.check_users.remove(request.user)
+           notice.check_users.remove(request.user) #왜 여기가 실행되지 않지?
            notice.check_count-=1
            notice.save()
             #notice.check_users.remove(request.user)
         else:
-            notice.check_users.add(request.user)
+            notice.check_users.add(request.user) #왜 여기ㄴ가 실행되지 않지?
             notice.check_count+=1
             notice.save()
         return redirect('myteam_notice') # return redirect('articles:index')
