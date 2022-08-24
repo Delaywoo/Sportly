@@ -21,10 +21,10 @@
 
     <div class="container">
         <h4 class="my-3 border-bottom pb-2">가입 비밀번호</h4>
-        <form action="{% url 'joinin' joinpw.id%}" method="POST" enctype="multipart/form-data">
+        <form action="{% url 'realjoin' joinpw.id %}" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            <input type="password" pattern="[0-9]*" inputmode="numeric" name="joinpassword" class="make-team">
-            <button type="submit" class="btn btn-primary">가입하기</button>
+            <input type="password" pattern="[0-9]*" inputmode="numeric" name="realjoinpw" class="make-team">
+            <button type="submit"  class="btn btn-primary">가입하기</button>
         </form>
     </div>
 
