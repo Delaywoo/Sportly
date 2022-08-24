@@ -28,6 +28,11 @@ let clickEventArr = [];
 let storeToDo = [];
 
 
+function deleteDiv() {
+    const delcontent = document.getElementById('real');
+    delcontent.remove();
+ }
+  
 
 function isLeapYear(year){
     return (year%4==0)&&(year%400==0||year%100!=0);
@@ -155,7 +160,7 @@ function preMonthOrYear(){
 function main(){
     setMonthTitle(year,mon);
     makeCalendar(year,mon,getDayOfMon(mon,year));
-    todoTitle.textContent = `${year}.${mon}.${currentDay} - 무슨 일정이 있으신가요?`; //여기도
+    todoTitle.textContent = `${year}-${mon}-${currentDay}`; //여기도
     displayToDoOnDays();
 }
 
