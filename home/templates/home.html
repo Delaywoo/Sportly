@@ -55,6 +55,7 @@
             <h1 class="todo-title">
                 Today's To Do List
             </h1>
+            
             <div class="textToDo">
                 <form>
                     <input type="text" id= "title" name="title" class="textToDo-text">
@@ -68,14 +69,17 @@
                     <form action = "{% url 'schedulemodelformcreate' %}"  method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
                         <input type="text" id= "title" name="title">
-                        <input type="date" id="date" name="date"  value="{{ form.date.value|default_if_none:'' }}"> <!--required pattern="\d{4}-\d{2}-\d{2}"-->
+                        <input type="text" id="date" name="date" > <!--required pattern="\d{4}-\d{2}-\d{2}"-->
                         
+                        <!--value="{{ form.date|default_if_none:'' }}"-->
                         <!--<input type="hidden" name="team_color" id="team_color"
                         value="{{ form.team_color.value|default_if_none:'' }}">-->
                         
-                        <input type="submit">추가하기</input>
+                        <input type="submit" value="추가하기"></input>
+
                     </form>
                 </div>
+
             {% else %}
                 <p>로그인시 일정 추가 기능을 사용할 수 있습니다.</p>
             {% endif %}
@@ -83,6 +87,13 @@
 
             <ul class="todoList"></ul>
         </div>
+
+        <form action ="{% url 'schedule_list' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" id="date_choice" name="date_choice" >
+            <input type="submit" value="일정검색">
+        </form>
+
 
         <div>
             {% for schedule in schedules %} <!--home함수 사용-->

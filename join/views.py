@@ -47,7 +47,6 @@ def joinpw(request, join_id):
 
 @login_required(login_url='/login/')
 def realjoin(request, join_id):
-        
     #input = RealJoin()
     #input.pw = request.POST['realjoinpw']
     inputpw = request.POST['realjoinpw']
@@ -57,7 +56,7 @@ def realjoin(request, join_id):
     originalpw = original.joinpw
     print(originalpw)
     if inputpw == originalpw:
-        return render(request,'myteam_log.html')
+        return render(request,'myteam_all.html')
     else:
         return redirect('joinall')
         

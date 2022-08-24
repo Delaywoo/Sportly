@@ -19,5 +19,5 @@ urlpatterns=[
     path('calendar/',calendar,name = 'calendar'),
     path('schedulemodelformcreate/',schedulemodelformcreate,name='schedulemodelformcreate'),
     path('schedule1/',schedule1,name='schedule1'),
-
+    path('schedule_list/',schedule_list,name='schedule_list'),
 ]

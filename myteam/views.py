@@ -5,12 +5,21 @@ from .models import Tactic,Notice
 from django.utils import timezone
 from .forms import TacticModelForm,NoticeModelForm
 from django.contrib.auth.decorators import login_required
+from join.models import Team
+from mylog.models import Mylog
+
 # Create your views here.
+
+@login_required(login_url='/login/')
+def myteam_all(request):
+    #myteam= 가입하기 비밀번호 일치한 팀 나타내기
+    return render(request, 'myteam_all.html')
 
 @login_required(login_url='/login/')
 def myteam_log(request):
     #팀원들의 log 모아오기.
-    return render(request,'myteam_log.html')
+    logs= Mylog.objects.all().order_by('-date')
+    return render(request,'myteam_log.html',{'logs':logs})
 
 @login_required(login_url='/login/')
 def myteam_notice(request):

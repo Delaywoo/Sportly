@@ -1,0 +1,40 @@
+my team 목록을 표시하는 창
+공지사항 옆에 팀 로그 표시를 삭제해서 삭제 안한 거 받아서 복붙하기
+가입하기 한 팀만 이 페이지에 rendering 하기
+rendering 한 애들 누르면 myteam_log.html 로 연결시키기 
+ 
+{% extends 'realbase.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}<title>마이팀 list</title>{% endblock title %}
+    {% block css %}<link rel="stylesheet" href="{% static 'css/myteams.css' %}?after"> {% endblock css %}
+</head>
+<body>
+    {% block content %}
+    {% for post in posts %}
+    <div class='team'>
+        <div class = 'left'>
+            {% if post.photo %}
+            <img src="{{post.photo.url}}" alt="" width="120px" height="120px">
+            {% endif %}
+            <a href="{% url 'joinpw' post.id %}">
+        </div>
+
+        <div class = 'right'>
+            <h3 class='teamname'>{{ post.title }} </h3>
+            <h4 class='subtitle'>{{ post.subtitle }}</h4>
+            <button style=border:0>가입하기</button>
+        </div>
+    </div>
+    {% endfor %}
+    
+    {% endblock content %}
+</body>
+
+</html>
