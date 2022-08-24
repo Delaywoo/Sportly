@@ -14,7 +14,7 @@ class Team(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     joinpw = models.CharField(null=True, max_length=10)
     photo = models.ImageField(blank=False, null=False, upload_to = 'jointeam_photo')
-    #member = models.ManyToManyField(User, through='JoinPass', related_name='Member',blank=True)
+    member = models.ManyToManyField(User, related_name='Member',blank=True) #through='JoinPass'
     
     def __str__(self):
         return self.title

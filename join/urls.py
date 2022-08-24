@@ -9,4 +9,7 @@ urlpatterns=[
     path('modelformcreate/', modelformcreate ,name='modelformcreate'),
     path('joinpw/<int:join_id>', joinpw, name='joinpw'),
     path('realjoin/<int:join_id>',realjoin, name = 'realjoin'),
+
+    path('myteamlist', myteamlist, name='myteamlist'),
+    #path('realjoin/<int:join_id',realjoin, name = 'realjoin')
 ]

@@ -254,3 +254,71 @@ body{
     margin: 0 auto;
     width: 370px;
 }
+
+.realinput{
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    border: 3px solid rgb(210, 218, 255);
+    width: 70%;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.addbutton{
+    background-color: white;
+    font-weight: 600;
+    border: none;
+    font-size: 15px;
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.showbtn{
+    background-color: rgb(87, 76, 247);
+    color: white;
+    font-weight: 600;
+    border: none;
+    font-size: 15px;
+    width: 170px;
+    border-radius: 20px;
+    padding: 6px;
+    
+
+}
+
+.realcontent{
+    background-color: white;
+    width: 80%;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 5px;
+    height: 100px;
+
+    
+
+}
+
+.contentdate{
+    font-size: 15px;
+    color: #8999f3;
+    font-weight: 600;
+    float: left;
+    margin-left: 10px;
+}
+
+.contentcontent{
+    margin-top: 10px;
+    border-radius: 5px;
+    padding-left: 0px;
+    clear: both;
+    text-align: left;
+    margin-left: 10px;
+
+}
+
+.loginplease{
+    color: white;
+    font-weight: 600;
+}

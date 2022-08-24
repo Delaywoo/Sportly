@@ -14,9 +14,9 @@ class NoticeModelForm(forms.ModelForm):
         fields=['title','date','tag','contents','photo','video','datetime','location']
 
         TAG_CHOICES = (
-        ('긴급 공지', '긴급 공지'),
-        ('일반 공지', '일반 공지'),
-        ('훈련 공지', '훈련 공지'),
+        ('긴급', '긴급'),
+        ('일반', '일반'),
+        ('훈련', '훈련'),
         )
         widgets = {
             'tag':forms.RadioSelect}

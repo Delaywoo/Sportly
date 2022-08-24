@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'realbase.html' %}
 {% load static %}
 
@@ -30,3 +31,38 @@
 
 {% endblock content %}
 
+=======
+{% extends 'realbase.html' %}
+{% load static %}
+
+{% block title %}<title>팀 생성</title>{% endblock title %}
+{% block css %}<link rel="stylesheet" href="{% static 'joindetail.css' %}?after"> {% endblock css %}
+
+{% block content %}
+
+    <div class="team-introduce">
+        <img src="{{join_detail.photo.url}}" alt="" height="150px">
+        <br>
+        <h4>&#128204; 팀명 </h4>
+        <h5>{{join_detail.title}}</h5>
+        <h4>&#128204; 운동 종목 </h4>
+        <h5>{{join_detail.subtitle}}</h5>
+        <h4>&#128204; 팀 소개 </h4>
+        <h5>{{join_detail.body}}</h5>
+        <br>
+        
+    </div>
+
+    <div class="container">
+        <h4 class="my-3 border-bottom pb-2">가입 비밀번호</h4>
+        <form action="{% url 'realjoin' joinpw.id %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="password" pattern="[0-9]*" inputmode="numeric" name="realjoinpw" class="make-team">
+            <button type="submit"  class="btn btn-primary">가입하기</button>
+        </form>
+    </div>
+
+{% endblock content %}
+
+<!-- 가입이 완료되었습니다. MY TEAM에서 확인해 주세요 는 자바스크립트로 띄우기-->
+>>>>>>> 824654cdc82fa44a29563e6a1b0b289e94dac559
