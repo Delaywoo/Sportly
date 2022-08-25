@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block title %}<title>마이팀 로그</title>{% endblock title %}
-    {% block css %}<link rel="stylesheet" href="{% static 'css/mylog_list.css' %}?after">{% endblock css %}
+    {% block css %}<link rel="stylesheet" href="{% static 'css/myteams.css' %}?after">{% endblock css %}
 </head>
 <body>
     {% block content %}
@@ -67,6 +67,41 @@
 
     </div>
     {% endblock content %}
+
+
+    
+    <div class="myalllogs">
+        {% for post in posts %}
+            <div class="onelog">
+                <div class="log-garo">
+                    <div class="log-emotion">{{post.mood}}</div>
+                    <a class="log-date" href="{% url 'mylog_detail' post.id %}">{{post.log_date2}}</a>
+                </div>
+                <div class="log-content">
+                    <h5>작성자</h5>
+                    <h6>{{post.writer}}</h6>
+                    <h5>배운 점</h5>
+                    <h6>{{post.learned}}</h6>
+                    <h5>부족한 점</h5>
+                    <h6>{{post.lacked}}</h6>
+                    <h5>개선할 점</h5>
+                    <h6>{{post.improve}}</h6>
+                    
+                    {% if post.photo %}
+                    <h5>사진</h5>
+                    <img src="{{post.photo.url}}" alt="" width="200px"><br>
+                    {% endif %}
+                    
+                    {% if post.video %}
+                    <h5>비디오</h5>
+                    <video src="{{post.video.url}}" width="200px"></video>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    
+        </div>
+    
 </body>
 
 </html>
