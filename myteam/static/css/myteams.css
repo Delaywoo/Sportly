@@ -96,9 +96,10 @@ h2{
 }
 
 .check{
-    font-size: 15px;
-    margin-left: auto;
-    color: rgb(97, 97, 97);
+    font-size: 18px;
+    margin-left: 300%;
+    background-color: rgba(0,0,0,0);
+    border: none;
 }
 
 .notice-type {

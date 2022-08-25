@@ -109,3 +109,10 @@ input[type=radio]:checked + label {
 .media-title {
     width: 50%;
 }
+
+.cautions {
+    font-size: 15px;
+    color: #524FFF;
+    margin: 5px;
+    font-weight: bold;
+}

@@ -2,7 +2,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-    <html lang="ko">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -55,53 +55,59 @@
             <h1 class="todo-title">
                 Today's To Do List
             </h1>
-            
-            <div class="textToDo">
+
+            <div class="hide">
                 <form>
-                    <input type="text" id= "title" name="title" class="textToDo-text">
+                    <input type="text" id="title" name="title" class="textToDo-text">
                     <button class="textToDo-button add">Add</button>
                 </form>
             </div>
-            
-            {% if user.is_authenticated %}
-                <div>
-                    <p>일정 추가하기</p>
-                    <form action = "{% url 'schedulemodelformcreate' %}"  method="POST" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        <input type="text" id= "title" name="title">
-                        <input type="text" id="date" name="date" > <!--required pattern="\d{4}-\d{2}-\d{2}"-->
-                        
-                        <!--value="{{ form.date|default_if_none:'' }}"-->
-                        <!--<input type="hidden" name="team_color" id="team_color"
-                        value="{{ form.team_color.value|default_if_none:'' }}">-->
-                        
-                        <input type="submit" value="추가하기"></input>
 
-                    </form>
-                </div>
+            {% if user.is_authenticated %}
+            <div>
+
+                <form action="{% url 'schedulemodelformcreate' %}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="text" id="title" name="title" class='realinput'>
+                    <input type="text" class='hide' id="date" name="date">
+                    <!--required pattern="\d{4}-\d{2}-\d{2}"-->
+
+                    <!--value="{{ form.date|default_if_none:'' }}"-->
+                    <!--<input type="hidden" name="team_color" id="team_color"
+                        value="{{ form.team_color.value|default_if_none:'' }}">-->
+
+                    <input type="submit" value="추가하기" class="addbutton"></input>
+
+                </form>
+            </div>
 
             {% else %}
-                <p>로그인시 일정 추가 기능을 사용할 수 있습니다.</p>
+            <p class='loginplease'>로그인시 일정 추가 기능을 사용할 수 있습니다.</p>
             {% endif %}
 
 
-            <ul class="todoList"></ul>
+            <!-- <ul class="todoList"></ul> -->
         </div>
 
-        <form action ="{% url 'schedule_list' %}" method="POST" enctype="multipart/form-data">
+        <form action="{% url 'schedule_list' %}" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            <input type="text" id="date_choice" name="date_choice" >
-            <input type="submit" value="일정검색">
+            <input type="text" class='hide' id="date_choice" name="date_choice">
+            <input type="submit" value="선택 날짜 일정보기" class='showbtn'>
         </form>
 
 
-        <div>
-            {% for schedule in schedules %} <!--home함수 사용-->
-            날짜 : {{schedule.date}} <br>
-            내용 : {{schedule.title}} <hr>
-            {% endfor %}
+        {% for schedule in schedules %}
+        <!--home함수 사용-->
+        <div class='realcontent' id = 'real'>
+            <p class='contentdate'>{{schedule.date}}</p> <br>
+            <p class='contentcontent'>{{schedule.title}}</p> <br>
+
         </div>
-        <ul class="todoList"></ul>
+        {% endfor %}
+
+        <div class='hide'>
+            <ul class="todoList"></ul>
+        </div>
     </div>
 
 
@@ -110,6 +116,8 @@
 
 
     {% endblock content %}
+
+    
 
 </body>
 
