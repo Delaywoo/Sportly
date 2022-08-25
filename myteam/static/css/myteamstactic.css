@@ -178,16 +178,16 @@ body{
   background-color: #ffffff;
   width: 350px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 20px;
   margin-bottom: 20px;
   margin-top: 10;
   border-radius: 15px;
 }
 
 .name{
-    float: left;
+    float: right;
     font-weight: 500;
-    font-size: 12px;
+    font-size: 15px;
     color: gray;
     margin-top: 3px;
 }
@@ -204,6 +204,7 @@ body{
   clear: both;
   padding: 5px;
   text-decoration: none;
+  font-size: 20px;
 }
 
 .btndiv {
@@ -230,11 +231,10 @@ h2 {
 
 .date {
   float: left;
-  font-size: 5px;
+  font-size: 15px;
   color: #524fff;
   margin-left: 5px;
   margin-bottom: 10px;
-  font-weight: 500;
 }
 
 .check {
@@ -249,10 +249,9 @@ h2 {
 .title {
   float: left;
   clear: both;
-  font-weight: 700;
-  font-size: 17px;
-  margin-left: 5px;
-  margin-right: 170px;
+  font-weight: bold;
+  font-size: 20px;
+  display: inline;
 }
 
 .title2 {
@@ -268,14 +267,15 @@ h2 {
   background-color: white;
   clear: both;
   border-radius: 5px;
-  font-size: 10px;
+  font-size: 15px;
   padding: 5px;
+  font-size: 18px;
   text-align: left;
 }
 
 img {
   clear: both;
-
+  margin-bottom: 20px;
   width: 70%;
   margin-left: -20px;
 }

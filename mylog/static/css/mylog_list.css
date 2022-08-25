@@ -2,6 +2,24 @@
     text-align: center;
 }
 
+.teammenu-btn {
+    text-decoration: none;
+    background-color: #524fff;
+    display: inline-block;
+    text-align: center;
+    color: white;
+    width: 100px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+  }
+
 .floating-button {
     display: flex;
     position: fixed;

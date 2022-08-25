@@ -2,7 +2,7 @@ from django.db import models
 from django.conf import settings
 from django.contrib import auth
 from django.contrib.auth.models import User 
-
+from myteam.models import Notice, Tactic
 
 
 
@@ -14,8 +14,9 @@ class Team(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     joinpw = models.CharField(null=True, max_length=10)
     photo = models.ImageField(blank=False, null=False, upload_to = 'jointeam_photo')
-    member =  models.ManyToManyField(User, related_name='Member',blank=True) #through='JoinPass'
-    
+    member = models.ManyToManyField(User, related_name='Member',blank=True) #through='JoinPass'
+    notices= models.ManyToManyField(Notice, related_name='Notice',blank=True)
+    tactics = models.ManyToManyField(Tactic,related_name="Tactic",blank=True)
     def __str__(self):
         return self.title
 

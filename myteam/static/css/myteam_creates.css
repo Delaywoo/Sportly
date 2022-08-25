@@ -171,4 +171,14 @@ input[type=radio]:checked + label {
 .media-title {
     width: 50%;
 }
+<<<<<<< HEAD
 >>>>>>> e1ca5ccf8a1745cd909e9c7ac231c5a12d74187f
+=======
+
+.cautions {
+    font-size: 15px;
+    color: #524FFF;
+    margin: 5px;
+    font-weight: bold;
+}
+>>>>>>> 6b016d6091b50a01cb186639ec7e352339914692
