@@ -1,3 +1,73 @@
+<<<<<<< HEAD
+<!--
+    피그마의 'Myteam:팀 전술' 페이지
+-->
+
+{% extends 'realbase.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}<title>마이팀 전술</title>{% endblock title %}
+    {% block css %}
+    <link rel="stylesheet" href="{% static 'css/myteamstactic.css' %}?after"> {% endblock css %}
+</head>
+
+<body>
+    {% block content %}
+    
+    <div class="teammenus">
+        <a href="{% url 'myteam_notice' join.id %}" class="teammenu-btn">공지사항</a><br>
+        <a href="{% url 'myteam_log' %}" class="teammenu-btn">팀 로그</a><br>
+        <a href="{% url 'myteam_tactic' join.id %}" class="teammenu-btn">팀 전술</a><br>
+        <br>
+    </div>
+    <br>
+    {% for post in posts %}
+
+    <div class='teamlist'>
+        <div class='contents'>
+            <div class='title'>{{post.title}}</div>
+            {% if post.writer.last_name %}
+            <div class = 'name'>작성자 : {{ post.writer.last_name}}</div>
+            {% else %}
+            <!--만약 last_name이 null이면 익명으로 표시하기.-->
+            <div class = 'name'>작성자 : 익명 </div>
+            {% endif %}
+            
+            <p class='date'>{{post.date}}</p> <br>
+            <div class='realcontent'>{{post.contents}}</div> <br>
+            
+            {% if post.photo %}
+            <p class='title2'>사진</p> <br>
+            <img src="{{post.photo.url}}" alt=""> <br>
+            {% endif %}
+            
+            {% if post.video %}
+            <p class='title2'>비디오</p> <br>
+            <video src="{{post.video.url}}"></video>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+
+
+    
+
+    <div class='btndiv'>
+        <a href="{% url 'tacticmodelformcreate' %}" class='bottombtn'>전술 추가</a>
+    </div>
+
+
+    {% endblock content %}
+</body>
+
+=======
 <!--
     피그마의 'Myteam:팀 전술' 페이지
 -->
@@ -64,4 +134,5 @@
     {% endblock content %}
 </body>
 
+>>>>>>> 6b016d6091b50a01cb186639ec7e352339914692
 </html>

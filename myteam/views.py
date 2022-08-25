@@ -8,11 +8,15 @@ from join.models import Team
 from django.utils import timezone
 from .forms import TacticModelForm,NoticeModelForm
 from django.contrib.auth.decorators import login_required
+from join.models import Team
+from mylog.models import Mylog
+
 # Create your views here.
 
 @login_required(login_url='/login/')
 def myteam_log(request): #,team_id
     #팀원들의 log 모아오기.
+
     #this_team = get_object_or_404(Team, pk = team_id) #팀 이름을 구분키로 사용
     #members = User.objects.filter(id=this_team.member)
     #logs = Mylog.objects.filter(writer=members)

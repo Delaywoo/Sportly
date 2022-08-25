@@ -17,7 +17,6 @@ class Team(models.Model):
     member = models.ManyToManyField(User, related_name='Member',blank=True) #through='JoinPass'
     notices= models.ManyToManyField(Notice, related_name='Notice',blank=True)
     tactics = models.ManyToManyField(Tactic,related_name="Tactic",blank=True)
-
     def __str__(self):
         return self.title
 
@@ -40,4 +39,3 @@ class RealPwd(models.Model):
 class Check(models.Model):
     real = models.ForeignKey('RealPwd',on_delete=models.CASCADE )
     input = models.CharField(null=True, max_length=10)
-

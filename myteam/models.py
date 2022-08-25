@@ -10,7 +10,7 @@ class Tactic(models.Model):
     #팀 : 외래키로 받아오기
     title = models.TextField()
     date = models.DateField(default=timezone.now) #default=datetime.now(), auto_now_add()
-    photo =  models.ImageField(blank=False, null=False, upload_to = 'tactic_photo')
+    photo =  models.ImageField(blank=True, null=True, upload_to = 'tactic_photo')
     video = models.FileField(blank=True, null=True, upload_to = 'tactic_file') #파일 업로드 사이즈 최댓값은 기본 2.5mb, 따로 설정 가능.
     contents = models.TextField()
     def __str__(self):

@@ -5,6 +5,7 @@ from mylog.views import mylog_detail
 
 
 urlpatterns = [
+
     path('myteam_notice',myteam_notice,name="myteam_notice"),
    
     path('myteam_log',myteam_log,name='myteam_log'),

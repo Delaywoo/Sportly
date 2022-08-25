@@ -1,3 +1,4 @@
+
 <!--메뉴바에서 my team을 클릭하면 """가장 먼저""" 이동하는 페이지.
 피그마의 'MyTeam:공지' 페이지이다.-->
 {% extends 'realbase.html' %}
@@ -18,6 +19,7 @@
     {% block content %}
     
     <div class="teammenus">
+
         <a href="{% url 'myteam_notice'  %}" class="teammenu-btn">공지사항</a><br>
         <a href="{% url 'myteam_log' %}" class="teammenu-btn">팀 로그</a><br>
         <a href="{% url 'myteam_tactic'%}" class="teammenu-btn">팀 전술</a><br>
@@ -103,4 +105,5 @@
     {% endblock content %}
 </body>
 
+>>>>>>> e1ca5ccf8a1745cd909e9c7ac231c5a12d74187f
 </html>
