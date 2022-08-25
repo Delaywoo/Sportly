@@ -37,7 +37,8 @@
                 <a class="log-date" href="{% url 'mylog_detail' post.id %}">{{post.log_date2}}</a>
             </div>
             <div class="log-content">
-
+                <h5>작성자</h5>
+                <h6>{{post.writer}}</h6>
                 <h5>배운 점</h5>
                 <h6>{{post.learned}}</h6>
                 <h5>부족한 점</h5>

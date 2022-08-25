@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block title %}<title>마이팀 로그</title>{% endblock title %}
-    {% block css %}<link rel="stylesheet" href="{% static 'css/myteams.css' %}?after"> {% endblock css %}
+    {% block css %}<link rel="stylesheet" href="{% static 'css/mylog_list.css' %}?after">{% endblock css %}
 </head>
 <body>
     {% block content %}
@@ -19,10 +19,53 @@
         <a href="{% url 'myteam_log' %}" class="teammenu-btn">팀 로그</a><br>
         <a href="{% url 'myteam_tactic' %}" class="teammenu-btn">팀 전술</a><br>
     </div>
+    <br>    
     <br>
-    <br>
-    <a href="{% url 'teamlog_detail' %}">팀 로그 하나를 클릭시</a>
     
+    <!-- 하단 플로팅 버튼 : 일지 작성 -->
+
+    <div class = 'btndiv'>
+        <a href="{% url 'mylogmodelformcreate' %}" class = 'bottombtn'>로그 작성</a>
+    </div>
+
+    
+    <!--<a class="mylog-btn" href="{% url 'modelformcreate' %}">내 로그 작성하기</a><br>
+    <a class="mylog-btn" href="{% url 'schedule_create' %}">일정 등록하기</a><br>-->
+    
+    <!--이 아래로 로그들을 띄운다.-->
+    <h1>MY TEAM LOGS</h1>
+
+    <div class="myalllogs">
+    {% for log in logs %}
+        <div class="onelog">
+            <div class="log-garo">
+                <div class="log-emotion">{{log.mood}}</div>
+                <a class="log-date" href="{% url 'mylog_detail' log.id %}">{{log.log_date2}}</a>
+            </div>
+            <div class="log-content">
+                <h5>작성자</h5>
+                <h6>{{log.writer}}</h6>
+                <h5>배운 점</h5>
+                <h6>{{log.learned}}</h6>
+                <h5>부족한 점</h5>
+                <h6>{{log.lacked}}</h6>
+                <h5>개선할 점</h5>
+                <h6>{{log.improve}}</h6>
+                
+                {% if log.photo %}
+                <h5>사진</h5>
+                <img src="{{log.photo.url}}" alt="" width="200px"><br>
+                {% endif %}
+                
+                {% if log.video %}
+                <h5>비디오</h5>
+                <video src="{{log.video.url}}" width="200px"></video>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+
+    </div>
     {% endblock content %}
 </body>
 

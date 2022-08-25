@@ -1,16 +1,24 @@
 
 import django
 from django.shortcuts import redirect, render, get_object_or_404
+from django.contrib.auth.models import User
+from mylog.models import Mylog
 from .models import Tactic,Notice
+from join.models import Team
 from django.utils import timezone
 from .forms import TacticModelForm,NoticeModelForm
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 @login_required(login_url='/login/')
-def myteam_log(request):
+def myteam_log(request): #,team_id
     #팀원들의 log 모아오기.
-    return render(request,'myteam_log.html')
+    #this_team = get_object_or_404(Team, pk = team_id) #팀 이름을 구분키로 사용
+    #members = User.objects.filter(id=this_team.member)
+    #logs = Mylog.objects.filter(writer=members)
+    logs= Mylog.objects.all().order_by('-log_date2')
+    return render(request,'myteam_log.html',{'logs':logs}) #{'logs':logs}
+    #return redirect ('myteam_log')
 
 @login_required(login_url='/login/')
 def myteam_notice(request):
@@ -60,10 +68,12 @@ def tacticmodelformcreate(request):
 def teamlog_comment(request):
     return render(request,'teamlog_comment.html')
 
+"""
 @login_required(login_url='/login/')
-def teamlog_detail(request):
-    return render(request,'teamlog_detail.html')
-
+def teamlog_detail(request,teamlog_id):
+    myteamlog_detail=get_object_or_404(Mylog,pk=teamlog_id)
+    return render(request,'teamlog_detail.html',{'myteamlog_detail':myteamlog_detail})
+"""
 
 #@require_POST
 @login_required(login_url='/login/')

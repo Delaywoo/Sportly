@@ -20,28 +20,28 @@
 
     {% block content %}
 
-    <h3 class="title">팀 목록</h3>
+    <h3 class="title">내가 속한 팀 목록</h3>
     <!--<a href="{% url 'modelformcreate' %}" class="maketeam"> 새 팀 만들기</a><br>-->
 
-    <div class="team-list">
-        {% for myteam in myteams %}
+    {% for myteam in myteams %}
+    <div class="team-list" >
         <div class='team'>
             <div class = 'left'>
                 {% if myteam.photo %}
                 <img src="{{myteam.photo.url}}" alt="" width="120px" height="120px">
                 {% endif %}
             </div>
-
+         
             <div class = 'right'>
-                <h3 href="{% url 'myteam_notice' %}" class='teamname'>{{ myteam.title }} </h3> 
+                <a  class='teamname' href="{% url 'myteam_notice'  %}">{{ myteam.title }} </a> 
                 <!--팀 제목 클릭시 해당 팀의 공지사항 페이지로 이동하도록 url 연결하기!!-->
                 <h4 class='subtitle'>{{ myteam.subtitle }}</h4>
                 <!--<button style=border:0>가입하기</button>-->
             </div>
         </div>
-        {% endfor %}
+        
     </div>
-
+    {% endfor %}
 
     {% endblock content %}
 
