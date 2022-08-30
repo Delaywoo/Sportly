@@ -22,34 +22,6 @@
     </div>
     <br>    
     <br>
-<<<<<<< HEAD
-    <br>
-    <a href="{% url 'teamlog_detail' %}">팀 로그 하나를 클릭시</a>
-    {% for post in logs %}
-        <div class="onelog">
-            <div class="log-garo">
-                <div class="log-emotion">{{logs.mood}}</div>
-                <a class="log-date" href="{% url 'mylog_detail' post.id %}">{{logs.log_date2}}</a>
-            </div>
-            <div class="log-content">
-
-                <h5>배운 점</h5>
-                <h6>{{logs.learned}}</h6>
-                <h5>부족한 점</h5>
-                <h6>{{logs.lacked}}</h6>
-                <h5>개선할 점</h5>
-                <h6>{{logs.improve}}</h6>
-                
-                {% if logs.photo %}
-                <h5>사진</h5>
-                <img src="{{logs.photo.url}}" alt="" width="200px"><br>
-                {% endif %}
-                
-                {% if logs.video %}
-                <h5>비디오</h5>
-                <video src="{{logs.video.url}}" width="200px"></video>
-=======
-    
     <!-- 하단 플로팅 버튼 : 일지 작성 -->
 
     <div class = 'btndiv'>
@@ -88,53 +60,13 @@
                 {% if log.video %}
                 <h5>비디오</h5>
                 <video src="{{log.video.url}}" width="200px"></video>
->>>>>>> 6b016d6091b50a01cb186639ec7e352339914692
                 {% endif %}
             </div>
         </div>
     {% endfor %}
-<<<<<<< HEAD
-=======
 
     </div>
->>>>>>> 6b016d6091b50a01cb186639ec7e352339914692
     {% endblock content %}
 
 
-    
-    <div class="myalllogs">
-        {% for post in posts %}
-            <div class="onelog">
-                <div class="log-garo">
-                    <div class="log-emotion">{{post.mood}}</div>
-                    <a class="log-date" href="{% url 'mylog_detail' post.id %}">{{post.log_date2}}</a>
-                </div>
-                <div class="log-content">
-                    <h5>작성자</h5>
-                    <h6>{{post.writer}}</h6>
-                    <h5>배운 점</h5>
-                    <h6>{{post.learned}}</h6>
-                    <h5>부족한 점</h5>
-                    <h6>{{post.lacked}}</h6>
-                    <h5>개선할 점</h5>
-                    <h6>{{post.improve}}</h6>
-                    
-                    {% if post.photo %}
-                    <h5>사진</h5>
-                    <img src="{{post.photo.url}}" alt="" width="200px"><br>
-                    {% endif %}
-                    
-                    {% if post.video %}
-                    <h5>비디오</h5>
-                    <video src="{{post.video.url}}" width="200px"></video>
-                    {% endif %}
-                </div>
-            </div>
-        {% endfor %}
-    
-        </div>
-    
-</body>
-
->>>>>>> e1ca5ccf8a1745cd909e9c7ac231c5a12d74187f
 </html>
