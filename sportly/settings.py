@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = (os.environ.get('DEBUG', 'True') != 'False')
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', 'jyw0115.pythonanywhere.com']
 
 
 # Application definition
@@ -54,7 +54,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -136,6 +136,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 LOGIN_REDIRECT_URLS="/" #로그인 성공시 "/"으로 갈 것.(home으로 간다.)
 # Default primary key field type
@@ -151,19 +152,14 @@ MEDIA_URL = '/media/'#사용자에 의해 올라온 파일에 접근할 수 있�
 # Access key ID: AKIAWCCWMND7BZU7YXFQ
 # Secret across key: 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
 
-AWS_ACCESS_KEY_ID = 'AKIAWCCWMND7BZU7YXFQ'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_REGION = 'ap-northeast-2'
-AWS_STORAGE_BUCKET_NAME = 'mysportly'
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.%s.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME, AWS_REGION)
-AWS_DEFAULT_ACL = 'public-read'
+# AWS_ACCESS_KEY_ID = 'AKIAWCCWMND7BZU7YXFQ'
+# AWS_SECRET_ACCESS_KEY = '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'
+# AWS_REGION = 'ap-northeast-2'
+# AWS_STORAGE_BUCKET_NAME = 'mysportly'
+# AWS_S3_CUSTOM_DOMAIN = '%s.s3.%s.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME, AWS_REGION)
+# AWS_DEFAULT_ACL = 'public-read'
 
-STATICFILES_LOCATION = 'static'
+# STATICFILES_LOCATION = 'static'
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
-
-
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'

@@ -1,0 +1,88 @@
+.team-create {
+    width: 90%;
+    max-width: 550px;
+    margin: auto;
+}
+
+h4 {
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+h5 {
+    font-size: 19px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+
+h6 {
+    font-size: 17px;
+    font-weight: bold;
+    text-align: left;
+    margin: 10px;
+    margin-left: 10%;
+    margin-top: 15px;
+}
+
+.make-team {
+    background-color: rgba(223, 223, 223, 0.467);
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 10px;
+    width: 80%;
+    
+}
+
+.maketeam-input {
+    font-size: 18px;
+    display: flex;
+    margin: auto;
+    text-align: center;
+    height: 40px;
+    background-color: #524FFF;
+    color: white;
+    border-radius: 15px;
+    width: 100px;
+    margin-top: 20px;
+    border: none;
+    text-align: center;
+    padding: 2px;
+    padding-left: 14px;
+    box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.47);
+}
+
+.img-upload {
+    width: 100px;
+    height: 100px;
+    color: rgb(200, 200, 200);
+    background-color:rgba(240, 240, 240, 0.5);;
+    font-size: 50px;
+    border-radius: 7px;
+    font-weight: 600;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    cursor: pointer;
+}
+
+#img-file {
+    display: none;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.media-title {
+    width: 50%;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
