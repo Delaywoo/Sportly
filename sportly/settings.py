@@ -136,7 +136,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'staticfiles')
 
 LOGIN_REDIRECT_URLS="/" #로그인 성공시 "/"으로 갈 것.(home으로 간다.)
 # Default primary key field type
