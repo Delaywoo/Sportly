@@ -1,0 +1,304 @@
+
+
+.teammenu-btn {
+    text-decoration: none;
+    background-color: #524FFF;
+    display: inline-block;
+    text-align: center;
+    color: white;
+    width: 100px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.teammenus {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.contents{
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    width: 370px;
+    margin: 0 auto;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.line{
+    background-color: white;
+}
+
+.bottombtn:link, .bottombtn:visited{
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.btndiv {
+    text-align: center;
+    font-size: 17px;
+    cursor: pointer;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    font-weight: 700;
+    background-color:#554AF0;
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.47);
+}
+
+
+p{
+    font-size: 10px;
+    float: right;
+    clear: both;
+}
+
+h2{
+    float: left;
+    margin-left: 30px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.date{
+    float: left;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.notice-icon {
+    font-size: 40px;
+}
+
+.first-line, .second-line {
+    display: flex;
+    padding: 0;
+    align-items: center;
+}
+
+.check{
+    font-size: 18px;
+    margin-left: 300%;
+    background-color: rgba(0,0,0,0);
+    border: none;
+}
+
+.notice-type {
+    background-color: rgb(240, 240, 240);
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: bolder;
+    margin-left: 20px;
+    padding: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.title{
+    float: left;
+    clear: both;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.title2{
+    float: left;
+    clear: both;
+    font-size: 15px;
+    font-weight: 500;
+    clear: both;
+}
+
+.realcontent{
+    background-color: white;
+    clear: both;
+    border-radius: 5px;
+    font-size: 15px;
+    text-align: left;
+}
+
+img{
+    clear: both;
+    width: 70%;
+    margin-left: -20px;
+}
+
+
+.all-notices {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.each-notice {
+    background-color: white;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.notice-writer {
+    font-size: 15px;
+    margin-left: 10px;
+}
+
+* {
+    text-align: center;
+}
+
+.teammenu-btn {
+    text-decoration: none;
+    background-color: #524fff;
+    display: inline-block;
+    text-align: center;
+    color: white;
+    width: 100px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+  }
+
+.floating-button {
+    display: flex;
+    position: fixed;
+    right: 40%;
+    bottom: 15px;
+    z-index: 2;
+  }
+
+.to-write {
+    font-size: 15px;
+    display: flex;
+    position: relative;
+    height: 40px;
+    cursor: pointer;
+    font-weight: 700;
+    background-color: #524FFF;
+    border-radius: 15px;
+    padding: 5%;
+    width: 100px;
+    box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.47);
+}
+
+.myalllogs {
+    text-align: center;
+    display: inline-block;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    
+}
+
+.onelog {
+    background-color: #F8F8FA;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.log-garo {
+    display: flex;
+    padding-left: 10px;
+}
+
+h5 {
+    font-size: 17px;
+    font-weight: bold;
+    text-align: left;
+    padding: 5px;
+}
+
+.onething {
+    display: flex;
+}
+
+h6 {
+    text-align: left;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.log-content {
+    padding: 10px;
+}
+
+h1 {
+    font-weight: bolder;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+.log-emotion {
+    float: left;
+    font-size: 40px;
+    text-align: center;
+    padding: 5px;
+}
+
+
+.log-date {
+    font-size: 20px;
+    float:right;
+    width: 85%;
+    color: black;
+    margin: auto;
+    top: auto;
+    bottom: auto;
+    text-align: left;
+    margin-left: 10px;
+}
+
+body {
+    margin-bottom: 100px;
+}
+
+.bottombtn:link, .bottombtn:visited{
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.btndiv {
+    text-align: center;
+    font-size: 17px;
+    cursor: pointer;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    font-weight: 700;
+    background-color:#554AF0;
+    border-radius: 10px;
+    width: 150px;
+    height: 30px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.47);
+}
