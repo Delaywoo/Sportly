@@ -1,4 +1,3 @@
-from turtle import textinput
 from xml.dom.minidom import Comment
 from django import forms
 from .models import Tactic, Notice
