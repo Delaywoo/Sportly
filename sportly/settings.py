@@ -132,9 +132,9 @@ USE_TZ = False #True로 하면 timezone()사용시 UTC로 처리된다.
 
 STATIC_URL = '/static/'
 
-# STATICFILES_DIRS = [
-#     BASE_DIR / 'static'
-# ]
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
+]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
